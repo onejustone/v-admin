@@ -1,0 +1,12 @@
+section(class="lx-dialog")
+  transition(name="modal")
+    div(class="modal-mask" @click="close" v-show="show")
+      div(class="modal-container" @click.stop="")
+        div(class="modal-header")
+          slot(name="header")
+        div(class="modal-body")
+          slot
+            span {{ content }}
+        div(class="modal-footer text-right")
+          button(class="modal-close" @click="close") 取消
+          button(class="modal-confirm" @click="confirm") 确认

@@ -1,0 +1,268 @@
+{
+  "text_fields": [
+    {
+      "field_id": "alias_field_id_yourcategory_yourform_yourfielename",
+      "name": "多行文本",
+      "description": "demo_desc",
+      "type": "text",
+      "config": {
+        "type": "textarea",
+        "//": "前端是否显示错误验证信息,默认显示",
+        "hidden_error": true,
+        "placeholder": "demo_placeholder",
+        "max": 500
+      },
+      "required": false
+    },
+    {
+      "field_id": "alias_field_id_yourcategory_yourform_yourfielename",
+      "name": "单行文本",
+      "description": "demo_desc",
+      "type": "text",
+      "config": {
+        "type": "input",
+        "placeholder": "demo_placeholder",
+        "max": 120
+      },
+      "required": false
+    },
+    {
+      "field_id": "alias_field_id_yourcategory_yourform_yourfielename",
+      "name": "座机",
+      "type": "text",
+      "config": {
+        "type": "telephone"
+      },
+      "required": false
+    },
+    {
+      "field_id": "alias_field_id_yourcategory_yourform_yourfielename",
+      "name": "邮箱",
+      "type": "text",
+      "config": {
+        "type": "email"
+      },
+      "required": true
+    },
+    {
+      "field_id": "alias_field_id_yourcategory_yourform_yourfielename",
+      "name": "手机",
+      "type": "text",
+      "config": {
+        "type": "mobile"
+      },
+      "required": true
+    }
+  ],
+  "choice_fields": [
+    {
+      "field_id": "alias_field_id_yourcategory_yourform_yourfielename",
+      "name": "下拉框",
+      "type": "choice",
+      "required": true,
+      "config": {
+        "type": "select",
+        "multi": false,
+        "options": [
+          {
+            "option_id": 1,
+            "name": "op1"
+          },
+          {
+            "option_id": 2,
+            "name": "op2"
+          },
+          {
+            "option_id": 3,
+            "name": "op3"
+          },
+          {
+            "option_id": 4,
+            "name": "op4"
+          }
+        ]
+      }
+    },
+    {
+      "field_id": "alias_field_id_yourcategory_yourform_yourfielename",
+      "name": "单选框",
+      "type": "choice",
+      "required": true,
+      "config": {
+        "type": "radio",
+        "multi": false,
+        "options": [
+          {
+            "option_id": 1,
+            "name": "op1"
+          },
+          {
+            "option_id": 2,
+            "name": "op2"
+          },
+          {
+            "option_id": 3,
+            "name": "op3"
+          },
+          {
+            "option_id": 4,
+            "name": "op4"
+          }
+        ]
+      }
+    },
+    {
+      "field_id": "alias_field_id_yourcategory_yourform_yourfielename",
+      "name": "复选框",
+      "type": "choice",
+      "required": true,
+      "config": {
+        "type": "checkbox",
+        "multi": true,
+        "options": [
+          {
+            "option_id": 1,
+            "name": "op1"
+          },
+          {
+            "option_id": 2,
+            "name": "op2"
+          },
+          {
+            "option_id": 3,
+            "name": "op3"
+          },
+          {
+            "option_id": 4,
+            "name": "op4"
+          }
+        ]
+      }
+    },
+    {
+      "field_id": "alias_field_id_yourcategory_yourform_select",
+      "name": "带搜索的下拉框",
+      "type": "choice",
+      "required": true,
+      "config": {
+        "type": "select",
+        "multi": false,
+        "filterable": true,
+        "options": [
+          {
+            "option_id": 1,
+            "name": "op1"
+          },
+          {
+            "option_id": 2,
+            "name": "op2"
+          },
+          {
+            "option_id": 3,
+            "name": "op3"
+          },
+          {
+            "option_id": 4,
+            "name": "op4"
+          }
+        ]
+      }
+    },
+    {
+      "field_id": "alias_field_id_yourcategory_yourform_cascader",
+      "name": "级联选择器",
+      "type": "choice",
+      "required": true,
+      "config": {
+        "type": "select",
+        "multi": false,
+        "filterable": true,
+        "options": [
+          "// options 格式参考，file::common_info/area_data.json"
+        ]
+      }
+    }
+  ],
+  "number_fields": [
+    {
+      "field_id": "alias_field_id_yourcategory_yourform_yourfielename",
+      "name": "整数",
+      "type": "number",
+      "config": {
+        "type": "integer",
+        "prefix": "",
+        "suffix": "万元"
+      },
+      "required": true
+    },
+    {
+      "field_id": "alias_field_id_yourcategory_yourform_yourfielename",
+      "name": "小数",
+      "type": "number",
+      "config": {
+        "type": "float"
+      },
+      "required": true
+    },
+    {
+      "field_id": "alias_field_id_yourcategory_yourform_yourfielename",
+      "name": "货币类型",
+      "type": "number",
+      "config": {
+        "type": "currency"
+      },
+      "required": true
+    }
+  ],
+  "date_fields": [
+    {
+      "field_id": "alias_field_id_yourcategory_yourformyourfielename",
+      "name": "日期",
+      "type": "date",
+      "config": {
+        "type": "date"
+      },
+      "required": true
+    },
+    {
+      "field_id": "alias_field_id_yourcategory_yourformyourfielename",
+      "name": "时间",
+      "type": "date",
+      "config": {
+        "type": "datetime"
+      },
+      "required": true
+    }
+  ],
+  "file_fields": [
+    {
+      "field_id": "alias_field_id_yourcategory_yourformyourfielename",
+      "name": "文件",
+      "type": "file",
+      "config": {
+        "type": "file"
+      },
+      "required": true
+    },
+    {
+      "field_id": "alias_field_id_yourcategory_yourform_yourfielename",
+      "name": "图片",
+      "type": "file",
+      "config": {
+        "type": "image"
+      },
+      "required": true
+    }
+  ],
+  "relation_fields": [
+    {
+      "field_id": "alias_field_id_yourcategory_yourform_yourfielename",
+      "name": "关联关系",
+      "type": "relation",
+      "config": {
+        "category_id": "alias_category_id_lawyer",
+        "multi": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+@import "./function";
+
+@mixin b($block) {
+  $B: $namespace+'-'+$block !global;
+
+  .#{$B} {
+    @content;
+  }
+}
+
+@mixin when($state) {
+  @at-root {
+    &.#{$state-prefix + $state} {
+      @content;
+    }
+  }
+}
+
+
+@mixin screens ($res-min: 600px, $res-max:1000px) {
+  @media screen and (min-width: $res-min) and (max-width: $res-max) {
+     @content;
+  }
+}
+
+@mixin triangle ($direction:top, $size:14px, $borderColor: gray) {
+  content: "";
+  width: 0;
+  height: 0;
+
+  @if $direction == top {
+    border-bottom: $size solid $borderColor;
+    border-right: $size dashed transparent;
+    border-left: $size dashed transparent;
+  }
+
+  @else if $direction == bottom {
+    border-top: $size solid $borderColor;
+    border-right: $size dashed transparent;
+    border-left: $size dashed transparent;
+  }
+
+  @else if $direction == left {
+    border-top: $size dashed transparent;
+    border-bottom: $size dashed transparent;
+    border-right: $size solid $borderColor;
+  }
+
+  @else if $direction == right {
+    border-top: $size dashed transparent;
+    border-bottom: $size dashed transparent;
+    border-left: $size solid $borderColor;
+  }
+}
+
+@mixin disabled($bgColor:#e6e6e6, $textColor:#ababab) {
+  background-color: $bgColor !important;
+  color: $textColor !important;
+  cursor: not-allowed !important;
+}
+
+
+@mixin size($size...) {
+  $size: if(length($size) > 0,$size, auto);
+  $width: nth($size, 1);
+  $height: nth($size, length($size));
+
+  @if $width != auto {
+    $width: if(unitless($width), $width + px, $width);
+  }
+
+  @if $height != auto {
+    $height: if(unitless($height), $height + px, $height);
+  }
+
+  width: $width;
+  height: $height;
+}
+
+ %center-block {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+$imgStyleBorder: 1px solid #ccc!default;
+$imgStylePadding: 2px;
+$imgStyleRadius: 8px !default;
+
+@mixin img-border($border: $imgStyleBorder, $padding: $imgStylePadding) {
+  border: $border;
+  padding: $padding;
+}
+
+@mixin img-rounded($radius:$imgStyleRadius) {
+  border-radius: $radius;
+}
+
+@mixin float($float: left) {
+  float: $float;
+  border: 5px solid red;
+}

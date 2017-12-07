@@ -1,0 +1,693 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"has",
+				"hasInfo"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 354.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"inst\tll",
+				"Package Control: Install Local Dependency"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				":w",
+				":w - Save"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"i",
+				"Package Control: Install Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"theme",
+				"Material Theme: Activate theme"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"the  theme",
+				"Material Theme: Activate theme"
+			],
+			[
+				"the theme",
+				"Material Theme: Activate theme"
+			],
+			[
+				"the them",
+				"Material Theme: Activate theme"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"install a",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"remove pa",
+				"Package Control: Remove Package"
+			],
+			[
+				"install pa",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 528.0
+	},
+	"console":
+	{
+		"height": 143.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/chenrong/GitRepo/primaryGitRepo/vue-demo",
+		"/Users/chenrong/GitRepo/primaryGitRepo/vue-demo/src",
+		"/Users/chenrong/GitRepo/primaryGitRepo/vue-demo/src/components",
+		"/Users/chenrong/GitRepo/primaryGitRepo/vue-demo/src/plugins",
+		"/Users/chenrong/GitRepo/primaryGitRepo/vue-demo/src/utils",
+		"/Users/chenrong/GitRepo/primaryGitRepo/vue-demo/src/vendor"
+	],
+	"file_history":
+	[
+		"/Users/chenrong/GitRepo/primaryGitRepo/vue-demo/src/App.vue",
+		"/Users/chenrong/GitRepo/primaryGitRepo/vue-demo/src/plugins/install.js",
+		"/Users/chenrong/GitRepo/primaryGitRepo/vue-demo/src/utils/util.js",
+		"/Users/chenrong/GitRepo/primaryGitRepo/vue-demo/src/components/dialog/src/dialog.pug",
+		"/Users/chenrong/GitRepo/primaryGitRepo/vue-demo/src/components/dialog/src/dialog.js",
+		"/Users/chenrong/GitRepo/primaryGitRepo/vue-demo/src/components/dialog/index.js",
+		"/Users/chenrong/GitRepo/primaryGitRepo/vue-demo/src/utils/vdom.js",
+		"/Users/chenrong/GitRepo/primaryGitRepo/vue-demo/src/components/message/src/main.vue",
+		"/Users/chenrong/GitRepo/primaryGitRepo/vue-demo/src/components/message/src/message.js",
+		"/Users/chenrong/GitRepo/primaryGitRepo/vue-demo/src/components/message/src/message.scss",
+		"/Users/chenrong/GitRepo/primaryGitRepo/vue-demo/src/components/message/src/message.pug",
+		"/Users/chenrong/GitRepo/primaryGitRepo/vue-demo/src/components/message/index.js",
+		"/Users/chenrong/GitRepo/primaryGitRepo/vue-demo/src/main.js",
+		"/Users/chenrong/GitRepo/primaryGitRepo/vue-demo/src/components/dialog/package.json",
+		"/Users/chenrong/GitRepo/primaryGitRepo/vue-demo/src/components/dialog/dialog.pug",
+		"/Users/chenrong/GitRepo/primaryGitRepo/vue-demo/src/components/dialog/main.vue",
+		"/Users/chenrong/GitRepo/primaryGitRepo/vue-demo/src/components/dialog/dialog.js",
+		"/Users/chenrong/GitRepo/primaryGitRepo/vue-demo/src/components/dialog/dialog.scss",
+		"/Users/chenrong/lingxiWorkSpace/frontend/lingxiang-fe/lingxiang-fe.sublime-project",
+		"/Users/chenrong/lingxiWorkSpace/frontend/lingxiang-fe/lingxiang-fe.sublime-workspace",
+		"/Users/chenrong/Library/Application Support/Sublime Text 3/Packages/User/Terminal.sublime-settings",
+		"/Users/chenrong/lingxiWorkSpace/weidelaw-fe.sublime-project",
+		"/Users/chenrong/lingxiWorkSpace/frontend/lingxiang-fe/static/vendor/element-ui/src/utils/popper.js",
+		"/Users/chenrong/Library/Application Support/Sublime Text 3/Settings/SideBarEnhancements.json"
+	],
+	"find":
+	{
+		"height": 70.0
+	},
+	"find_in_files":
+	{
+		"height": 167.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"userClose",
+			"onclose",
+			"innerOptions",
+			"typeof",
+			"dialog",
+			"modalVisible",
+			"  ",
+			"container"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 70.0
+	},
+	"input":
+	{
+		"height": 73.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 168.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "vue-demo.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"formva",
+				"src/views/project/elements/workflow/FormNav.vue"
+			],
+			[
+				"router.co",
+				"src/router/core/router.core.js"
+			],
+			[
+				"routeapi",
+				"routes/api.php"
+			],
+			[
+				"header",
+				"src/views/layout/header/HeaderLogo.vue"
+			],
+			[
+				"fie",
+				"src/views/project/elements/Field.vue"
+			],
+			[
+				"weidero",
+				"src/router/weidelaw/router.js"
+			],
+			[
+				"cat",
+				"src/views/category/Index.vue"
+			],
+			[
+				"category",
+				"src/views/category/Index.vue"
+			],
+			[
+				"fiel",
+				"src/views/project/elements/Field.vue"
+			],
+			[
+				"nu",
+				"src/views/project/field/Number.vue"
+			],
+			[
+				"option",
+				"src/views/project/ProjectDetailOptions.vue"
+			],
+			[
+				"log",
+				"src/views/project/elements/LogicColumn.vue"
+			],
+			[
+				"logibu",
+				"src/components/logicButtonsDialog/logicButtonsDialog.js"
+			],
+			[
+				"deployssc",
+				"docs/deploy/ssc/category_cert/status_list_cert.json"
+			],
+			[
+				"number",
+				"src/views/project/field/Number.vue"
+			],
+			[
+				"logicbutinde",
+				"src/components/logicButtonsDialog/Index.vue"
+			],
+			[
+				"logicbuttoinindex",
+				"src/components/LogicButtonsDialog/Index.vue"
+			],
+			[
+				"innner",
+				"src/views/project/elements/form/innerForm/innerForm.js"
+			],
+			[
+				"logicco",
+				"src/views/project/elements/LogicColumn.vue"
+			],
+			[
+				"file",
+				"src/components/filePreviewDialogPanel/MyFileView.vue"
+			],
+			[
+				"tableformindev.e",
+				"src/views/project/elements/form/tableForm/index.vue"
+			],
+			[
+				"projectindex.vue",
+				"src/views/project/Index.vue"
+			],
+			[
+				"category.vue",
+				"src/views/category/Index.vue"
+			],
+			[
+				"tbaleform",
+				"src/views/project/elements/form/tableForm/tableForm.js"
+			],
+			[
+				"storepreoj",
+				"src/store/modules/project.js"
+			],
+			[
+				"storepro",
+				"src/store/modules/project.js"
+			],
+			[
+				"logicbu",
+				"src/components/logicButtonsDialog/logicButtonsDialog.js"
+			],
+			[
+				"storeproje",
+				"src/store/modules/project.js"
+			],
+			[
+				"proect",
+				"src/api/resource/project.js"
+			],
+			[
+				"dialogforms.js",
+				"src/views/project/elements/form/dialogForm/dialogForm.service.js"
+			],
+			[
+				"dia",
+				"src/store/modules/core/form/dialogForm.js"
+			],
+			[
+				"cateinde",
+				"src/views/category/Index.vue"
+			],
+			[
+				"export",
+				"src/components/FileExportDialog/Index.vue"
+			],
+			[
+				"dutyinde",
+				"src/views/duty/Index.vue"
+			],
+			[
+				"viewinner",
+				"src/views/project/elements/form/innerForm/innerForm.js"
+			],
+			[
+				"innerform",
+				"src/views/project/elements/form/innerForm/innerForm.js"
+			],
+			[
+				"in",
+				"static/theme/index.css"
+			],
+			[
+				"createconfig",
+				"database/migrations/2017_09_29_182149_create_config_table.php"
+			],
+			[
+				"html",
+				"src/components/core/html/src/html.js"
+			],
+			[
+				"mixi",
+				"src/theme/mixins/mixins.scss"
+			],
+			[
+				"ht",
+				"src/api/http.js"
+			],
+			[
+				"",
+				"src/views/project/elements/Col.vue"
+			],
+			[
+				"setting",
+				"src/views/setting/ManagerMember.vue"
+			],
+			[
+				"lighttba",
+				"src/components/lightTable/index.vue"
+			],
+			[
+				"inner",
+				"src/views/project/elements/form/innerForm/innerForm.js"
+			],
+			[
+				"project.js",
+				"src/store/modules/project.js"
+			],
+			[
+				"dialogform",
+				"src/store/modules/core/form/dialogForm.js"
+			],
+			[
+				"status",
+				"src/store/modules/status.js"
+			],
+			[
+				"stat",
+				"src/api/resource/status.js"
+			],
+			[
+				"status.js",
+				"src/api/status.js"
+			],
+			[
+				"logic",
+				"src/components/logicButtonsDialog/logicButtonsDialog.js"
+			],
+			[
+				"dialogfom",
+				"src/store/modules/core/form/dialogForm.js"
+			],
+			[
+				"storestatustab",
+				"src/store/modules/statusTabs.js"
+			],
+			[
+				"statustab",
+				"src/store/modules/statusTabs.js"
+			],
+			[
+				"logidia",
+				"src/store/modules/components/logicButtonsDialog.js"
+			],
+			[
+				"field.ve",
+				"src/views/project/elements/Field.vue"
+			],
+			[
+				"valida",
+				"src/utils/validate.js"
+			],
+			[
+				"innf",
+				"src/views/project/elements/form/InnerForm.vue"
+			],
+			[
+				"mati",
+				"src/views/project/field/text/MaxTips.vue"
+			],
+			[
+				"text",
+				"src/components/SearchBox/Text.vue"
+			],
+			[
+				"index",
+				"static/theme/index.css"
+			],
+			[
+				"alertm",
+				"src/utils/alertMessage.js"
+			],
+			[
+				"util",
+				"build/utils.js"
+			],
+			[
+				"fileupl",
+				"src/components/FileUploadDialog/Index.vue"
+			],
+			[
+				"index.css",
+				"static/theme/index.css"
+			],
+			[
+				"choice",
+				"src/views/project/field/Choice.vue"
+			],
+			[
+				"innerfo",
+				"src/views/project/elements/form/InnerForm.vue"
+			],
+			[
+				"field.v",
+				"src/views/project/elements/Field.vue"
+			],
+			[
+				"tablef",
+				"src/views/project/elements/form/TableForm.vue"
+			],
+			[
+				"backtotop",
+				"src/components/BackToTop/Index.vue"
+			],
+			[
+				"backto",
+				"src/components/BackToTop/Index.vue"
+			],
+			[
+				"file.v",
+				"src/views/project/field/file/File.vue"
+			],
+			[
+				"choice.vue",
+				"src/views/project/field/Choice.vue"
+			],
+			[
+				"text.ve",
+				"src/components/SearchBox/Text.vue"
+			],
+			[
+				"wdlaw",
+				"backend/lingxiang/docs/deploy/wdlaw.json"
+			],
+			[
+				"statuscert",
+				"backend/lingxiang/docs/deploy/ssc/category_cert/status_list_cert.json"
+			],
+			[
+				"statusproject",
+				"backend/lingxiang/docs/deploy/ssc/category_project/status_list_project.json"
+			],
+			[
+				"scf.jon",
+				"backend/lingxiang/docs/deploy/scf.json"
+			],
+			[
+				"layoutlistpro",
+				"backend/lingxiang/docs/deploy/ssc/category_project/layout_list_project.json"
+			],
+			[
+				"statuslistpro",
+				"backend/lingxiang/docs/deploy/ssc/category_project/status_list_project.json"
+			],
+			[
+				"logicbuttonspro",
+				"backend/lingxiang/docs/deploy/ssc/category_project/logic_buttons_project.json"
+			],
+			[
+				"categorycert",
+				"backend/lingxiang/docs/deploy/ssc/category-cert/category_cert.json"
+			],
+			[
+				"categorypro",
+				"backend/lingxiang/docs/deploy/ssc/category-project/category_project.json"
+			],
+			[
+				"ssc.json",
+				"backend/lingxiang/docs/deploy/ssc.json"
+			],
+			[
+				"ssc.jso",
+				"backend/lingxiang/docs/deploy/ssc.json"
+			],
+			[
+				"sscj",
+				"backend/lingxiang/vendor/guzzlehttp/guzzle/src/Cookie/SessionCookieJar.php"
+			],
+			[
+				"logicbuttonsce",
+				"backend/lingxiang/docs/deploy/ssc/logic_buttons_cert.json"
+			],
+			[
+				"categorycet",
+				"backend/lingxiang/docs/deploy/ssc/category_cert.json"
+			],
+			[
+				"logiccolumnspro",
+				"backend/lingxiang/docs/deploy/ssc/logic_columns_project.json"
+			],
+			[
+				"status_list_ce",
+				"backend/lingxiang/docs/deploy/ssc/status_list_cert.json"
+			],
+			[
+				"status_list_",
+				"backend/lingxiang/docs/deploy/ssc/status_list_project.json"
+			],
+			[
+				"status_list_project.json",
+				"backend/lingxiang/docs/deploy/ssc/status_list_project.json"
+			],
+			[
+				"status_list_project",
+				"backend/lingxiang/docs/deploy/ssc/status_list_project.json"
+			],
+			[
+				"logicbuttto",
+				"backend/lingxiang/docs/deploy/ssc/logic_buttons_cert.json"
+			],
+			[
+				"status_listce",
+				"backend/lingxiang/docs/deploy/ssc/status_list_cert.json"
+			],
+			[
+				"layout_listce",
+				"backend/lingxiang/docs/deploy/ssc/layout_list_cert.json"
+			],
+			[
+				"certor",
+				"backend/lingxiang/docs/deploy/ssc/form_cert_org.json"
+			],
+			[
+				"certo",
+				"backend/lingxiang/docs/deploy/ssc/form_cert_org.json"
+			],
+			[
+				"ssc.j",
+				"backend/lingxiang/docs/deploy/ssc.json"
+			],
+			[
+				"filelo",
+				"backend/lingxiang/app/Repository/Eloquents/Deploy/FileLoader.php"
+			],
+			[
+				"fileload",
+				"backend/lingxiang/app/Repository/Eloquents/Deploy/FileLoader.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/lingxiWorkSpace/frontend/weidelaw-fe/weidelaw-fe.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 81.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 374.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 270.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

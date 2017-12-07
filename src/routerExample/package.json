@@ -1,0 +1,5 @@
+{
+    "main": "./router.js",
+    "private": true,
+    "name": "router"
+}

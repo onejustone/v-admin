@@ -1,0 +1,23 @@
+.lx-message {
+  position: fixed;
+  left: 50%;
+  top: 20px;
+  transform: translate(-50%);
+  padding: 1em;
+  color: black;
+  min-width: 200px;
+  border: 1px solid gray;
+  // box-shadow: 2px 4px rgba(0,0,0,.3);
+  border-radius: 2px;
+  z-index: 10001;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
