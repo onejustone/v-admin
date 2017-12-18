@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import routesConfig from '../../../router/routes'
+  import { mapState } from 'vuex'
   import SideBarItem from './SideBarItem.vue'
 
   export default {
@@ -16,9 +16,7 @@
     },
 
     computed: {
-      routes () {
-        return routesConfig
-      }
+      ...mapState('permission/router', ['routes'])
     }
   }
 </script>

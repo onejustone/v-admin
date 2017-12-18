@@ -1,4 +1,5 @@
-import router from './permission/router.js'
+import router from './permission/router'
+import auth from './permission/auth'
 
 const state = {
 
@@ -13,11 +14,12 @@ const mutations = {
 }
 
 export default {
-  namespace: true,
+  namespaced: true,
   state,
   actions,
   mutations,
   modules: {
-    router
+    router,
+    auth
   }
 }

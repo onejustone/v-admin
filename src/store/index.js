@@ -7,14 +7,12 @@ import getters from './getters.js'
 
 import permission from './modules/permission.js'
 
-Vue.use(Vuex)
-
 const state = {
-
 }
 
-const store = new Vuex({
-  strict: true,
+Vue.use(Vuex)
+
+const store = new Vuex.Store({
   state,
   getters,
   actions,

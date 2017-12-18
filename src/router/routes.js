@@ -1,10 +1,15 @@
+
 import { _import } from './config'
 
 const constRoutes = [
   {
+    path: '',
+    redirect: '/components-demo'
+  },
+  {
     name: '404',
     path: '/404',
-    component: _import('errorPage/404'),
+    component: _import('error/404'),
     hiddden: true,
     meta: {
       title: '404'

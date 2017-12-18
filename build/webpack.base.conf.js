@@ -26,6 +26,8 @@ module.exports = {
       '@root': resolve('src'),
       '@views': resolve('src/views'),
       '@router': resolve('src/router'),
+      '@util': resolve('src/util'),
+      '@store': resolve('src/store')
     }
   },
   module: {
