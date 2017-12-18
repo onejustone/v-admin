@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Main from './src/main.vue'
-import { isVNode } from '@root/utils/vdom.js'
+import util from '@root/util'
 
 const DialogConstrcutor = Vue.extend(Main)
 
@@ -28,7 +28,7 @@ const Dialog = (options = {}) => {
     data: options
   })
 
-  if (isVNode(instance.content)) {
+  if (util.isVNode(instance.content)) {
     instance.$slots.default = [instance.content]
     instance.content = null
   }

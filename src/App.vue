@@ -12,7 +12,6 @@
 <script>
 import { SideBar, AppMain, NavBar, TagsView } from './views/layout'
 import BackToUp from './components/backToUp'
-
 export default {
   name: 'app',
 
@@ -22,21 +21,20 @@ export default {
     NavBar,
     TagsView,
     BackToUp
+  },
+
+  computed: {
+    testValue () {
+      const obj = { 'cssName': 'red' }
+      if (this.$_hasOwn(obj, 'cssName')) {
+        return 'fuckaaaaa'
+      }
+    }
   }
 }
 </script>
 
-<style type="text/css">
-  /*html,
-  body {
-    overflow: auto;
-  }
-*/</style>
-
 <style lang="styl">
-  html
-      width 100%
-      height 100%
-  .lx-main
-    border 1px solid red
+ @import "style/global.styl"
 </style>
+

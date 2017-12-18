@@ -1,5 +1,5 @@
 <template lang="pug">
-span charts
+  span charts
 </template>
 
 <script>
@@ -9,6 +9,3 @@ span charts
     componentName: 'charts'
   }
 </script>
-
-<style lang="scss" scoped>
-</style>

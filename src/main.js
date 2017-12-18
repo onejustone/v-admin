@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router/router.js'
+import store from './store/index.js'
 
 import 'normalize.css'
 import ElementUI from 'element-ui'
@@ -11,6 +12,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 // import LxDialog from '@/components/dialog'
 
 import Plugins from '@root/plugins/install.js'
+import Util from '@root/util/install.js'
 
 import VueI18n from 'vue-i18n'
 
@@ -20,11 +22,13 @@ Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.use(VueI18n)
 Vue.use(Plugins)
+Vue.use(Util)
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { App }
 })
