@@ -3,7 +3,6 @@ import { SET_USER_INFO } from '../../mutationTypes/permission'
 
 const state = {
   user: {
-    name: 'jack'
   }
 }
 
@@ -20,6 +19,10 @@ const actions = {
     }
 
     context.commit(SET_USER_INFO, { userInfo })
+  },
+
+  logOut (context) {
+    console.log('yes, logOut')
   }
 }
 

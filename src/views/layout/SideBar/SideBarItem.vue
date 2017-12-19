@@ -1,6 +1,6 @@
 <template lang="pug">
   div.menu-item-wrap
-    template(v-for="item in routes" v-if="!item.hidden")
+    template(v-for="item in routes" v-if="!item.hidden && item.path")
       router-link(v-if="!item.children" :to="item.path" :key="item.name")
         el-menu-item(:index="item.path")
           i(v-if="item.meta && item.meta.icon" :icon="item.icon")

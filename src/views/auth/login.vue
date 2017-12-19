@@ -1,9 +1,9 @@
 <template lang="pug">
-  section.menu-container fuck menu
+  div login
 </template>
 
 <script>
   export default {
-    name: 'menu'
+    name: 'login'
   }
 </script>

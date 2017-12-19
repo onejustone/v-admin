@@ -17,9 +17,7 @@ const getters = {
 const actions = {
   async generatorAsyncRoutes (context, playLoad) {
     const roles = ['admin']
-    console.log(asyncRoutes, 'asyncRoutes')
     const accessRoutes = localUtil.recursivefilterAcceessRoutes(asyncRoutes, roles)
-    debugger
     context.commit(SET_ROUTES, { accessRoutes })
   }
 }

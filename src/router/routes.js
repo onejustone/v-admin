@@ -1,5 +1,5 @@
 
-import { _import } from './config'
+import { _import } from './_importModule'
 
 const constRoutes = [
   {
@@ -7,10 +7,14 @@ const constRoutes = [
     redirect: '/components-demo'
   },
   {
+    name: 'login',
+    path: '/login',
+    component: _import('auth/login')
+  },
+  {
     name: '404',
     path: '/404',
     component: _import('error/404'),
-    hiddden: true,
     meta: {
       title: '404'
     }
@@ -30,9 +34,10 @@ const asyncRoutes = [
     children: [
       {
         name: 'backToUp',
-        path: 'back-to-up',
+        path: 'back_to_up',
         meta: {
-          title: '回到顶部'
+          title: '回到顶部',
+          roles: ['admin']
         },
         component: _import('componentsDemo/BackToUp')
       },

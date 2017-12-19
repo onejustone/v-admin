@@ -1,6 +1,7 @@
 <template lang="pug">
   section(class="side-bar")
-    el-menu(mode="vertical")
+    //- div {{ routes }}
+    el-menu(mode="vertical" router)
       side-bar-item(:routes="routes")
 </template>
 
