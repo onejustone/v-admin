@@ -1,9 +1,9 @@
 <template lang="pug">
-  section.menu-container fuck menu
+  div 404 page
 </template>
 
 <script>
   export default {
-    name: 'menu'
+    name: 'error404'
   }
 </script>

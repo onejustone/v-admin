@@ -12,10 +12,16 @@
           span {{ item.meta.title }}
 
         template(v-for="child in item.children")
-          side-bar-item(v-if="child.children" :key="child.name" :routes="[child]")
-          router-link(v-else :key="child.name" :to="`${item.path}/${child.name}`")
+          side-bar-item(
+            v-if="child.children"
+            :key="child.name"
+            :routes="[child]"
+            :depth="depth + 1"
+          )
+
+          router-link(v-else :key="child.name" :to="child.path")
             el-menu-item(
-              :index="`${item.path}/${child.name}`"
+              :index="item.path"
             )
              i(v-if="child.meta && child.meta.icon")
              span(v-if="child.meta && child.meta.title") {{ child.meta.title }}
@@ -31,6 +37,11 @@
         default () {
           return []
         }
+      },
+
+      depth: {
+        type: Number,
+        default: 1
       }
     }
   }

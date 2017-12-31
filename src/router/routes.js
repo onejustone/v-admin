@@ -3,51 +3,65 @@ import { _import } from './_importModule'
 
 const constRoutes = [
   {
-    path: '',
-    redirect: '/components-demo'
-  },
-  {
     name: 'login',
     path: '/login',
-    component: _import('auth/login')
+    component: _import('auth/login'),
+    meta: {
+      title: 'login'
+    }
   },
   {
     name: '404',
     path: '/404',
-    component: _import('error/404'),
+    component: _import('error/error404'),
     meta: {
       title: '404'
     }
+  },
+  {
+    path: '',
+    redirect: '/layout'
   }
 ]
 
 const asyncRoutes = [
   {
-    name: 'componentsDemo',
-    path: '/components-demo',
-    component: _import('componentsDemo/Index'),
-    redirect: '/components-demo/back-to-up',
+    path: '/layout',
+    name: 'layout',
+    component: _import('layout/Layout'),
     meta: {
-      icon: 'document',
-      title: '组件'
+      title: 'dashboard'
     },
     children: [
       {
-        name: 'backToUp',
-        path: 'back_to_up',
+        name: 'components',
+        path: '/layout/component_demo',
+        component: _import('componentsDemo/Index'),
+        // redirect: 'back_to_up',
         meta: {
-          title: '回到顶部',
+          icon: 'document',
+          title: '组件',
           roles: ['admin']
         },
-        component: _import('componentsDemo/BackToUp')
-      },
-      {
-        name: 'menu',
-        path: 'menu',
-        meta: {
-          title: 'menu'
-        },
-        component: _import('componentsDemo/Menu')
+        children: [
+          {
+            name: 'backTo',
+            path: '/layout/component_demo/back_to_top',
+            meta: {
+              title: '回到顶部',
+              roles: ['admin']
+            },
+            component: _import('componentsDemo/BackToUp')
+          },
+          {
+            name: 'test-menu',
+            path: '/layout/component_demo/test_menu',
+            meta: {
+              title: 'test-menu'
+            },
+            component: _import('componentsDemo/TestMenu')
+          }
+        ]
       }
     ]
   }

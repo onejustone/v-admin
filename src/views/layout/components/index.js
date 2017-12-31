@@ -1,9 +1,9 @@
 import SideBar from './SideBar/SideBar.vue'
 
-import AppMain from './AppMain.vue'
-
 import NavBar from './NavBar.vue'
+
+import AppMain from './AppMain.vue'
 
 import TagsView from './TagsView'
 
-export { SideBar, AppMain, NavBar, TagsView }
+export { SideBar, NavBar, AppMain, TagsView }

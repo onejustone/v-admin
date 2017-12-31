@@ -3,6 +3,7 @@ import { SET_USER_INFO } from '../../mutationTypes/permission'
 
 const state = {
   user: {
+    name: 'jack'
   }
 }
 
