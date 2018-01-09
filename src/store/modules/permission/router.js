@@ -1,10 +1,11 @@
 import localUtil from './util'
-import { SET_ROUTES } from '../../mutationTypes/permission'
+import * as mType from '../../mutationTypes/permission'
 
 import { constRoutes, asyncRoutes } from '@router/routes'
 
 const state = {
   routes: constRoutes,
+  isCollapse: false,
   addRoutes: []
 }
 
@@ -18,17 +19,21 @@ const actions = {
   async generatorAsyncRoutes (context, playLoad) {
     const roles = ['admin']
     const accessRoutes = localUtil.recursivefilterAcceessRoutes(asyncRoutes, roles)
-    context.commit(SET_ROUTES, { accessRoutes })
+    context.commit(mType.SET_ROUTES, { accessRoutes })
   }
 }
 
 const mutations = {
-  [SET_ROUTES] (state, playLoad) {
+  [mType.SET_ROUTES] (state, playLoad) {
     state.routes = [
       ...state.routes,
       ...playLoad.accessRoutes
     ]
     state.addRoutes = playLoad.accessRoutes
+  },
+
+  [mType.SWITCH_COLLPASE] (state) {
+    state.isCollapse = !state.isCollapse
   }
 }
 

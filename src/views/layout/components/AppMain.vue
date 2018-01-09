@@ -1,12 +1,23 @@
 <template lang="pug">
     div.app-main
-        router-view
-        div.box
+      router-view
+      el-button(@click="handleCollpase") switchCollpase
 </template>
 
 <script>
+  import { mapMutations } from 'vuex'
+  import * as mType from '../../../store/mutationTypes/permission'
+
   export default {
-    name: 'appMain'
+    name: 'appMain',
+
+    methods: {
+      ...mapMutations('permission/router', [`${mType.SWITCH_COLLPASE}`]),
+
+      handleCollpase () {
+        this[mType.SWITCH_COLLPASE]()
+      }
+    }
   }
 </script>
 

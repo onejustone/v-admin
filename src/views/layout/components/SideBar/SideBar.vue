@@ -1,7 +1,16 @@
 <template lang="pug">
   section(class="side-bar")
-    //- div {{ routes }}
-    el-menu(mode="vertical" router)
+    el-menu(
+      mode="vertical"
+      @open="handleOpen"
+      @close="handleClose"
+      :default-active="$route.path"
+      :default-openeds="openedsRoute"
+      :collapse="isCollapse"
+      background-color="#304156"
+      text-color="white"
+      active-text-color="#409EFF"
+    )
       side-bar-item(:routes="routes")
 </template>
 
@@ -16,8 +25,30 @@
       SideBarItem
     },
 
+    data () {
+      return {
+        openedsRoute: []
+      }
+    },
+
     computed: {
-      ...mapState('permission/router', ['routes'])
+      ...mapState('permission/router', ['routes', 'isCollapse'])
+    },
+
+    methods: {
+      handleOpen (index, indexPath) {
+        // todo
+      },
+
+      handleClose (index, indexPath) {
+        // todo
+      }
     }
   }
 </script>
+
+<style lang="styl">
+  .side-bar
+    .el-menu:not(.el-menu--collapse)
+      min-width 200px
+</style>

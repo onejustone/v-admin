@@ -1,5 +1,5 @@
 <template lang="pug">
-  section.menu-container fuck menu
+  section.menu-container
 </template>
 
 <script>
@@ -7,3 +7,6 @@
     name: 'testMenu'
   }
 </script>
+
+<style lang="styl" scoped>
+</style>

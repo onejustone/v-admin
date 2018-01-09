@@ -12,7 +12,7 @@
     props: {
       width: {
         type: String,
-        default: '200px'
+        default: 'auto'
       }
     }
   }

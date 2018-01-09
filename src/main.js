@@ -9,10 +9,9 @@ import store from '@store'
 import 'normalize.css'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import './permission'
 
 // import LxDialog from '@/components/dialog'
-
+import './permission'
 import Plugins from '@root/plugins/install.js'
 import Util from '@root/util/install.js'
 

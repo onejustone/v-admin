@@ -1,10 +1,17 @@
 <template lang="pug">
   section(class="nav-bar")
-    span nav-bar
+    div.toggle-menu
+    lx-breadcrumb
 </template>
 
 <script>
+  import LxBreadcrumb from '../../../components/breadcrumb'
+
   export default {
-    name: 'NavBar'
+    name: 'NavBar',
+
+    components: {
+      LxBreadcrumb
+    }
   }
 </script>

@@ -1,0 +1,9 @@
+div.lx-breadcrumb
+  el-breadcrumb(separator="/")
+    template(v-for="(item, index) in levelList")
+      el-breadcrumb-item(
+        v-if="item.meta.title"
+        :key="index"
+      )
+        span.redirect(v-if="item.redirect") {{ item.meta.title }}
+        router-link(v-else :to="item.path") {{ item.meta.title }}
