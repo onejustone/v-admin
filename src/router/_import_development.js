@@ -1,1 +1,1 @@
-module.exports = path => require(`@views/${path}.vue`).default
+module.exports = path => require(`@/views/${path}.vue`).default

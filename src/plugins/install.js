@@ -1,11 +1,11 @@
-import LxMessage from '@root/components/message'
-import LxDialog from '@root/components/dialog'
+import LxMessage from '@/components/message'
+import LxDialog from '@/components/dialog'
 
-import LxContainer from '@root/components/container'
-import LxAside from '@root/components/aside'
-import LxMain from '@root/components/main'
-import LxHeader from '@root/components/header'
-import LxFooter from '@root/components/footer'
+import LxContainer from '@/components/container'
+import LxAside from '@/components/aside'
+import LxMain from '@/components/main'
+import LxHeader from '@/components/header'
+import LxFooter from '@/components/footer'
 
 const components = [
   LxMessage,

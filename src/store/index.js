@@ -1,5 +1,5 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import vue from 'vue'
+import vuex from 'vuex'
 
 import actions from './actions.js'
 import mutations from './mutations.js'
@@ -10,9 +10,9 @@ import permission from './modules/permission.js'
 const state = {
 }
 
-Vue.use(Vuex)
+vue.use(vuex)
 
-const store = new Vuex.Store({
+const store = new vuex.Store({
   state,
   getters,
   actions,
@@ -23,4 +23,3 @@ const store = new Vuex.Store({
 })
 
 export default store
-

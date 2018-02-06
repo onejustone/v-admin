@@ -1,6 +1,7 @@
 <template lang="pug">
-  section(class="side-bar")
+  section(class="side-bar" style="height:100%")
     el-menu(
+      style="height:100%"
       mode="vertical"
       @open="handleOpen"
       @close="handleClose"
@@ -47,7 +48,7 @@
   }
 </script>
 
-<style lang="styl">
+<style lang="stylus">
   .side-bar
     .el-menu:not(.el-menu--collapse)
       min-width 200px

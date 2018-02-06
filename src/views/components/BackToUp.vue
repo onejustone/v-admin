@@ -1,19 +1,24 @@
 <template lang="pug">
   section.back-to-up-container
-    div(v-for="item in 100")
-      span.item item
-
-    back-to-up
+    ul.father
+      li.item(v-for="item in 10") {{ item }}
 </template>
 
 <script>
-  import BackToUp from '../../components/backToUp'
-
   export default {
-    name: 'componentBackToUp',
-
-    components: {
-      BackToUp
-    }
+    name: 'componentBackToUp'
   }
 </script>
+
+<style lang="stylus" scoped>
+.back-to-up-container
+  padding 0 20px
+  .father
+    border 1px solid red
+    overflow hidden
+    .item
+      border 1px solid green
+      float left
+      width 100px
+      margin-right 20px
+</style>

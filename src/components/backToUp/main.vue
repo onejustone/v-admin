@@ -2,4 +2,4 @@
 
 <script src="./backToUp.js"></script>
 
-<style lang="styl" src="./backToUp.styl"></style>
+<style lang="stylus" src="./backToUp.styl"></style>

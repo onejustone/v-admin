@@ -1,5 +1,5 @@
 <template lang="pug">
-  lx-container
+  lx-container(style="height:100%")
     lx-aside(style="height:100%")
       side-bar
     lx-container(direction="vertical")

@@ -21,7 +21,7 @@
   }
 </script>
 
-<style lang="styl" scoped>
+<style lang="stylus" scoped>
 .box
   dispay inline-block
   width 0

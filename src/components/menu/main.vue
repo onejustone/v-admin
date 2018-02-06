@@ -2,4 +2,4 @@
 
 <script src="./menu.js"></script>
 
-<style lang="styl" src="./menu.styl"></style>
+<style lang="stylus" src="./menu.styl"></style>

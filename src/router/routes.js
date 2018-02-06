@@ -20,7 +20,7 @@ const asyncRoutes = [
   {
     name: 'components', path: '/components', component: Layout, redirect: '/components/båck_to_up', meta: { icon: 'document', title: '组件', roles: ['admin'] },
     children: [
-      { name: 'backto', path: '/components/båck_to_up', component: _import('components/BackToUp'), meta: { title: '回到顶部', roles: ['admin'] }},
+      { name: 'backto', path: '/components/back_to_up', component: _import('components/BackToUp'), meta: { title: '回到顶部', roles: ['admin'] }},
       { name: 'test-menu', path: '/components/test_menu', component: _import('components/TestMenu'), meta: { title: 'test-menu' }}
     ]
   }

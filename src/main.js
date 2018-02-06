@@ -3,17 +3,17 @@
 import Vue from 'vue'
 import App from './App'
 
-import router from '@router'
-import store from '@store'
+import router from 'router'
+import store from 'store'
 
 import 'normalize.css'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
-// import LxDialog from '@/components/dialog'
+// import LxDialog from '@//components/dialog'
 import './permission'
-import Plugins from '@root/plugins/install.js'
-import Util from '@root/util/install.js'
+import Plugins from '@/plugins/install.js'
+import Util from '@/util/install.js'
 
 import VueI18n from 'vue-i18n'
 

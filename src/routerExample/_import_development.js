@@ -1,1 +1,1 @@
-module.exports = path => require(`@router/${path}.vue`).default
+module.exports = path => require(`@/router/${path}.vue`).default

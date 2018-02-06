@@ -1,5 +1,5 @@
-import { _import } from '@router/config'
-import { router } from '@root/config'
+import { _import } from '@/router/config'
+import { router } from '@/config'
 
 export default {
   path: `/${router.example}`,
