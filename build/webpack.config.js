@@ -16,13 +16,13 @@ module.exports = {
     // path: 打包后js、css、image等存放的目录; Webpack 2+ 要求output.path必须为绝对路径。
     path: path.resolve(__dirname, '../dist'),
     filename: '[name].[hash].js',
-    chunkFilename: '[name].[chunkhash].js',
-    publicPath: '/static/'
+    chunkFilename: '[name].[chunkhash].js'
+    // publicPath: '/dist/'
     /* 
       publicPath: 静态资源文件夹路径， 如果不配置，则默认为 '/',
       在实际项目中，静态资源一般集中放在一个文件夹下，
-      比如static目录，那么这里就应该改成publicPath: '/static/'，
-      相应的 index.html 中引用的 JS 也要改成src="/static/build.js"，
+      比如dist目录，那么这里就应该改成publicPath: '/dist/'，
+      相应的 index.html 中引用的 JS 也要改成src="/dist/build.js"，
       publicPath 可以解释为最终发布的服务器上 build.js 所在的目录，
       其他静态资源也应当在这个目录下。
      */
@@ -53,26 +53,29 @@ module.exports = {
         include: [path.resolve('./src')]
       },
       {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract('css-loader')
         // 样式解析，其中css-loader用于解析，而vue-style-loader则将解析后的样式嵌入js代码a
         // 关于 webpack 对样式文件的处理请参考: https://github.com/zhengweikeng/blog/issues/9
-        test: /\.css$/,
-        use: ["vue-style-loader", "css-loader"] 
         // 支持 import/require 引入CSS文件，实际应用中并不推荐使用 import 引入 css，参考：https://github.com/postcss/postcss-loader/issues/35
         /* 
           也可以使用如下的配置
-          { test: /\.css$/, loader: 'vue-style-loader!css-loader' }
+          {
+            test: /\.css$/,
+            use: ["vue-style-loader", "css-loader"]
+          }
           可以发现，webpack的loader的配置是从右往左的，从上面代码看的话，就是先使用css-loader之后使用style-loader
-          loader 后缀可以不写
+          webpack1 loader 后缀可以不写, webpack2 则不可省略
           { test: /\.css$/, loader: 'vue-style!css' }
         */
       },
       {
         test: /\.styl$/,
-        use: ["vue-style-loader", "css-loader", "stylus-loader"] // 支持CSS预处理语言
+        loader: ExtractTextPlugin.extract('vue-style-loader!css-loader!stylus-loader') // 支持 stylus
       },
       {
         test: /\.scss$|\.sass$/,
-        use: ["vue-style-loader", "css-loader", "sass-loader"] // 支持CSS预处理语言
+        loader: ExtractTextPlugin.extract('vue-style-loader!css-loader!sass-loader') // 支持 sass
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -105,8 +108,8 @@ module.exports = {
     }),
     new ExtractTextPlugin({
         // 提取 CSS
-        allChunks: true, // extract-text-webpack-plugin 默认不会提取异步模块中的 CSS，需要加上配置
-        filename: "css/[name].[contenthash].css]"
+        // allChunks: true, // extract-text-webpack-plugin 默认不会提取异步模块中的 CSS，需要加上配置
+        filename: "css/[name].[contenthash].css"
     })
   ]
 }
