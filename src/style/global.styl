@@ -18,3 +18,14 @@ a
 
 .el-menu--collapse .el-submenu__title > span ~ i
  display none
+
+$primaryColor = green
+$dangerColor = red
+
+.is-active__primary
+  &:hover
+    color $primaryColor
+
+.is-active__danger
+  &:hover
+    color $dangerColor

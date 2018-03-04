@@ -1,0 +1,93 @@
+span(
+  class="lx-cascader"
+  :class="[{ 'active': show, 'is-disabled': disabled }]"
+)
+  span(class="lx-cascader-input" @click="showAction")
+    el-input(
+      class="lx-cascader-text"
+      v-model="currentLabels"
+      :size="size"
+    )
+
+    i(
+      class="lx-cascader-allow"
+      :class="iconArrow"
+     )
+
+  span(class="lx-cascader-content" v-if="show")
+    ul(
+      class="lx-cascader-menu"
+      v-for="(group, listIndex) in list"
+    )
+      li(
+        class="lx-cascader-menu-item"
+        v-for="(item, groupIndex) in group"
+        @click="touch($event, listIndex, item)"
+        :class="[ { 'is-disabled': item.disabled } ]"
+      )
+        span(v-if="item.isEdit" class="lx-cascader-menu-item__edit")
+          el-input(
+            :ref="'edit_'+item[valueKey]"
+            v-if="item.isEdit"
+            v-model="item[valueKey]"
+            :size="size"
+          )
+
+          i(
+            class="lx-cascader-menu-item-edit-icon el-icon-check is-active__primary"
+            @click="doneMenuItemEdit(item)"
+          )
+
+          i(
+            class="lx-cascader-menu-item-edit-icon el-icon-close is-active__danger"
+            @click.stop="cancelMenuItemEdit(item)"
+          )
+
+        span(v-else)
+          span(
+            :class="{ 'is-active': item.selected }"
+          ) {{ item[labelKey]}}
+
+          i(
+            class="lx-cascader-menu-item-icon el-icon-arrow-right"
+            v-if="listIndex < maxLevel - 1"
+          )
+          i(
+            class="lx-cascader-menu-item-icon el-icon-delete is-active__danger"
+            v-if="canDelete(item)"
+            @click="handleDelete(item)"
+          )
+
+          i(
+            class="lx-cascader-menu-item-icon el-icon-edit is-active__primary"
+            v-if="canEdit(item)"
+            @click="handleEdit(item)"
+          )
+
+      li(
+        v-if="addNewInputStack['input_'+listIndex] && addNewInputStack['input_'+listIndex].show"
+        class="lx-cascader-new-item"
+      )
+        el-input(
+          :ref="'input_' + listIndex"
+          class="lx-cascader-new-item-text"
+          v-model="addNewInputStack['input_'+listIndex]['value']"
+          :size="size"
+          placeholder="请输入节点名称"
+        )
+
+        i(class="new-item-icon el-icon-check" @click="newAddItem(listIndex, list)")
+        i(class="new-item-icon el-icon-close" @click="cancelAddItem(listIndex, list)")
+
+      span.add-item(v-if="showAddButton(listIndex, list)")
+        el-tooltip(
+          content="添加新节点"
+          placement="top-start"
+          effet="dark"
+        )
+          el-button(
+            @click="handleAddNew($event, listIndex, group)"
+            type="default"
+            size="mini"
+            icon="el-icon-plus"
+          )

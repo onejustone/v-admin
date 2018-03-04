@@ -1,0 +1,117 @@
+ul,
+li,
+ol
+  margin 0
+  padding 0
+  list-style none
+
+.lx-cascader
+  display inline-block
+  position relative
+  width 250px
+  min-width 200px
+  max-width 600px
+
+.lx-cascader-input
+  position relative
+
+.lx-cascader-allow
+  position absolute
+  right 10px
+  top 50%
+  transform translateY(-50%)
+
+.lx-cascader-content
+  position: absolute
+  top: 30px
+  left: 0px
+  white-space: nowrap
+  background: #fff
+  position: absolute
+  margin: 5px 0
+  z-index: 2
+  border: 1px solid #e4e7ed
+  border-radius: 2px
+  -webkit-box-shadow: 0 2px 12px 0 rgba(0,0,0,.1)
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1)
+
+.lx-cascader-menu
+  display inline-block
+  vertical-align top
+  height 204px
+  overflow auto
+  border-right solid 1px #e4e7ed
+  -webkit-box-sizing border-box
+  box-sizing border-box
+  margin 0
+  padding 6px 0
+  min-width 200px
+
+.lx-cascader-menu-item
+  font-size: 14px;
+  padding: 8px 20px
+  position: relative
+  white-space: nowrap
+  text-overflow: ellipsis
+  color: #606266
+  line-height: 1.5
+  -webkit-box-sizing: border-box
+  box-sizing: border-box
+  cursor: pointer
+  outline: 0
+  &:hover
+    background-color: #f5f7fa
+
+  .lx-cascader-menu-item-icon
+    float: right
+    margin-left 8px
+
+.lx-cascader-menu-item__edit
+  position relative
+  width 200px
+
+  .el-input
+    width 100%
+
+  .lx-cascader-menu-item-edit-icon
+    position absolute
+    right 10px
+    top 50%
+    transform translateY(-50%)
+
+  .el-icon-check
+    right 35px
+
+.lx-cascader-new-item
+  font-size: 14px;
+  padding: 8px 20px
+  position: relative
+  color: #606266
+  line-height: 1.5
+  -webkit-box-sizing: border-box
+  box-sizing: border-box
+  .new-item-icon
+    position absolute
+    right 30px
+    top 50%
+    transform translateY(-50%)
+
+  .el-icon-check
+    right 50px
+
+.is-disabled
+  &:hover
+    cursor not-allowed
+
+.is-active
+  color red
+
+.lx-cascader-new-item-text
+  width auto
+
+.add-item
+  display inline-block
+  width 100%
+  margin-top 10px
+  .el-button
+    margin-left 50px

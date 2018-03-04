@@ -1,0 +1,5 @@
+{
+    "private": true,
+    "name": "ExpandTree",
+    "main": "./main.vue"
+}

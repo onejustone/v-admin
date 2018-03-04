@@ -1,0 +1,5 @@
+{
+    "private": true,
+    "name": "LxCascader",
+    "main": "./main.vue"
+  }

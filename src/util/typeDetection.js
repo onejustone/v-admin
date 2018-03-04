@@ -11,7 +11,7 @@ const isNativeStringType = function _isNativeStringType (type) {
   return type === 'string' || type === 'url' || type === 'hex' || type === 'email' || type === 'pattern'
 }
 
-const isEemptyArray = function _isEemptyArray (value) {
+const isEmptyArray = function _isEmptyArray (value) {
   return Array.isArray(value) && !value.length
 }
 
@@ -19,7 +19,7 @@ const isEmptyValue = function _isEmptyValue (value, type) {
   if (value === undefined || value === null) {
     return true
   }
-  if (isEemptyArray(value)) {
+  if (isEmptyArray(value)) {
     return true
   }
   if (isNativeStringType(type) && typeof value === 'string' && !value) {
@@ -59,7 +59,7 @@ export {
   hasOwn,
   isString,
   isNativeStringType,
-  isEemptyArray,
+  isEmptyArray,
   isEmptyValue,
   isEmptyObject,
   each

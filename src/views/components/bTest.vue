@@ -9,13 +9,7 @@ export default {
   name: 'bTest',
 
   props: ['slotProps'],
-
-  data () {
-    return {
-      arrs: ['a', 'b', 'c', 'd', 'e']
-    }
-  },
-
+  
   methods: {
     nodeClick () {
       console.log('bTest nodeClick')
