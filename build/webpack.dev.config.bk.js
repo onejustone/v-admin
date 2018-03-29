@@ -1,12 +1,6 @@
  // 开发配置
 const webpack = require('webpack')
-const merge = require('webpack-merge')
-
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const baseWebpackConfig = require('./webpack.base.config')
-const utils = require('./utils')
-const config = require('./config')
-
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const path = require('path')
 
