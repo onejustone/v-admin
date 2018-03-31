@@ -1,6 +1,6 @@
 <template lang="pug">
 span
-    el-button(@click="handleCollpase") 
+    el-button(@click="handleCollpase")
 </template>
 
 <script>
@@ -9,7 +9,6 @@ import * as mType from '../../../store/mutationTypes/permission'
 
 export default {
   name: 'CollapseMenu',
-
   methods: {
     ...mapMutations('permission/router', [`${mType.SWITCH_COLLPASE}`]),
 

@@ -5,11 +5,8 @@
   "author": "onejustone",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --host 0.0.0.0 --public --inline --progress --config build/webpack.base.config.js",
-    "build": "cross-env NODE_ENV=production webpack --config build/webpack.config.js --progress --colors",
-    "adev-cli": "cross-env NODE_ENV=development webpack-dev-server --progress --config build/webpack.dev.config.js",
-    "adev": "node build/dev.js",
-    "aprod": "node build/prod.js",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --progress --config build/webpack.dev.config.js",
+    "prod": "cross-env NODE_ENV=development webpack --progress --config build/webpack.prod.config.js",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
