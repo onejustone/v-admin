@@ -6,24 +6,38 @@
 */
 
 // base.config.js不配置css的loader的原因和vue-loader一样
-// 同样考虑到给种环境的差异性以及个性配置，在各自的环境中配置 path和publicPath更合适
+// 同样考虑到各种环境的差异E性以及个性配置，在各自的环境中配置 path和publicPath更合适
 
 const webpack = require('webpack')
 const path = require('path')
 const utils = require('./utils')
 
-function resovle(relPath) {
+function resolve(relPath) {
   return path.resolve(__dirname, relPath)
 }
 
-modules.exports = {
+module.exports = {
   entry: {
     main: resolve('../src/main.js')
   },
   output: {
     filename: 'js/[name].js'
   },
-  modules: {
+  resolve: {
+        extensions: ['.js', '.vue', '.styl', '.stylus', 'pug'],
+        modules: [path.resolve(__dirname, '../node_modules')],
+        alias: {
+            'vue$': 'vue/dist/vue.esm.js',
+            '@': resolve('../src'),
+            'router': path.resolve(__dirname, '../src/router'),
+            'plugins': path.resolve(__dirname, '../src/plugins'),
+            'store': path.resolve(__dirname, '../src/store'),
+            'views': path.resolve(__dirname, '../src/views'),
+            'util': path.resolve(__dirname, '../src/util'),
+            'theme': path.resolve(__dirname, '../src/util')
+        }
+    },
+  module: {
     rules: [
       {
         test: /\.js$/,
@@ -34,8 +48,7 @@ modules.exports = {
         test: /\.vue$/,
         use: {
           loader: "vue-loader",
-          options: utils.vueLoaderOptions
-
+          options: utils.vueLoaderOptions()
         }
       },
       {

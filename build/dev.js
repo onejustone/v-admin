@@ -1,14 +1,11 @@
  // 调用webpack-dev-server NodeJS API启动服务器
 const webpack = require('webpack');
 const webpackDevServer = require('webpack-dev-server');
-const config = require("./webpack.dev.config");
-const compiler = webpack(config);
-const port = 1080
-const url = `0.0.0.0:${port}/`
+const config = require('./config')
+const devConfig = require("./webpack.dev.config");
+const compiler = webpack(devConfig);
 
 // 热替换配置
-config.entry.app = [`webpack-dev-server/client?${url}`, "webpack/hot/dev-server", config.entry.app];
-
 const server = new webpackDevServer(compiler, {
     stats: {
         colors: true
@@ -16,13 +13,16 @@ const server = new webpackDevServer(compiler, {
     noInfo: true,
     // 热替换配置
     hot: true,
-    publicPath: config.output.publicPath
+    publicPath: config.dev.publicPath
 });
 
-server.listen(port, "0.0.0.0");
+const url = `http://localhost:${config.dev.port}/`
+server.listen(config.dev.port, "0.0.0.0");
 // 打包完毕后启动浏览器
+const opn = require('opn')
 
 server.middleware.waitUntilValid(function () {
     console.log(`> Listening at ${url}`);
     require('child_process').exec(`start ${url}`);
+    opn(`${url}`)
 })

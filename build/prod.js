@@ -1,5 +1,5 @@
-// 调用webpack NodeJS API构var webpack = require("webpack");
-var prodWebpackConfig = require('./webpack.prod.config')
-webpack(prodWebpackConfig, function(err, stats) {
-    process.stdout.write(stats.toString());
+const webpack = require('webpack')
+const webpackProdConfig = require('./webpack.prod.config')
+webpack(webpackProdConfig, function (err, status) {
+    process.stdout.write(stats.toString())
 })
