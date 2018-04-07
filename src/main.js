@@ -10,6 +10,9 @@ import store from 'store'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
+// import Rx from 'rxjs/Rx'
+// import VueRx from 'vue-rx'
+
 // import LxDialog from '@//components/dialog'
 import './permission'
 import Plugins from '@/plugins/install.js'
@@ -21,6 +24,7 @@ Vue.config.productionTip = false
 
 // Vue.component('LxDialog', LxDialog)
 Vue.use(ElementUI)
+// Vue.use(VueRx, Rx)
 Vue.use(VueI18n)
 Vue.use(Plugins)
 Vue.use(Util)

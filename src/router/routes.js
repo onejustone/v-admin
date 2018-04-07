@@ -58,6 +58,18 @@ const asyncRoutes = [
         path: '/vue',
         component: _import('components/vue/index'),
         meta: { title: 'vue' }
+      },
+      // {
+      //   name: 'rxjsPlayground',
+      //   path: '/rxjs',
+      //   component: _import('rxjs/index'),
+      //   meta: { title: 'rxjsPlayground' }
+      // },
+      {
+        name: 'lazyImagePlayground',
+        path: '/lazy_image',
+        component: _import('components/LazyImage'),
+        meta: { title: 'lazyImagePlayground' }
       }
     ]
   }

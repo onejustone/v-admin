@@ -1,0 +1,18 @@
+div.lazy-img-box(
+  v-loading="imgLoading"
+  element-loading-text="图片加载中"
+  element-loading-background="rgba(255, 255, 255, 0.2)"
+)
+  template(
+    v-if="img[previewLink]"
+  )
+    img.preview-image(
+      :src="img[previewLink]"
+      @load="handleLoad"
+    )
+
+  template(v-else)
+    img.preview-image(
+      src="./assert/demo.jpg"
+      @load="handleLoad"
+    )

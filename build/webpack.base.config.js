@@ -76,5 +76,14 @@ module.exports = {
         ]
       }
     ]
-  }
+  },
+  plugins: [
+    new webpack.ProvidePlugin({
+      Rx: 'Rxjs'
+      // $: 'jquery',
+      // jquery: 'jquery',
+      // 'window.jQuery': 'jquery',
+      // jQuery: 'jquery'
+    })
+  ]
 }

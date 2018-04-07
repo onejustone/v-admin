@@ -7,15 +7,12 @@
 </template>
 
 <script>
-import { data } from './hash'
 import md5 from 'md5'
 export default {
   name: 'VueDemo',
 
   mounted () {
-    console.log(md5(JSON.stringify(data)))
   }
-
 }
 </script>
 
