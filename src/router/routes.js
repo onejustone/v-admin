@@ -70,6 +70,18 @@ const asyncRoutes = [
         path: '/lazy_image',
         component: _import('components/LazyImage'),
         meta: { title: 'lazyImagePlayground' }
+      },
+      {
+        name: 'canvas',
+        path: '/my_canvas',
+        component: _import('components/Canvas'),
+        meta: { title: 'myCanvas' }
+      },
+      {
+        name: 'time',
+        path: '/time',
+        component: _import('components/Time'),
+        meta: { title: 'time' }
       }
     ]
   }

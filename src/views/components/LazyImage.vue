@@ -1,5 +1,6 @@
 <template lang="pug">
 div.lazy-image-playground lazy image
+  img(src="/static/demo.jpg")
   template(
     v-for="(img, idx) in images"
   )

@@ -108,24 +108,38 @@ export default {
         rect.top < window.innerHeight &&
         rect.left < window.innerWidth
       ) {
-        const previewImage = el.querySelectorAll('img.preview-image')[0]
-        if (this.cached) return
+        if (this.cached) {
+          this.adjustImageSize()
+          return
+        }
+
+        this.loadOriginImage()
         this.cached = true
-        this.loadOriginImage(previewImage)
       }
+    },
+
+    adjustImageSize () {
+      // const parent = this.$el
+      // const parentWidth = this.$el.offsetWidth
+      // const parentHeight = this.$el.offsetHeight
+      // // const image = this.$el.querySelectorAll('img')[0]
+      // // const imageWidth = image.width
+      // // const boundaryValue = Math.min()
+      // adjustImage()
     },
 
     loadOriginImage (preview) {
       this.imgLoading = true
+      const previewImage = this.$el.querySelectorAll('img.preview-image')[0]
       const newImage = new Image()
-      const parent = preview.parentNode
-      const parentWidth = parent.offsetWidth
+      const parent = this.$el
+      const parentWidth = this.$el.offsetWidth
       newImage.src = this.img.viewLink
       const vm = this
       newImage.onload = function () {
         adjustImage(newImage, parentWidth)
-        preview.style.display = 'none'
         parent.appendChild(newImage)
+        parent.removeChild(previewImage)
         vm.imgLoading = false
       }
     }
