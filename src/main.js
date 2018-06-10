@@ -10,8 +10,12 @@ import store from 'store'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
-// import Rx from 'rxjs/Rx'
-// import VueRx from 'vue-rx'
+import Buefy from 'buefy'
+import 'buefy/lib/buefy.css'
+
+Vue.use(Buefy)
+import Rx from 'rxjs/Rx'
+import VueRx from 'vue-rx'
 
 // import LxDialog from '@//components/dialog'
 import './permission'
@@ -24,7 +28,7 @@ Vue.config.productionTip = false
 
 // Vue.component('LxDialog', LxDialog)
 Vue.use(ElementUI)
-// Vue.use(VueRx, Rx)
+Vue.use(VueRx, Rx)
 Vue.use(VueI18n)
 Vue.use(Plugins)
 Vue.use(Util)

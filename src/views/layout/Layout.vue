@@ -6,7 +6,8 @@
       lx-main
         nav-bar
         tags-view
-        app-main
+        keep-alive
+          app-main
 </template>
 
 <script>

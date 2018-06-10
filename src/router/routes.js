@@ -22,7 +22,6 @@ const asyncRoutes = [
       }
     ]
   },
-
   {
     name: 'components',
     path: '/components',
@@ -59,12 +58,63 @@ const asyncRoutes = [
         component: _import('components/vue/index'),
         meta: { title: 'vue' }
       },
-      // {
-      //   name: 'rxjsPlayground',
-      //   path: '/rxjs',
-      //   component: _import('rxjs/index'),
-      //   meta: { title: 'rxjsPlayground' }
-      // },
+      {
+        name: 'rxjsPlayground',
+        path: '/rxjs',
+        component: _import('rxjs/index'),
+        redirect: '/rxjs/side',
+        meta: { title: 'rxjsPlayground' },
+        children: [
+          {
+            name: 'rxjsSlide',
+            path: '/rxjs/side',
+            component: _import('rxjs/Slide'),
+            meta: {
+              title: 'slide'
+            }
+          },
+          {
+            name: 'rxjsCount',
+            path: '/rxjs/count',
+            component: _import('rxjs/Count'),
+            meta: {
+              title: 'count'
+            }
+          },
+          {
+            name: 'rxjsImage',
+            path: '/rxjs/image',
+            component: _import('rxjs/Image'),
+            meta: {
+              title: 'image'
+            }
+          },
+          {
+            name: 'rxjsSigned',
+            path: '/rxjs/Signed',
+            component: _import('rxjs/Signed'),
+            meta: {
+              title: 'Signed'
+            }
+          },
+          {
+            name: 'rxjsForm',
+            path: '/rxjs/form',
+            component: _import('rxjs/Form'),
+            meta: {
+              title: 'Form'
+            }
+          },
+          {
+            name: 'rxjsOpreator_1',
+            path: '/rxjs/opreator_1',
+            component: _import('rxjs/operators/First'),
+            meta: {
+              title: 'opreator_1'
+            }
+          }
+        ]
+      },
       {
         name: 'lazyImagePlayground',
         path: '/lazy_image',
