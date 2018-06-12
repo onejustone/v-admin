@@ -13,32 +13,39 @@
 
     subscriptions () {
       const mouseDown$ = this.$fromDOMEvent('.drag-cell', 'mousedown')
-        .map((e, value) => console.log("drage cell mosedown"))
+        .map(e => {
+          console.log("drage cell mosedown")
+          return e
+        })
 
       const mouseMove$ = this.$fromDOMEvent(null, 'mousemove')
-        .map((e, value) => console.log("mousemove"))
+        .map(e => {
+          console.log("mousemove")
+          return e
+        })
 
       const mouseUp$ = this.$fromDOMEvent(null, 'mouseup')
-        .map((e, value) => console.log("mouseup"))
+        .map(e => {
+          console.log("mouseup")
+          return {
+            x: e.clientX,
+            y: e.clientY
+          }
+        })
 
       const dragSteam$ = mouseDown$.map(e => mouseMove$.takeUntil(mouseUp$))
         .concatAll()
-        .map(_ => console.log('结束了'))
+        .map(e => console.log('结束了', e.x, e.y))
 
       return {
-        // mouseDown$,
-        // mouseMove$,
-        // mouseUp$,
         dragSteam$
       }
     },
 
     created () {
-      console.log('created')
     },
 
     mounted () {
-      console.log('mounted')
     }
   }
 </script>
