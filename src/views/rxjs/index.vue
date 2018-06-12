@@ -10,3 +10,9 @@ export default {
 }
 </script>
 
+<style lang="stylus" scoped>
+.rxjs-playground-module
+  height 100%
+</style>
+
+

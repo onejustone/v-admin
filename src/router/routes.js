@@ -36,6 +36,12 @@ const asyncRoutes = [
         meta: { title: '回到顶部', roles: ['admin'] }
       },
       {
+        name: 'list',
+        path: '/components/list',
+        component: _import('components/list/List'),
+        meta: { title: '列表', roles: ['admin'] }
+      },
+      {
         name: 'test-menu',
         path: '/components/test_menu',
         component: _import('components/TestMenu'),
@@ -111,6 +117,14 @@ const asyncRoutes = [
             component: _import('rxjs/operators/First'),
             meta: {
               title: 'opreator_1'
+            }
+          },
+          {
+            name: 'rxjsDrag',
+            path: '/rxjs/drag',
+            component: _import('rxjs/demos/SimpleDrag'),
+            meta: {
+              title: 'simpleDrag'
             }
           }
         ]

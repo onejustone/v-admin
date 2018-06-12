@@ -50,6 +50,7 @@
 
 <style lang="stylus">
   .side-bar
+    overflow auto
     .el-menu:not(.el-menu--collapse)
       min-width 200px
 </style>

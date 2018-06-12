@@ -2,7 +2,7 @@
   lx-container(style="height:100%")
     lx-aside(style="height:100%")
       side-bar
-    lx-container(direction="vertical")
+    lx-container(direction="vertical" style="height:100%; overflow-y: auto;")
       lx-main
         nav-bar
         tags-view
