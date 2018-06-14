@@ -1,7 +1,7 @@
 <template lang="pug">
   section(class="nav-bar")
     div.toggle-menu
-    lx-breadcrumb
+    //- lx-breadcrumb
 </template>
 
 <script>
