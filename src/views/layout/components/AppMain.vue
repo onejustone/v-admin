@@ -16,10 +16,8 @@
 
     watch: {
       '$route' (to, from) {
-        console.log(to, from)
         const toDepth = to.path.split('/').length
         const fromDepth = from.path.split('/').length
-        console.log(toDepth, fromDepth)
         this.transitionName = toDepth < fromDepth ? 'el-zoom-in-center' : 'el-zoom-in-bottom'
       }
     },

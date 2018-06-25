@@ -30,9 +30,7 @@
     methods: {
       lodaComponents () {
         try {
-          console.log(this.First)
           import('./Second.vue').then(m => {
-            console.log(m)
             this.currentView = m
           })
         } catch (e) {
@@ -58,14 +56,12 @@
 
         const winnerPromise = new Promise((resolve, reject) => {
           setTimeout(_ => {
-            console.log('i am winnder')
             resolve()
           })
         })
 
         const loserPromise = new Promise((resolve, reject) => {
           setTimeout(_ => {
-            console.log('i am loser')
             resolve()
           })
         })

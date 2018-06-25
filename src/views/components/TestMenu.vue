@@ -17,7 +17,6 @@
 
     methods: {
       nodeClick () {
-        console.log('nodeClick at testMenu')
       }
     }
   }

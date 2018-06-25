@@ -17,7 +17,6 @@
       ).pluck('key')
 
       const left$ = key$.filter(key => {
-        console.log(key)
         return key === 'ArrowLeft'
       })
 

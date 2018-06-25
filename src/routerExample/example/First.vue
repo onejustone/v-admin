@@ -8,7 +8,6 @@
 
     methods: {
       info () {
-        console.log('hahaha')
       }
     },
 

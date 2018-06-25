@@ -25,7 +25,6 @@ export default {
     c () {
       const time = '2018.05.22 08:34'
       const timestamp = new Date(time).getTime()
-      console.log(timestamp)
       return this.humanize(timestamp / 1000)
     }
   },

@@ -114,9 +114,25 @@ const asyncRoutes = [
           {
             name: 'rxjsOpreator_1',
             path: '/rxjs/opreator_1',
-            component: _import('rxjs/operators/First'),
+            component: _import('rxjs/operators/Operators1'),
             meta: {
               title: 'opreator_1'
+            }
+          },
+          {
+            name: 'rxjsOpreator_3',
+            path: '/rxjs/opreator_3',
+            component: _import('rxjs/operators/Operators3'),
+            meta: {
+              title: 'opreator_3'
+            }
+          },
+          {
+            name: 'rxjsOpreator_4',
+            path: '/rxjs/opreator_4',
+            component: _import('rxjs/operators/Operators4'),
+            meta: {
+              title: 'opreator_4'
             }
           },
           {

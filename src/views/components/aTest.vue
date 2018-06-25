@@ -16,7 +16,6 @@ export default {
 
   methods: {
     outClick () {
-      console.log('yes, at aText')
     }
   },
 

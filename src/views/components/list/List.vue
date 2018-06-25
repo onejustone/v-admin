@@ -37,7 +37,6 @@ export default {
   methods: {
     deleteItem () {
       const randomCount = Math.floor(Math.random()*5 + 1)
-      console.log(randomCount)
       this.itemCout = randomCount
     }
   }

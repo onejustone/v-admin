@@ -9,10 +9,9 @@ export default {
   name: 'bTest',
 
   props: ['slotProps'],
-  
+
   methods: {
     nodeClick () {
-      console.log('bTest nodeClick')
       this.$parent.$emit('nodeClick')
     }
   }

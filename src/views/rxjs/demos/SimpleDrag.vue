@@ -51,7 +51,6 @@
     },
 
     subscriptions () {
-      // documentScroll$ 当 dragContainer 的顶部小于可视高度时，fixed dragCell element
       const rootScroll$ = this.dragContainerWrapperScroll$
         .map(e => this.dragContainer.getBoundingClientRect().y < 0)
         .map(bool => bool ?
@@ -68,12 +67,16 @@
         .map(({ data, event }) => event )
 
       const mouseUp$ = this.$fromDOMEvent('.drag-cell', 'mouseup')
+      //. mouseout冒泡 mouseleave不冒泡
+      const mouseout$ = this.$fromDOMEvent(null, 'mouseout')
+
+      const stopDrag$ = Observable.merge(mouseUp$, mouseout$)
 
       const criticalValue = ({ value, min, max }) => {
         return Math.min(Math.max(min, value), max)
       }
 
-      const dragSteam$ = mouseDown$.map(e => mouseMove$.takeUntil(mouseUp$))
+      const dragSteam$ = mouseDown$.map(e => mouseMove$.takeUntil(stopDrag$))
         .concatAll()
         .withLatestFrom(mouseDown$, (move, down) => {
           const wrapperRect = this.dragContainerWrapper.getBoundingClientRect()
@@ -91,15 +94,11 @@
           const safeX = criticalValue({ value: relativeX, min: minX, max: maxX })
           const safeY = criticalValue({ value: relativeY, min: minY, max: maxY })
 
-          console.log(safeX, safeY)
           this.dragCellElement.style.top = `${safeY}px`
           this.dragCellElement.style.left = `${safeX}px`
         })
 
       return {
-        mouseDown$,
-        mouseMove$,
-        mouseUp$,
         rootScroll$,
         dragSteam$
       }

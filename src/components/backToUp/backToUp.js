@@ -19,7 +19,6 @@ export default {
       let i = 1
       this.timer = setInterval(_ => {
         const next = lastPosition - step * i
-        console.log(i)
         if (next <= -lastPosition) {
           window.scroll(0, 0)
           clearInterval(this.timer)

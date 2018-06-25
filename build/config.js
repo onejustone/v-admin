@@ -4,7 +4,7 @@ module.exports = {
   dev: {
     path: path.resolve(__dirname, '../static'),
     publicPath: '/',
-    port: 8000
+    port: 6066
   },
   test: {
 

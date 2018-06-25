@@ -12,11 +12,9 @@
     },
 
     created () {
-      console.log('new crated', this.content)
     },
 
     beforeDestroy () {
-      console.log('beforeDestroy: ', this.content)
     }
   }
 </script>

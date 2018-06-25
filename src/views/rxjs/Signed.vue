@@ -64,7 +64,6 @@
     },
 
     mounted () {
-      console.log(this.$el)
     }
   }
 </script>

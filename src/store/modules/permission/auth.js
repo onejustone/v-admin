@@ -23,7 +23,6 @@ const actions = {
   },
 
   logOut (context) {
-    console.log('yes, logOut')
   }
 }
 

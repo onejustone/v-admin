@@ -99,7 +99,6 @@ export default {
     },
 
     checkImage () {
-      console.log(new Date())
       const el = this.$el
       const rect = el.getBoundingClientRect()
       if (

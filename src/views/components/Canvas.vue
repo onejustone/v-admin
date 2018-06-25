@@ -51,7 +51,6 @@
         this.context.fillText(this.text, -20, 40)
         canvasInstance.style.width = 200
         canvasInstance.style.height = 200
-        console.log(canvasInstance)
       }
     }
   }
