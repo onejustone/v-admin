@@ -33,7 +33,8 @@ module.exports = {
             'plugins': path.resolve(__dirname, '../src/plugins'),
             'store': path.resolve(__dirname, '../src/store'),
             'views': path.resolve(__dirname, '../src/views'),
-            'util': path.resolve(__dirname, '../src/util')
+            'util': path.resolve(__dirname, '../src/util'),
+            'api': path.resolve(__dirname, '../src/api')
         }
     },
   module: {
