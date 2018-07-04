@@ -21,9 +21,6 @@ const install = (Vue) => {
   components.map(component => {
     Vue.component(component.name, component)
   })
-
-  Vue.prototype.$dialog = LxDialog
-  Vue.prototype.$message = LxMessage
 }
 
 export default install

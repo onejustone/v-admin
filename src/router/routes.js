@@ -128,11 +128,27 @@ const asyncRoutes = [
             }
           },
           {
-            name: 'gitHubSearch',
-            path: '/rxjs/gitHub',
-            component: _import('rxjs/operators/gitHubSearch/index'),
+            name: 'operator_4',
+            path: '/rxjs/operator_4',
+            component: _import('rxjs/operators/Operators4'),
             meta: {
-              title: 'gitHubSearch'
+              title: 'operator_4'
+            }
+          },
+          {
+            name: 'operator_5',
+            path: '/rxjs/operator_5',
+            component: _import('rxjs/operators/Operators5'),
+            meta: {
+              title: 'operator_5'
+            }
+          },
+          {
+            name: 'operator_6',
+            path: '/rxjs/operator_6',
+            component: _import('rxjs/operators/Operators6'),
+            meta: {
+              title: 'operator_6'
             }
           },
           {

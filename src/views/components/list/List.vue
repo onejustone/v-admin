@@ -4,9 +4,14 @@
     h2.text _listData {{ _listData }}
 
     button.button.primary(@click="deleteItem") 切换
-    template(v-for="(item, index) of _listData")
-      keep-alive
-        ListItem(:content="item" :key="index")
+    div.list-item-content
+       template(v-for="(item, index) of _listData")
+         keep-alive
+           ListItem(
+             :content="item"
+             :key="index"
+             :index="index"
+           )
 </template>
 
 <script>

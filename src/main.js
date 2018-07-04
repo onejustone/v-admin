@@ -10,17 +10,17 @@ import store from 'store'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
-import Buefy from 'buefy'
-import 'buefy/lib/buefy.css'
+// import Buefy from 'buefy'
+// import 'buefy/lib/buefy.css'
 
-Vue.use(Buefy)
+// Vue.use(Buefy)
 import Rx from 'rxjs/Rx'
 import VueRx from 'vue-rx'
 
 // import LxDialog from '@//components/dialog'
 import './permission'
-import Plugins from '@/plugins/install.js'
-import Util from '@/util/install.js'
+import Plugins from 'plugins/install.js'
+import Util from 'util/install.js'
 
 import VueI18n from 'vue-i18n'
 
