@@ -14,14 +14,12 @@
     domStreams: ['snooze$', 'dismiss$'],
 
     subscriptions () {
-      const countdown$ = Observable.interval(500)
+      const countdown$ = Observable.interval(100)
         .startWith(5)
         .scan(time => time - 1)
         .takeWhile(time => time >= 0)
         .concat(Observable.of('wake up!!!'))
-        .repeatWhen(() =>
-          this.snooze$.takeUntil(this.dismiss$)
-        )
+        .repeatWhen(() => this.snooze$.takeUntil(this.dismiss$))
         .concat(Observable.of('have a nice day!'))
 
       const disable$ = countdown$.map(text => text !== 'wake up!!!')

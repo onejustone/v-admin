@@ -158,6 +158,14 @@ const asyncRoutes = [
             meta: {
               title: 'simpleDrag'
             }
+          },
+          {
+            name: 'rxjsPullToRefresh',
+            path: '/rxjs/pull_to_refresh',
+            component: _import('rxjs/demos/PullToRefresh'),
+            meta: {
+              title: 'pullToRefresh'
+            }
           }
         ]
       },
