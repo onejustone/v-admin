@@ -15,18 +15,20 @@ section.pull-to-refresh-container
 
 <style lang="stylus" scoped>
 .pull-to-refresh-container
-  padding 20px
+  padding 50px
   border 1px solid green
   background rgba(234, 222, 334, 0.5)
 
 .pull-pull-to-refresh__indacitor
+  display flex
+  justify-content center
+  align-items center
   position relative
   z-index 1
 
 .list
   position relative
   border 1px solid red
-  padding 20px
   background green
   margin-top -45px
   z-index 2
@@ -98,23 +100,26 @@ section.pull-to-refresh-container
       pullAnimation (offset) {
         this.list.style.transform = `translate3d(0, ${offset}px, 0)`
       },
-      pullToRefreshDragMove (offset, result) {
-        this.pullAnimation(offset)
+      pullToRefreshDragMove (_offset, result) {
+        const maxOffset = Math.min(_offset, this.maxOffset)
+        this.pullAnimation(maxOffset)
         // this.showPullprogress = true
 
-        let percentage = Math.floor(Math.abs(offset) / this.maxOffset * 100)
+        let percentage = Math.floor(Math.abs(_offset) / this.maxOffset * 100)
+        console.log(percentage, 'percentage')
         percentage = percentage > 100 ? 100 : percentage
 
         this.percentage = percentage
         this.releaseToRefresh = result
-
-        result && this.$message.success('move refresh')
       },
       pullToRefreshDragRelase () {
         this.$message.success('release refresh')
-      },
-      contorllLoading () {
-
+        const getData = Observable.of('complete').delay(1000)
+        getData.subscribe(value => {
+          console.log(value)
+          this.percentage = 0
+          this.pullAnimation(0)
+        })
       }
     },
 
@@ -124,7 +129,6 @@ section.pull-to-refresh-container
       const touchEnd = this.$fromDOMEvent(null, 'touchend')
       const touchCancel = this.$fromDOMEvent(null, 'touchcancel')
       const end = Observable.merge(touchEnd, touchCancel)
-
       const touchstartAtTop = touchStart
         // 只处理位于顶部的 touchstart 事件
         .filter(start => this.$el.scrollTop === 0)
@@ -132,7 +136,7 @@ section.pull-to-refresh-container
       const dragDown = touchstartAtTop.map(start =>
           touchMove
             .takeUntil(end)
-            // 未觸發資料讀取請求時，结束时恢复初始状态
+            // 未触发请求，结束时恢复初始状态
             .concat(Observable.defer(_ => this.pullAnimation(0)))
         )
         .concatAll()
@@ -155,24 +159,22 @@ section.pull-to-refresh-container
         })
         // 只处理向下的滑动操作
         .filter(drag => drag.offset > 0 )
-        // 超过范围不做处理
-        .filter(drag => drag.absOffset <= this.maxOffset)
         .do(drag => {
-          console.log(drag.offset, 'offset')
-          console.log(drag.absOffset, 'absOffset')
-          // console.log(drag.compressOffset, 'compressOffset')
-          console.log(this.maxOffset, 'maxOffset')
-          // const showIndicator = drag.compressOffset >= this.threshold
-          // if (!showIndicator) return
           const refresh = drag.absOffset === this.maxOffset
-          console.log(refresh, 'refresh')
-          this.pullToRefreshDragMove(drag.offset, refresh)
+          this.pullToRefreshDragMove(drag.absOffset, refresh)
+          console.log(drag.absOffset, 'drag.absOffset')
         })
-        // 展示处理当滑动的距离超过最大阈值时
+         // 展示处理当滑动的距离超过最大阈值时
+        .skipWhile(drag => drag.absOffset < this.maxOffset)
         .map(drag => {
-          // this.pullToRefreshDragMove()
+          const refresh = drag.absOffset >= this.maxOffset
+          if (refresh) {
+            this.pullToRefreshDragRelase()
+          }
           return drag
         })
+        .takeWhile(drag => drag.absOffset < this.maxOffset)
+        .repeat()
 
       return {
         touchStart,

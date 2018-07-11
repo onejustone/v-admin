@@ -20,6 +20,7 @@ module.exports = merge(baseWebpackConfig, {
         // 热更新配置
         hot: true,
         quiet: true, // 保证 friendly-errors-webpack-plugin 生效
+        host: '0.0.0.0',
         port: config.dev.port,
         open: true,
         noInfo: true,
