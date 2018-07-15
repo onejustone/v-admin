@@ -166,6 +166,14 @@ const asyncRoutes = [
             meta: {
               title: 'pullToRefresh'
             }
+          },
+          {
+            name: 'car',
+            path: '/rxjs/car',
+            component: _import('rxjs/demos/shoppingCar/ShoppingCar'),
+            meta: {
+              title: 'shoppingCar'
+            }
           }
         ]
       },
