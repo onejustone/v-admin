@@ -6,8 +6,11 @@ module.exports = {
   parserOptions: {
     sourceType: 'module'
   },
+  globals: {
+    '_': true
+  }
   env: {
-    browser: true,
+    browser: true
   },
   extends: 'vue',
   // required to lint *.vue files

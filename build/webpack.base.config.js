@@ -41,6 +41,13 @@ module.exports = {
   module: {
     rules: [
       {
+        test: require.resolve('lodash'),
+        use: [{
+          loader: 'expose-loader',
+          options: '_'
+        }]
+      },
+      {
         test: /\.js$/,
         use: "babel-loader",
         include: [resolve('../src')]
@@ -80,7 +87,8 @@ module.exports = {
   },
   plugins: [
     new webpack.ProvidePlugin({
-      Rx: 'Rxjs'
+      Rx: 'Rxjs',
+      _: 'lodash'
       // $: 'jquery',
       // jquery: 'jquery',
       // 'window.jQuery': 'jquery',
