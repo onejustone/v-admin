@@ -1,6 +1,6 @@
 <template lang="pug">
 span
-    el-button(@click="handleCollpase")
+  el-button(@click="handleCollpase")
 </template>
 
 <script>

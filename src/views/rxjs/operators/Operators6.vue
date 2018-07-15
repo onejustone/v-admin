@@ -19,7 +19,7 @@ section.section operators6
 <script>
   // debounce, throttle
   import { Observable } from 'rxjs'
-  // import helper from 'api/helper.js'
+  // import http from 'api/http.js'
 
   export default {
     domStreams: ['finiteTimer$'],

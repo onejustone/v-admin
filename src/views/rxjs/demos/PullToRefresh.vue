@@ -5,6 +5,7 @@ section.pull-to-refresh-container
       :width=40
       type="circle"
       color="#8e71c7"
+      status="success"
       :percentage="percentage"
     )
   ul.list
@@ -37,8 +38,9 @@ section.pull-to-refresh-container
 <script>
   const THRESHOLD = 40 // 触发刷新的阈值
   const ELASTICITY = 2 //动画的弹力系数
+  const URl = 'www.github.com'
   // const MAXOFFSET = THRESHOLD * MAXOFFSET
-
+  import { xget } from 'http'
   import { Observable } from 'rxjs'
 
   export default {
@@ -53,7 +55,7 @@ section.pull-to-refresh-container
         // 触发刷新的阈值
         threshold: THRESHOLD, // 40
         // 最大滚动距离
-        maxOffset: 40, // 66
+        maxOffset: 50, // 66
         listNode: '',
         releaseToRefresh: false,
         pullToRefreshContainer: '',
@@ -103,7 +105,6 @@ section.pull-to-refresh-container
       pullToRefreshDragMove (_offset, result) {
         const maxOffset = Math.min(_offset, this.maxOffset)
         this.pullAnimation(maxOffset)
-        // this.showPullprogress = true
 
         let percentage = Math.floor(Math.abs(_offset) / this.maxOffset * 100)
         console.log(percentage, 'percentage')
@@ -112,10 +113,13 @@ section.pull-to-refresh-container
         this.percentage = percentage
         this.releaseToRefresh = result
       },
+      async getUseraInfo () {
+        await xget(URl)
+      },
       pullToRefreshDragRelase () {
         this.$message.success('release refresh')
-        const getData = Observable.of('complete').delay(1000)
-        getData.subscribe(value => {
+        const usersData$ = Observable.defer(_ => this.getUseraInfo())
+        usersData$.subscribe(value => {
           console.log(value)
           this.percentage = 0
           this.pullAnimation(0)

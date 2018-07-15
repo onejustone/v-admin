@@ -11,7 +11,7 @@
 <script>
 // debounce, throttle
   import { Observable } from 'rxjs'
-  import helper from 'api/helper.js'
+  import http from 'api/http.js'
 
   const SEARCH_REPOS = 'https://api.github.com/search/repositories?sort=stars&order=desc&q='
 
@@ -27,7 +27,7 @@
         .distinctUntilChanged()
         .do(value => console.log(value))
         // 仅处理最后一次的异步
-        .switchMap(value => Observable.fromPromise(helper.get(`${SEARCH_REPOS}${value}`)))
+        .switchMap(value => Observable.fromPromise(http.get(`${SEARCH_REPOS}${value}`)))
         .do(result => console.log(result))
         .map(result => result.items)
 

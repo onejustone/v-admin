@@ -18,7 +18,7 @@ section
 <script>
   // debounce, throttle
   import { Observable, ObjectUnsubscribedError } from 'rxjs'
-  // import helper from 'api/helper.js'
+  // import http from 'api/http.js'
 
   export default {
     domStreams: ['retry$'],
