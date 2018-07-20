@@ -1,5 +1,6 @@
 <template lang="pug">
-  span charts
+section.section charts
+  router-view
 </template>
 
 <script>

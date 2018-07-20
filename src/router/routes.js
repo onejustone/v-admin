@@ -152,6 +152,14 @@ const asyncRoutes = [
             }
           },
           {
+            name: 'operator_7',
+            path: '/rxjs/operator_7',
+            component: _import('rxjs/operators/Operators7'),
+            meta: {
+              title: 'operator_7'
+            }
+          },
+          {
             name: 'rxjsDrag',
             path: '/rxjs/drag',
             component: _import('rxjs/demos/SimpleDrag'),
@@ -174,6 +182,29 @@ const asyncRoutes = [
             meta: {
               title: 'shoppingCar'
             }
+          },
+          {
+            name: 'breakout',
+            path: '/rxjs/breakout',
+            component: _import('rxjs/demos/breakout/main'),
+            meta: {
+              title: 'breakout'
+            }
+          }
+        ]
+      },
+      {
+        name: 'charts',
+        path: '/charts',
+        component: _import('charts/main'),
+        meta: { title: 'charts' },
+        redirect: '/charts/bar_chart',
+        children: [
+          {
+            name: 'bar_chart',
+            path: '/charts/bar_chart',
+            component: _import('charts/barChart/main'),
+            meta: { title: 'barChart' },
           }
         ]
       },

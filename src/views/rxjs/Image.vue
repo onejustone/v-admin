@@ -25,7 +25,7 @@
           .map(res => res.response)
           .catch(() => Observable.of('error'))
         )
-        .share()
+        // .share()
 
       const error$ = person$.map(message => !message)
 

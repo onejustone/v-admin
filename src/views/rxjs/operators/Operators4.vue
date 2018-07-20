@@ -8,10 +8,11 @@
        span {{ item.name }}
 </template>
 
+
 <script>
 // debounce, throttle
   import { Observable } from 'rxjs'
-  import http from 'api/http.js'
+  import { get$ } from 'rapi/http.js'
 
   const SEARCH_REPOS = 'https://api.github.com/search/repositories?sort=stars&order=desc&q='
 
@@ -22,13 +23,13 @@
       const inputContent$ = this.handleInput$
         .debounceTime(500)
         .filter(({event, data}) => !!event.target.value)
+        // https://hackernoon.com/using-rxjs-to-handle-http-requests-what-ive-learned-4640aaf4646c
+        // .concatMap()
         .map(({event}) => event.target.value.trim())
         // 只取最近的一次不一样的值进行异步
         .distinctUntilChanged()
-        .do(value => console.log(value))
         // 仅处理最后一次的异步
-        .switchMap(value => Observable.fromPromise(http.get(`${SEARCH_REPOS}${value}`)))
-        .do(result => console.log(result))
+        .switchMap(value => get$(`${SEARCH_REPOS}${value}`))
         .map(result => result.items)
 
        return {
