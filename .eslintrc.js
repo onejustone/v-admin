@@ -8,7 +8,7 @@ module.exports = {
   },
   globals: {
     '_': true
-  }
+  },
   env: {
     browser: true
   },

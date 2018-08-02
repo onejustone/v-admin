@@ -2277,6 +2277,10 @@ ecc-jsbn@~0.1.1:
   dependencies:
     jsbn "~0.1.0"
 
+echarts-amap@1.0.0-rc.6:
+  version "1.0.0-rc.6"
+  resolved "https://registry.npmjs.org/echarts-amap/-/echarts-amap-1.0.0-rc.6.tgz#5782a74daee52ed44ce3f8f62577561783f09e16"
+
 echarts@^4.1.0:
   version "4.1.0"
   resolved "https://registry.npmjs.org/echarts/-/echarts-4.1.0.tgz#d588c95f73c1a9928b9c73d5b769751c3185bcdc"
@@ -5357,6 +5361,10 @@ number-is-nan@^1.0.0:
   version "1.0.1"
   resolved "https://registry.npmjs.org/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
 
+numerify@1.2.9:
+  version "1.2.9"
+  resolved "https://registry.npmjs.org/numerify/-/numerify-1.2.9.tgz#af4696bb1d57f8d3970a615d8b0cd53d932bd559"
+
 oauth-sign@~0.8.1, oauth-sign@~0.8.2:
   version "0.8.2"
   resolved "https://registry.npmjs.org/oauth-sign/-/oauth-sign-0.8.2.tgz#46a6ab7f0aead8deae9ec0565780b7d4efeb9d43"
@@ -7782,6 +7790,10 @@ utila@~0.4:
   version "0.4.0"
   resolved "https://registry.npmjs.org/utila/-/utila-0.4.0.tgz#8a16a05d445657a3aea5eecc5b12a4fa5379772c"
 
+utils-lite@0.1.10:
+  version "0.1.10"
+  resolved "https://registry.npmjs.org/utils-lite/-/utils-lite-0.1.10.tgz#d2908c0482e23c31e6b082558540e7134ffad7d7"
+
 utils-merge@1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
@@ -7793,6 +7805,14 @@ uuid@^3.0.0, uuid@^3.1.0:
 uuid@^3.0.1, uuid@^3.2.1:
   version "3.2.1"
   resolved "http://registry.npm.taobao.org/uuid/download/uuid-3.2.1.tgz#12c528bb9d58d0b9265d9a2f6f0fe8be17ff1f14"
+
+v-charts@^1.17.9:
+  version "1.17.9"
+  resolved "https://registry.npmjs.org/v-charts/-/v-charts-1.17.9.tgz#e0317975fc5e0b2c6138153b6183fb0fc9c94705"
+  dependencies:
+    echarts-amap "1.0.0-rc.6"
+    numerify "1.2.9"
+    utils-lite "0.1.10"
 
 v-money@^0.8.1:
   version "0.8.1"

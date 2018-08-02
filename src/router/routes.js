@@ -204,7 +204,13 @@ const asyncRoutes = [
             name: 'bar_chart',
             path: '/charts/bar_chart',
             component: _import('charts/barChart/main'),
-            meta: { title: 'barChart' },
+            meta: { title: 'barChart' }
+          },
+          {
+            name: 'map_chart',
+            path: '/charts/map_chart',
+            component: _import('charts/map/main'),
+            meta: { title: 'mapChart' }
           }
         ]
       },
