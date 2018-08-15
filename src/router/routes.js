@@ -65,6 +65,18 @@ const asyncRoutes = [
         meta: { title: 'vue' }
       },
       {
+        name: 'flower',
+        path: '/flower',
+        component: _import('components/flower/main'),
+        meta: { title: 'flower' }
+      },
+      {
+        name: 'flowerHome',
+        path: '/flowerHome',
+        component: _import('components/flowerHome/main'),
+        meta: { title: 'flowerHome' }
+      },
+      {
         name: 'rxjsPlayground',
         path: '/rxjs',
         component: _import('rxjs/index'),
@@ -211,6 +223,12 @@ const asyncRoutes = [
             path: '/charts/map_chart',
             component: _import('charts/map/main'),
             meta: { title: 'mapChart' }
+          },
+          {
+            name: 'population_map',
+            path: '/charts/population_map',
+            component: _import('charts/populationMap/main'),
+            meta: { title: 'populationMap' }
           }
         ]
       },
