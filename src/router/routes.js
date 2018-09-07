@@ -36,6 +36,18 @@ const asyncRoutes = [
         meta: { title: '回到顶部', roles: ['admin'] }
       },
       {
+        name: 'catalog',
+        path: '/components/catalog',
+        component: _import('components/catalog/index'),
+        meta: { title: '嵌套导航目录', roles: ['admin'] }
+      },
+      {
+        name: 'scrollBar',
+        path: '/components/scroll_bar',
+        component: _import('components/ScrollBar'),
+        meta: { title: '自定义滚动条', roles: ['admin'] }
+      },
+      {
         name: 'list',
         path: '/components/list',
         component: _import('components/list/List'),
@@ -69,12 +81,6 @@ const asyncRoutes = [
         path: '/flower',
         component: _import('components/flower/main'),
         meta: { title: 'flower' }
-      },
-      {
-        name: 'flowerHome',
-        path: '/flowerHome',
-        component: _import('components/flowerHome/main'),
-        meta: { title: 'flowerHome' }
       },
       {
         name: 'rxjsPlayground',

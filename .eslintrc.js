@@ -10,7 +10,8 @@ module.exports = {
     '_': true
   },
   env: {
-    browser: true
+    browser: true,
+   jquery: true
   },
   extends: 'vue',
   // required to lint *.vue files

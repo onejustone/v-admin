@@ -13,6 +13,11 @@ const cssLang = [
     loader: 'stylus-loader'
   },
   {
+    name: 'less',
+    reg: /\.less$/,
+    loader: 'less-loader'
+  },
+  {
     name: 'stylus',
     reg: /\.styl$/,
     loader: 'stylus-loader'

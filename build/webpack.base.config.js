@@ -33,10 +33,12 @@ module.exports = {
             'plugins': path.resolve(__dirname, '../src/plugins'),
             'store': path.resolve(__dirname, '../src/store'),
             'views': path.resolve(__dirname, '../src/views'),
+            'static': path.resolve(__dirname, '../static'),
             'util': path.resolve(__dirname, '../src/util'),
             'api': path.resolve(__dirname, '../src/api'),
             'rapi': path.resolve(__dirname, '../src/rapi'),
-            'http': path.resolve(__dirname, '../src/api/http')
+            'http': path.resolve(__dirname, '../src/api/http'),
+            'packages': path.resolve(__dirname, '../src/components')
         }
     },
   module: {
@@ -89,11 +91,11 @@ module.exports = {
   plugins: [
     new webpack.ProvidePlugin({
       Rx: 'Rxjs',
-      _: 'lodash'
-      // $: 'jquery',
-      // jquery: 'jquery',
-      // 'window.jQuery': 'jquery',
-      // jQuery: 'jquery'
+      _: 'lodash',
+      $: 'jquery',
+      jquery: 'jquery',
+      'window.jQuery': 'jquery',
+      jQuery: 'jquery'
     })
   ]
 }

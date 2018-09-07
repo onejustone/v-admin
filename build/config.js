@@ -4,7 +4,7 @@ module.exports = {
   dev: {
     path: path.resolve(__dirname, '../static'),
     publicPath: '/',
-    port: 6066,
+    port: 6067,
     proxyTable: {
       '/api': {
         target: `http://${process.argv[2]}`,

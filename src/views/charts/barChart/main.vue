@@ -1,47 +1,81 @@
-<template lang="pug">
+<template lang='pug'>
 section.section.bar-chart-box
-  div#bar-chart(style="width: 600px;height:400px;")
+  div#bar-chart(style='width: 1000px; height:1000px')
 </template>
 
-<style lang="stylus" scoped>
-#bar-chart
-  background pink
+<style lang='stylus' scoped>
+#bar-chart {
+  // background: pink;
+}
 </style>
 
 <script>
-  import Echarts from 'echarts/lib/echarts'
-  import BarChart from 'echarts/lib/chart/bar'
-  import tooltip from 'echarts/lib/component/tooltip'
-  import title from 'echarts/lib/component/title'
+import Echarts from 'echarts/lib/echarts';
+import tooltip from 'echarts/lib/component/tooltip';
+import title from 'echarts/lib/component/title';
+import visualMap from 'echarts/lib/component/visualMap';
+import ChengduMap from 'static/map/chengdu.json';
+// import ChengduMap from 'static/map/hk.json';
+// require('static/map/chengdu.js')
 
-  export default {
-    name: 'charts',
+export default {
+  name: 'charts',
 
-    componentName: 'charts',
+  componentName: 'charts',
 
-    data () {
-      return {
+  data() {
+    return {};
+  },
 
-      }
-    },
+  async mounted() {
+    const myChart = Echarts.init(document.getElementById('bar-chart'));
+    await Echarts.registerMap('chengdu' , ChengduMap);
 
-    mounted () {
-      const myChart = Echarts.init(document.getElementById('bar-chart'))
-      myChart.setOption({
-        title: {
-          text: '柱状图'
-        },
-        tooltip: {},
-        xAxis: {
-          data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子'],
-        },
-        yAxis: {},
-        series: [{
-          name: '销量',
-          type: 'bar',
-          data: [5, 20, 36, 10, 10, 20]
+    myChart.setOption({
+      title: {
+        text: '项目地图',
+        subtext: 'jack'
+      },
+      tooltip: {
+        trigger: 'item',
+        formatter (params) {
+          console.log(params)
+          return params
+        }
+      },
+      visualMap: {
+        type: 'continuous',
+        min: 800,
+        max: 50000,
+        text:['High','Low'],
+        realtime: false,
+        calculable: true,
+        color: ['lightskyblue', 'yellow', 'orangered']
+      },
+      series: [
+        {
+          name: '项目统计',
+          type: 'map',
+          roam: false,
+          mapType: 'chengdu',
+          selectedMode: 'single',
+          itemStyle: {
+            normal: {
+              label: {
+                show: true
+              }
+            },
+            emphasis: {
+              label: {
+                show: true
+              }
+            }
+          },
+          data: [
+            {name: '都江堰市', value: 20057.34},
+          ]
         }]
-      })
-    }
+    })
   }
+}
 </script>
