@@ -4,7 +4,7 @@
 </template>
 
 <script>
-import ExpandTree from "@/components/expandTree";
+import ExpandTree from "components/expandTree";
 
 export default {
   name: 'ExpandTreeGround',

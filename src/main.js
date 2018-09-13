@@ -17,7 +17,6 @@ Vue.use(Buefy)
 import Rx from 'rxjs/Rx'
 import VueRx from 'vue-rx'
 
-// import LxDialog from '@//components/dialog'
 import './permission'
 import Plugins from 'plugins/install.js'
 import Util from 'util/install.js'

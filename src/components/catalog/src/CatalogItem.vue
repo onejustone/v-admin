@@ -5,7 +5,7 @@ li.catalog-anchor-item(
   :class="{'catalog-item__disabled': disabledCatalogItem(anchorNode)}"
   :style="[itemStyle]"
 )
-  span.catalog-item__name {{ anchorNode[anchorProps.name] }}
+  span.might-overflow.catalog-item__name {{ anchorNode[anchorProps.name] }}
 </template>
 
 <style lang="stylus" scoped>
@@ -17,6 +17,20 @@ li.catalog-anchor-item(
 
 .catalog-item__disabled
   color gray
+
+.catalog-item__name
+  display inline-block
+  width 100%
+
+.might-overflow
+  text-overflow ellipsis
+  overflow hidden
+  white-space nowrap
+
+// .might-overflow:hover
+//   text-overflow clip
+//   white-space normal
+//   word-break break-all
 </style>
 
 <script>

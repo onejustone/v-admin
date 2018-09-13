@@ -11,7 +11,7 @@ div.lazy-image-playground lazy image
 </template>
 
 <script>
-import LazyImage from '@/components/lazyImage'
+import LazyImage from 'components/lazyImage'
 import image_files from './images'
 
 export default {
@@ -21,7 +21,7 @@ export default {
     LazyImage
   },
 
-  computed: {
+  // computed: {
     images () {
       return image_files
     }

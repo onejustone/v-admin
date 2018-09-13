@@ -2,7 +2,6 @@
   ul.catalog(
     :style="itemStyle"
   )
-    div {{ activeAnchorId }}
     li.catalog-item__wrap(
       v-for="(nodeItem, index) in localAnchorList"
       :key="index"
@@ -12,6 +11,7 @@
         :textColor="textColor"
         :activeTextColor="activeTextColor"
         :activeAnchorId="currentAnchorId"
+        :anchorProps="anchorProps"
         @updateHelightAnchor="updateHelightAnchor"
       )
 
@@ -35,6 +35,10 @@
   height 200px
   width 200px
   overflow auto
+  overflow-x hidden
+
+.catalog-item__wrap
+  width 100%
 </style>
 
 <script>
@@ -52,7 +56,7 @@ export default {
       return {
         'id': 'id',
         'anchor': 'anchor',
-        'name': 'name',
+        'name': 'label',
         'children': 'children'
       }
     }},
@@ -78,12 +82,7 @@ export default {
       return {
         width: this.width ? this.width : 'auto'
       }
-    },
-
-    // catalogAnchorArray () {
-    //   if (!this.catalogAnchorElements) return []
-    //   return Array.from(this.catalogAnchorElements)
-    // }
+    }
   },
 
   created () {
@@ -91,7 +90,6 @@ export default {
 
   mounted () {
     this.initNavListData()
-    // this.cacheCatalogAnchorsElements()
   },
 
   watch: {

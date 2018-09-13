@@ -15,9 +15,9 @@ export default {
   font-size 0
   padding 10px
   height 200px
-  width 200px 
-  border 10px solid red 
-  overflow-x hidden 
-  overflow-y auto 
+  width 200px
+  border 10px solid red
+  overflow-x hidden
+  overflow-y auto
 </style>
 

@@ -1,6 +1,6 @@
 const data = [{
   anchor: 'anchor-1',
-  label: '一级 1',
+  label: '一级爱搜方式alsjflal家里舒服捡垃圾了方式逻辑法拉盛就 1',
   children: [{
     anchor: 'anchor-1-1',
     label: '二级 1-1',

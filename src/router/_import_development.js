@@ -1,1 +1,2 @@
-module.exports = path => require(`@/views/${path}.vue`).default
+// 异步加载的组件只能使用.vue文件，package.json不可以
+module.exports = path => require(`${path}.vue`).default

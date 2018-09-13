@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Main from './src/main.vue'
-import util from '@/util'
+import util from 'util'
 
 const DialogConstrcutor = Vue.extend(Main)
 

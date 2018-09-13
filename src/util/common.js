@@ -1,5 +1,5 @@
 import { isEmptyArray } from './typeDetection'
-import utils from '@/util'
+import utils from 'util'
 
 const deepCloneObj = function _deepCloneObj (sourceObj) {
   if (!sourceObj && typeof sourceObj !== 'object') {

@@ -1,6 +1,5 @@
 <template lang="pug">
   ul.sub-catalog
-    div {{ activeAnchorId }}
     li.catalog-item__wrap(
       v-for="(nodeItem, index) in localAnchorList"
       :key="index"
@@ -9,6 +8,7 @@
         :anchorNode="nodeItem"
         :textColor="textColor"
         :activeTextColor="activeTextColor"
+        :anchorProps="anchorProps"
         :activeAnchorId="activeAnchorId"
         @updateHelightAnchor="updateHelightAnchor"
       )

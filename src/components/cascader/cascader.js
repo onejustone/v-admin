@@ -1,4 +1,4 @@
-import globalUtils from '@/util'
+import globalUtils from 'util'
 // import objectPath from 'object-path'
 
 export default {

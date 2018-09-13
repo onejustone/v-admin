@@ -1,4 +1,4 @@
-import getScrollBarWidth from '@/util/getScrollBarWidth'
+import getScrollBarWidth from '/util/getScrollBarWidth'
 
 export default {
   name: 'LxScrollBar',

@@ -5,7 +5,7 @@ div
 </template>
 
 <script>
-import LxCascader from "@/components/cascader"
+import LxCascader from "components/cascader"
 import camelize from 'camelize'
 
 const rowData = [
