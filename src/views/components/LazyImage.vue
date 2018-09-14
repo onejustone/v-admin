@@ -21,7 +21,7 @@ export default {
     LazyImage
   },
 
-  // computed: {
+  computed: {
     images () {
       return image_files
     }

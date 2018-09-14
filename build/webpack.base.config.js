@@ -28,6 +28,7 @@ module.exports = {
         modules: [path.resolve(__dirname, '../node_modules')],
         alias: {
             'vue$': 'vue/dist/vue.esm.js',
+            // 用于 stylus 导入 .stylus 文件
             '@': resolve('../src'),
             'router': path.resolve(__dirname, '../src/router'),
             'plugins': path.resolve(__dirname, '../src/plugins'),

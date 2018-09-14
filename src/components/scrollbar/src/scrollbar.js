@@ -1,4 +1,4 @@
-import getScrollBarWidth from '/util/getScrollBarWidth'
+// import getScrollBarWidth from '/util/getScrollBarWidth'
 
 export default {
   name: 'LxScrollBar',
@@ -8,6 +8,6 @@ export default {
   },
 
   mounted () {
-    const scrollBarWidth = getScrollBarWidth()
+    // const scrollBarWidth = getScrollBarWidth()
   }
 }

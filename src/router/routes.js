@@ -12,13 +12,18 @@ const constRoutes = [
 ]
 // 需要异步加载的路由列表，在系统初始时会通过 permisson 对该列表中的路由进行权限过滤
 // 甚至可以支持服务器端配置
-let asyncRoutes = [
+const asyncRoutesList = [
   dashboard
 ]
 
-asyncRoutes = asyncRoutes.map(item => {
-  item['components'] = Layout
-})
+const asyncRoutes = []
+
+for (const item of asyncRoutesList) {
+  asyncRoutes.push({
+    ...item,
+    'component': Layout
+  })
+}
 
 console.log(asyncRoutes)
 // const asyncRoutes = [

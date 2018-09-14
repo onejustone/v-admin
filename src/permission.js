@@ -9,10 +9,12 @@ router.beforeEach((to, from, next) => {
       next({ path: '/' })
     } else if (!store.state.permission.auth.user.roles) {
       store.dispatch('permission/auth/getUserInfo', null, { root: true }).then(roles => {
+        console.log('permission/auth/getUserInfo')
         store.dispatch('permission/router/generatorAsyncRoutes', null, { root: true }).then(_ => {
           router.addRoutes(store.state.permission.router.routes)
           next({ ...to, replace: true })
-        }).catch(_ => {
+        }).catch(e => {
+          console.error(e)
           store.dispatch('permission/auth/logOut', null, { root: true }).then(_ => {
             this.$message.error('验证失败，请重新登录')
             next({ path: '/login' })
