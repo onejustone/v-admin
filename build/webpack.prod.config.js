@@ -33,10 +33,28 @@ module.exports = merge(baseWebpackConfig, {
       filename: 'css/style.css?[contenthash:8]'
     }),
     new HtmlWebpackPlugin({
-      title: 'ahah',
-      filename: 'index.html',
-      template: 'index.html',
-      inject: true
+      title: 'vue-demo',
+      // filename 是相对于 webpack 配置项 output.path（打包资源存储路径）
+      filename: './index.html',
+      // template 的路径是相对于webpack编译时的上下文目录，就是项目根目录
+      template: './index.html',
+      path: config.prod.path,
+      // favicon: resolveApp('favicon.ico'),
+      inject: true,
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeRedundantAttributes: true,
+        useShortDoctype: true,
+        removeEmptyAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        keepClosingSlash: true,
+        minifyJS: true,
+        minifyCSS: true,
+        minifyURLs: true
+      },
+      // necessary to consistently work with multiple chunks via CommonsChunkPlugin
+      // chunksSortMode: 'dependency'
     })
   ]
 })

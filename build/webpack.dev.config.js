@@ -1,4 +1,5 @@
  // 开发配置
+process.env.NODE_ENV = 'development'
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 
