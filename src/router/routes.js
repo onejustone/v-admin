@@ -8,8 +8,10 @@ const Layout = _import('layout/Layout')
 const constRoutes = [
   { name: 'login', path: '/login', component: _import('auth/login'), meta: { title: 'login' }, hidden: true },
   { name: '404', path: '/404', component: _import('error/error404'), meta: { title: '404' }, hidden: true },
+  { name: 'logOut', path: '/logOut', component: _import('error/error404'), meta: { title: '404' }, hidden: true },
   { path: '', redirect: '/dashboard' }
 ]
+
 // 需要异步加载的路由列表，在系统初始时会通过 permisson 对该列表中的路由进行权限过滤
 // 甚至可以支持服务器端配置
 const asyncRoutesList = [
@@ -24,8 +26,7 @@ for (const item of asyncRoutesList) {
     'component': Layout
   })
 }
-
-console.log(asyncRoutes)
+// console.log(asyncRoutes)
 // const asyncRoutes = [
 //   // {
 //   //   path: '/dashboard', component: Layout, redirect: '/dashboard/index',
