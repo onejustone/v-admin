@@ -20,6 +20,7 @@ const actions = {
     }
 
     context.commit(SET_USER_INFO, { userInfo })
+    return userInfo
   },
 
   logOut (context) {
