@@ -1,5 +1,4 @@
 const recursivefilterAcceessRoutes = function _recursivefilterAcceessRoutes (asyncRoutes, roles) {
-  console.log(asyncRoutes, 'asyncRoutes')
   const accessRoutes = asyncRoutes.filter(route => {
     if (hasRoutePermisson(route, roles)) {
       if (route.children) {

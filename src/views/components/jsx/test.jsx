@@ -1,15 +1,15 @@
-  export default {
-    name: 'Test',
+export default {
+  name: 'Test',
 
-    props: [],
+  props: [],
 
-    data () {
-      return {
-        test: 124
-      }
-    },
-
-    render (h) {
-      return h('div', {}, ['hshd'])
+  data () {
+    return {
+      test: 124
     }
+  },
+
+  render (h) {
+    return h('div', {}, ['hshd'])
   }
+}

@@ -39,7 +39,6 @@ export default {
       tooltip: {
         trigger: 'item',
         formatter (params) {
-          console.log(params)
           return params
         }
       },

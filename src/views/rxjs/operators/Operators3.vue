@@ -85,7 +85,6 @@ div
 
       // delay
       const mouseMovePos$ = this.delayContentMouseMove$.map(e => {
-        console.log('delayContentMouseMove')
         return {
           clientX: e.clientX,
           clientY: e.clientY
@@ -94,12 +93,9 @@ div
       })
 
      function followMouse (DOMArr) {
-       console.log('followMouse')
-       console.log(DOMArr)
        const delayTime = 600
        DOMArr.forEach((item, index) => (
          mouseMovePos$.map(e => {
-             console.log('img mouse mouve')
              return {
                clientX: e.clientX,
                clientY: e.clientY
@@ -107,12 +103,10 @@ div
            })
            .delay(delayTime * (Math.pow(0.65, index) + Math.cos(index / 4)) / 2)
            .map(({clientX, clientY}) => {
-             console.log('fuck')
              item.style.transform = `translate3d(${clientX}px, ${clientY}px, 0)`
            })
        ))
      }
-     console.log(this.imageDoms, 'imageDoms')
      followMouse(Array.from(this.imageDoms))
 
       return {
@@ -132,13 +126,10 @@ div
 
     methods: {
       followMouse (DOMArr) {
-        console.log('followMouse')
-        console.log(DOMArr)
         const delayTime = 600
         const vm = this
         DOMArr.forEach((item, index) => (
           vm.delayContentMouseMove$.map(e => {
-              console.log('img mouse mouve')
               return {
                 clientX: e.clientX,
                 clientY: e.clientY
@@ -146,7 +137,6 @@ div
             })
             .delay(delayTime * (Math.pow(0.65, index) + Math.cos(index / 4)) / 2)
             .map(({clientX, clientY}) => {
-              console.log('fuck')
               item.style.transform = `translate3d(${clientX}px, ${clientY}px, 0)`
             })
         ))

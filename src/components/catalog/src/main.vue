@@ -108,7 +108,6 @@ export default {
     },
 
     updateHelightAnchor (anchorNode) {
-      console.log(anchorNode)
       this.currentAnchorId = anchorNode[this.anchorProps['anchor']]
     }
   }

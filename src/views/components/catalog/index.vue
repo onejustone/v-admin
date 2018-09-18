@@ -85,7 +85,6 @@ export default {
     cacheAnchorElements () {
       const article = this.$el.querySelector('.article')
       const anchors = article.querySelectorAll("div[id*='anchor-']")
-      console.log(anchors, 'anchors')
       this.articleAnchorElements = anchors
     },
     listenArticleScroll () {

@@ -26,7 +26,6 @@ section
     subscriptions () {
        // catch
        const retry = this.retry$
-        .do(e => console.log(e))
 
        const source$ = Observable.from(['a', 'b', 'c', 'd', 2])
         .zip(Observable.interval(300), (x, y) => x)
