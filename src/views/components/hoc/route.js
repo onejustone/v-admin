@@ -3,15 +3,21 @@ import Hoc from './index.vue'
 
 const route = {
   path: '/components/hoc',
-  redirect: '/components/hoc/anchoredHeading',
+  redirect: '/components/hoc/anchoredHeadingWithJsx',
   meta: { title: 'hoc' },
   component: Hoc,
   children: [
     {
-      name: 'anchoredHeading',
-      path: '/components/hoc/anchoredHeading',
-      component: _import('components/hoc/AnchoredHeading'),
-      meta: { title: 'hocAnchoredHeading' }
+      name: 'anchoredHeadingWithJsx',
+      path: '/components/hoc/AnchoredHeadingWithJsx',
+      component: _import('components/hoc/AnchoredHeadingWithJSX/Example'),
+      meta: { title: 'headingJSX' }
+    },
+    {
+      name: 'smartList',
+      path: '/components/hoc/smartList',
+      component: _import('components/hoc/SmartList/Example'),
+      meta: { title: 'smartList' }
     }
   ]
 }
