@@ -11,7 +11,8 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
 import Buefy from 'buefy'
-import 'buefy/lib/buefy.css'
+
+// import 'buefy/src/scss/buefy.scss'
 
 Vue.use(Buefy)
 import Rx from 'rxjs/Rx'

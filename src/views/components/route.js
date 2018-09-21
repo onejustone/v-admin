@@ -1,5 +1,6 @@
 import { _import } from 'router/_importModule'
 import hocRoute from './hoc/route'
+import lightTale from './lightTable/route'
 
 const route = {
   name: 'components',
@@ -7,6 +8,8 @@ const route = {
   redirect: '/components/back_to_up',
   meta: { icon: 'document', title: '组件', roles: ['admin'] },
   children: [
+    lightTale,
+    hocRoute,
     {
       name: 'backToTop',
       path: '/components/back_to_up',
@@ -54,7 +57,6 @@ const route = {
       component: _import('components/vue/index'),
       meta: { title: 'vue' }
     },
-    hocRoute,
     {
       name: 'flower',
       path: '/flower',

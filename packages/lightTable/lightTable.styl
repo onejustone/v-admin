@@ -1,0 +1,70 @@
+.light-table
+  margin-top 16px
+.light-table__footer
+  margin-top 16px
+  .pagination
+    float right
+.light-table__link
+  color #288697
+  &:hover
+    cursor pointer
+.link__down
+  &:hover
+    text-decoration underline
+.icon
+  position absolute
+  font-size 16px
+  cursor pointer
+  transition all .2s
+  &:hover
+    color #288697
+  &:active
+    transform scale(.9)
+.cell__input
+  position absolute
+  width 100%
+  height 100%
+  top 0
+  left 0
+  border 0
+  text-indent 10px
+  padding-right 50px
+  background #f3f3f3
+.cell__input-button
+  position absolute
+  width 20px
+  height 20px
+  top 20px
+  outline 0
+  border 0
+  background none
+  transition all .2s
+  &:active
+    transform scale(.9)
+  .icon
+    opacity 1
+    position absolute
+    top 0
+    left 0
+    right 0
+    bottom 0
+    &:active
+      transform scale(1)
+  &.success
+    right 30px
+    .icon
+      color #288697
+  &.close
+    right 5px
+    .icon
+      color #6b6b6b
+  &:hover
+    border 1px solid #288697
+    &.success
+      background #288697
+    &.close
+      background #6b6b6b
+    .icon
+      color white !important
+.el-table /deep/ .success-row
+  background #f0f9eb

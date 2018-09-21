@@ -41,7 +41,7 @@ section.section
 </style>
 
 <script>
-import LxCatalog from 'packages/catalog'
+import LxCatalog from 'components/catalog'
 
 import navTestData from './nav_test_data.js'
 

@@ -4,7 +4,7 @@ section.section
 </template>
 
 <script>
-import LxScrollBar from 'packages/scrollbar'
+import LxScrollBar from 'components/scrollbar'
 
 export default {
   name: 'ScrollBar',

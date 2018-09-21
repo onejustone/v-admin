@@ -39,7 +39,7 @@ module.exports = {
             'api': path.resolve(__dirname, '../src/api'),
             'rapi': path.resolve(__dirname, '../src/rapi'),
             'http': path.resolve(__dirname, '../src/api/http'),
-            'packages': path.resolve(__dirname, '../src/components'),
+            'packages': path.resolve(__dirname, '../packages'),
             'components': path.resolve(__dirname, '../src/components'),
             'theme': path.resolve(__dirname, '../src/theme')
         }
