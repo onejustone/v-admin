@@ -1,7 +1,7 @@
 // import globalUitls from 'utils'
 import Sortable from 'sortablejs'
 import VueDraggable from 'vuedraggable'
-import { cloneDeep } from 'lodash'
+// import { cloneDeep } from 'lodash'
 
 export default {
   name: 'LightTable',
@@ -144,10 +144,10 @@ export default {
       function handleSortEnd ({ newIndex, oldIndex }) {
         console.log(newIndex, oldIndex)
         console.log(self.tableData, 'this.tableData')
-        // const targetRow = tableData.splice(oldIndex, 1)[0]
-        // tableData.splice(newIndex, 0, targetRow)
+        const targetRow = self.tableData.splice(oldIndex, 1)[0]
+        self.tableData.splice(newIndex, 0, targetRow)
         // targetRow['index'] = newIndex
-        // console.log(targetRow)
+        console.log(targetRow)
         // self.$emit('updateTableData', tableData)
       }
 
