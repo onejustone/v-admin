@@ -190,7 +190,6 @@ export default {
 
       Array.from(els).forEach((el, index) => {
         const seq = (index + 1) % 3
-        console.log(seq)
         animateTwo(el)
         // animatePools[seq](el)
       })

@@ -1,5 +1,4 @@
-// import { _import } from 'router/_importModule'
-import Index from './index.vue'
+import { _import } from 'router/_importModule'
 
 const route = {
   path: '/dashboard', redirect: '/dashboard/index',
@@ -7,8 +6,7 @@ const route = {
     {
       name: 'home',
       path: '/dashboard/index',
-      component: Index,
-      // component: _import('views/dashboard/index'),
+      component: _import('dashboard/index'),
       meta: { title: '首页' }
     }
   ]

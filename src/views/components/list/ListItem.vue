@@ -32,7 +32,6 @@
     computed: {
       listSubItemTotal () {
         const total = Math.abs(Math.floor(Math.random()*10)-5) + 1
-        console.log(total)
         return total
       }
     },
@@ -41,7 +40,6 @@
     },
 
     beforeDestroy () {
-      console.log('beforeDestroy', this.content)
     }
   }
 </script>

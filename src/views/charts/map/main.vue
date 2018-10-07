@@ -56,7 +56,6 @@
 
     methods: {
       handleChartEvents (e) {
-        console.log(e)
       }
     }
   }

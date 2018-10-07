@@ -15,7 +15,6 @@ export default {
       const flower$ = $('.js-valentine-flower')
       const flowerType = flower$.data('type')
 
-      console.log(flowerType, 'flowerType')
       const dialog$ = $('.js-valentine-flower-dialog')
       const dialogClose$ = $('.js-valentine-flower-dialog-quit')
 

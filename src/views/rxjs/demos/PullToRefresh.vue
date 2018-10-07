@@ -107,7 +107,6 @@ section.pull-to-refresh-container
         this.pullAnimation(maxOffset)
 
         let percentage = Math.floor(Math.abs(_offset) / this.maxOffset * 100)
-        console.log(percentage, 'percentage')
         percentage = percentage > 100 ? 100 : percentage
 
         this.percentage = percentage
@@ -120,7 +119,6 @@ section.pull-to-refresh-container
         this.$message.success('release refresh')
         const usersData$ = Observable.defer(_ => this.getUseraInfo())
         usersData$.subscribe(value => {
-          console.log(value)
           this.percentage = 0
           this.pullAnimation(0)
         })
@@ -166,7 +164,6 @@ section.pull-to-refresh-container
         .do(drag => {
           const refresh = drag.absOffset === this.maxOffset
           this.pullToRefreshDragMove(drag.absOffset, refresh)
-          console.log(drag.absOffset, 'drag.absOffset')
         })
          // 展示处理当滑动的距离超过最大阈值时
         .skipWhile(drag => drag.absOffset < this.maxOffset)

@@ -20,7 +20,6 @@
     },
 
     beforeDestroy () {
-      console.log('beforeDestroy list sub Item', this.content)
     }
   }
 </script>

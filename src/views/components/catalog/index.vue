@@ -41,7 +41,7 @@ section.section
 </style>
 
 <script>
-import LxCatalog from 'packages/catalog'
+import LxCatalog from 'components/catalog'
 
 import navTestData from './nav_test_data.js'
 
@@ -85,7 +85,6 @@ export default {
     cacheAnchorElements () {
       const article = this.$el.querySelector('.article')
       const anchors = article.querySelectorAll("div[id*='anchor-']")
-      console.log(anchors, 'anchors')
       this.articleAnchorElements = anchors
     },
     listenArticleScroll () {

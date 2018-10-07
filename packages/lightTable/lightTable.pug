@@ -1,0 +1,104 @@
+section(class="light-table")
+  el-table(
+    ref="lightTable"
+    :data="tableData"
+    v-loading="pending"
+    :rowClassName="rowClassName"
+    :showHeader="showHeader"
+    :border="border"
+    :stripe="stripe"
+    :style="tableStyle"
+    :size="size"
+    :highlightCurrentRow="true"
+    :headerCellStyle="headerCellStyle"
+    @select="select"
+    @selection-change="selectionChange"
+  )
+    //- 须写成 selection-change,而不是 selectionChange
+    el-table-column(
+      v-if="enableIndex"
+      type="index"
+    )
+
+    el-table-column(
+      v-if="enableSelect"
+      type="selection"
+      :selectable="setSelectable"
+      width="55"
+    )
+
+    el-table-column(
+      v-for="(column, index) in tableColumns"
+      :key="index"
+      :label="column[_columnProps['label']]"
+      :align="column[_columnProps['align']]"
+      :type="column[_columnProps['type']]"
+      :width="column[_columnProps['width']]"
+      :minWidth="column[_columnProps['minWidth']] || column[_columnProps['widths']]"
+      :headerAlign="column[_columnProps['headerAlign']]"
+      :sortable="column[_columnProps['sortable']]"
+    )
+      template(slot-scope="scope")
+        slot(:props="{column, rowData: scope.row, cellValue: $_getPropByPath(scope.row, column.column).v }")
+          span {{ $_getPropByPath(scope.row, column.column).v }}
+
+    el-table-column(
+      v-if="hasOption"
+      :width="optionsWidth"
+      :align="optionColumnAlign"
+      :fixed="fixedOptions"
+      label="操作"
+    )
+      template(slot-scope="scope")
+        slot(name="tableOptions" :props="{tableOptions, rowData: scope.row}")
+          template(v-if="tableOptions.length > 2")
+            el-button-group
+              template(v-for="(option, index) in tableOptions")
+                el-button(
+                  v-if="option.icon"
+                  :icon="option.icon"
+                  :type="option.type"
+                  :size="option.size"
+                  :plain="option.plain"
+                  :disabled="option.disabled && option.disabled(scope.row)"
+                  @click="(e) => option.handle(scope.row, e)"
+                )
+                el-button(
+                  v-else
+                  :key="index"
+                  :plain="option.plain"
+                  :type="option.type"
+                  :size="option.size"
+                  @click="(e) => option.handle(scope.row, e)"
+                ) {{ option.label }}
+
+          template(v-else)
+            template(v-for="(option, index) in tableOptions")
+              el-button(
+                v-if="option.icon"
+                :icon="option.icon"
+                :type="option.type"
+                :size="option.size"
+                :plain="option.plain"
+                :disabled="option.disabled && option.disabled(scope.row)"
+                @click="(e) => option.handle(scope.row, e)"
+              )
+              el-button(
+                v-else
+                :key="index"
+                :plain="option.plain"
+                :type="option.type"
+                :size="option.size"
+                @click="(e) => option.handle(scope.row, e)"
+              ) {{ option.label }}
+
+  .light-table__footer.clearfix(v-if="enablePage")
+    el-pagination.pagination(
+      @size-change="handleSizeChange"
+      :page-sizes="pageSizes"
+      @current-change="handleCurrentPage"
+      :page-size="selfLimit"
+      :current-page.sync="selfCurrentPage"
+      layout="total, sizes, prev, pager, next"
+      :total="total"
+    )
