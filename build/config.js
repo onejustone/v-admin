@@ -17,6 +17,6 @@ module.exports = {
   },
   prod: {
     path: path.resolve(__dirname, '../dist'),
-    publicPath: '/static/'
+    publicPath: '/'
   }
 }
