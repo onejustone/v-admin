@@ -16,8 +16,14 @@ const route = {
     {
       name: 'smartList',
       path: '/components/hoc/smartList',
-      component: _import('components/hoc/SmartList/Example'),
+      component: _import('components/hoc/VueFuncSmartList/Example'),
       meta: { title: 'smartList' }
+    },
+    {
+      name: 'vue_mixins_vs_hoc',
+      path: '/components/hoc/vue_hoc',
+      component: _import('components/hoc/vueMixinsVsHoc/index'),
+      meta: { title: 'vueMixinsVsHoc' }
     }
   ]
 }

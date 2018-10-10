@@ -1,4 +1,4 @@
-import Vue from 'Vue'
+import Vue from 'vue'
 import LxMessage from './src/main.vue'
 
 const MessageConstructor = Vue.extend(LxMessage)

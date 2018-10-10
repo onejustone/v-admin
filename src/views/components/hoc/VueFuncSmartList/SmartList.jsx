@@ -11,7 +11,6 @@ export default {
     isOrdered: Boolean
   },
   render (h, context) {
-    console.log(context.props.items, 'items')
     function appropriateListComponent () {
       const items = context.props.items
 
@@ -24,8 +23,8 @@ export default {
 
     return h(
       appropriateListComponent(),
-      context.data,
-      context.children
+      context.data, // 通过 context.data 在函数式组件中传递所有的特性和事件监听器
+      context.children // 等同于非函数式组件中的 this.$slots.default
     )
   }
 }
