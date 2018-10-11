@@ -11,13 +11,13 @@ export default {
   },
 
   render (h) {
-    // jsx 不需要下 h，render 需要写 h
+    // jsx 下不需要 h，render 需要写 h
     return (
       <div>
         <h2>我是基于hoc实现的，我是非侵入式的</h2>
         <enhanced-com test={9999}>
+          <h2 slot='secondSlot'>i am the secondSlot</h2>
           <p>Default Slot</p>
-          <h2 slot='slot1'>has name slot</h2>
         </enhanced-com>
       </div>
     )

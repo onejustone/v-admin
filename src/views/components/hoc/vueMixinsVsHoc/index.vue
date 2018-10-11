@@ -9,10 +9,7 @@
 
     section.section
       h3 base-component-with-hoc
-      base-component-with-hoc(
-        @customClick="customClick"
-        :test=1000
-      )
+      base-component-with-hoc
 </template>
 
 <script>
