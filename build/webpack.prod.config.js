@@ -30,6 +30,7 @@ module.exports = merge(baseWebpackConfig, {
       // }
     }),
     new ExtractTextPlugin({
+      allChunks: true, // extract-text-webpack-plugin 默认不会提取异步模块中的 CSS，需要加上配置
       filename: 'css/style.css?[contenthash:8]'
     }),
     new HtmlWebpackPlugin({
