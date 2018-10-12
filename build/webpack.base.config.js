@@ -19,7 +19,9 @@ function resolve(relPath) {
 module.exports = {
   entry: {
     // screen: resolve('../src/screen.js'),
-    main: resolve('../src/main.js')
+    main: resolve('../src/main.js'),
+    // 第三方代码，将第三方代码和业务代码分别打包构建，然后通过 CommonsChunkPlugin 打包到 vendor.js
+    vendor: ['rxjs', 'element-ui', 'vue-rx', 'vue-i18n', 'buefy', 'vuex', 'vue', 'vue-router']
   },
   output: {
     filename: 'js/[name].js'
@@ -102,7 +104,7 @@ module.exports = {
       'window.jQuery': 'jquery',
       jQuery: 'jquery'
     }),
-
+    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' })
     // new webpack.optimize.CommonsChunkPlugin({
     //   name: 'main-vendor',
     //   chunks: ['main'],
