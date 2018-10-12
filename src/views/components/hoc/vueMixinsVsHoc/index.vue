@@ -26,7 +26,6 @@ export default {
 
   methods: {
     customClick () {
-      console.log('parent customClick')
     }
   }
 }

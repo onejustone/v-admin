@@ -1,11 +1,9 @@
 export default function WithConsole (WrappedComponent) {
   return {
     mounted () {
-      console.log('I am hoc componets, i have already mounted')
     },
     props: WrappedComponent.props,
     render (h) {
-      console.log(this.$slots, '$slot')
        // 将 this.$slots 格式化为数组，因为 h 函数第三个参数是子节点，是一个数组
       const slots = Object.keys(this.$slots)
         .reduce((arr, key) => arr.concat(this.$slots[key]), [])
@@ -15,7 +13,6 @@ export default function WithConsole (WrappedComponent) {
           return vnode
         })
 
-      console.log(slots)
       // jsx 不需要下 h，render 需要写 h
       return h(
         WrappedComponent,

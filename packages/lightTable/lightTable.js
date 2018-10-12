@@ -136,39 +136,32 @@ export default {
 
   methods: {
     createSortable () {
-      const table = this.$el.querySelector('.el-table__body-wrapper tbody')
-      const self = this
+      // const table = this.$el.querySelector('.el-table__body-wrapper tbody')
+      // const self = this
       // const tableData = cloneDeep(this.tableData)
       // const tableData = this.tableData
 
-      function handleSortEnd ({ newIndex, oldIndex }) {
-        console.log(newIndex, oldIndex)
-        console.log(self.tableData, 'this.tableData')
-        const targetRow = self.tableData.splice(oldIndex, 1)[0]
-        self.tableData.splice(newIndex, 0, targetRow)
-        // targetRow['index'] = newIndex
-        console.log(targetRow)
-        // self.$emit('updateTableData', tableData)
-      }
+      // function handleSortEnd ({ newIndex, oldIndex }) {
+      //   const targetRow = self.tableData.splice(oldIndex, 1)[0]
+      //   self.tableData.splice(newIndex, 0, targetRow)
+      //   // targetRow['index'] = newIndex
+      //   // self.$emit('updateTableData', tableData)
+      // }
 
-      const sortable = Sortable.create(table, {
-        sort: true,
-        onEnd ({ newIndex, oldIndex }) {
-          handleSortEnd({ newIndex, oldIndex })
-        }
-      })
-      // sortable.onEnd((n, o) => console.log(n, o))
+      // const sortable = Sortable.create(table, {
+      //   sort: true,
+      //   onEnd ({ newIndex, oldIndex }) {
+      //     handleSortEnd({ newIndex, oldIndex })
+      //   }
+      // })
       // {
       //   onEnd({ newIndex, oldIndex }) {
       //     const targetRow = tableData.splice(oldIndex, 1)[0]
       //     tableData.splice(newIndex, 0, targetRow)
       //     targetRow['index'] = newIndex
-      //     console.log(targetRow)
-      //     console.log(tableData, 'tableData')
       //     self.$emit('updateTableData', tableData)
       //   }
       // }
-      console.log(sortable)
     },
 
     handleSizeChange (sizePage) {

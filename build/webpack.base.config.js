@@ -18,6 +18,7 @@ function resolve(relPath) {
 
 module.exports = {
   entry: {
+    // screen: resolve('../src/screen.js'),
     main: resolve('../src/main.js')
   },
   output: {
@@ -37,8 +38,9 @@ module.exports = {
             'static': path.resolve(__dirname, '../static'),
             'util': path.resolve(__dirname, '../src/util'),
             'api': path.resolve(__dirname, '../src/api'),
-            'rapi': path.resolve(__dirname, '../src/rapi'),
             'http': path.resolve(__dirname, '../src/api/http'),
+            'rapi': path.resolve(__dirname, '../src/rapi'),
+            'rhttp': path.resolve(__dirname, '../src/rapi/http'),
             'packages': path.resolve(__dirname, '../packages'),
             'components': path.resolve(__dirname, '../src/components'),
             'theme': path.resolve(__dirname, '../src/theme')
@@ -99,6 +101,32 @@ module.exports = {
       jquery: 'jquery',
       'window.jQuery': 'jquery',
       jQuery: 'jquery'
+    }),
+
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'main-vendor',
+      chunks: ['main'],
+      minChunks: function (module) {
+        return module.context && module.context.indexOf("node_modules") !== -1;
+      }
+    }),
+
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'screen-vendor',
+      chunks: ['screen'],
+      minChunks: function (module) {
+        return module.context && module.context.indexOf("node_modules") !== -1;
+      }
+    }),
+
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      chunks: ['admin-vendor', 'web-vendor']
+    }),
+
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'manifest',
+      chunks: ['vendor']
     })
   ]
 }

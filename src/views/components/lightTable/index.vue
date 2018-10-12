@@ -55,7 +55,6 @@ export default {
 
     },
     handleDelete (rowData) {
-      console.log(rowData)
       this.tableData = this.tableData.filter(item => item.id !== rowData.id)
     }
   }

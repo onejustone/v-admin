@@ -8,6 +8,7 @@ const Layout = _import('layout/Layout')
 // 固定路由
 const constRoutes = [
   { name: '404', path: '/404', component: _import('error/Error404'), meta: { title: '404' }, hidden: true },
+  { name: 'screen', path: '/screen', component: _import('screen/main'), meta: { title: 'screen' }, hidden: true },
   { name: 'logOut', path: '/logOut', component: _import('error/Error404'), meta: { title: '404' }, hidden: true },
   { path: '', redirect: '/dashboard' }
 ]

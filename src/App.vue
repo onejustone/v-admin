@@ -1,7 +1,6 @@
 <template lang="pug">
   div#website
     router-view
-    lx-currency(value="334434")
 </template>
 
 <script>

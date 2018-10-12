@@ -1,5 +1,4 @@
 function updateView (params) {
-  console.log('updateView')
 }
 
 function defReactive (obj, key, value) {
@@ -11,8 +10,6 @@ function defReactive (obj, key, value) {
     },
 
     set: function reactiveSetter (newValue) {
-      console.log('newValue', newValue)
-      console.log('oldValue', value)
       if (newValue === value) return
       value = newValue
       updateView()

@@ -7,7 +7,6 @@ export default {
 
   methods: {
     handleClick () {
-      console.log('handleClick test')
       this.$emit('customClick')
     }
   },
