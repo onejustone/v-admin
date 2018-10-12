@@ -103,30 +103,30 @@ module.exports = {
       jQuery: 'jquery'
     }),
 
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'main-vendor',
-      chunks: ['main'],
-      minChunks: function (module) {
-        return module.context && module.context.indexOf("node_modules") !== -1;
-      }
-    }),
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: 'main-vendor',
+    //   chunks: ['main'],
+    //   minChunks: function (module) {
+    //     return module.context && module.context.indexOf("node_modules") !== -1;
+    //   }
+    // }),
 
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'screen-vendor',
-      chunks: ['screen'],
-      minChunks: function (module) {
-        return module.context && module.context.indexOf("node_modules") !== -1;
-      }
-    }),
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: 'screen-vendor',
+    //   chunks: ['screen'],
+    //   minChunks: function (module) {
+    //     return module.context && module.context.indexOf("node_modules") !== -1;
+    //   }
+    // }),
 
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      chunks: ['admin-vendor', 'web-vendor']
-    }),
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: 'vendor',
+    //   chunks: ['admin-vendor', 'web-vendor']
+    // }),
 
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'manifest',
-      chunks: ['vendor']
-    })
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: 'manifest',
+    //   chunks: ['vendor']
+    // })
   ]
 }
