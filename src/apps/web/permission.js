@@ -1,5 +1,5 @@
-import router from './router'
-import store from './store'
+import router from './src/router'
+import store from './src/store'
 
 // 未登录时的白名单
 const notLoginWhiteList = ['/404', '/login']

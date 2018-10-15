@@ -12,7 +12,7 @@ export default {
   subscriptions () {
     const catType = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
 
-    const hitokoto$ = Observable.merge(Observable.of(0), Observable.interval(10000))
+    const hitokoto$ = Observable.merge(Observable.of(0), Observable.interval(60 * 1000))
       .concatMap(seq => get$(`https://sslapi.hitokoto.cn?c=${catType[CURRENTINDEX]}`))
       .do(_ => {
         if (CURRENTINDEX >= 6) CURRENTINDEX = -1

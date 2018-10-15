@@ -1,4 +1,4 @@
-import { _import } from 'router/_importModule'
+import { _import } from 'routeImport'
 import Hoc from './index.vue'
 
 const route = {

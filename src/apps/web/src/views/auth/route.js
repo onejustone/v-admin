@@ -1,9 +1,9 @@
-import { _import } from 'router/_importModule'
+import { _import } from 'routeImport'
 
 const route = {
   name: 'login',
   path: '/login',
-  component: _import('auth/Login'),
+  component: _import('web-views/auth/Login'),
   meta: { title: 'login' }, hidden: true
 }
 

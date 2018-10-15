@@ -1,4 +1,4 @@
-import { _import } from 'router/_importModule'
+import { _import } from 'routeImport'
 import hocRoute from './hoc/route'
 import lightTale from './lightTable/route'
 
@@ -13,67 +13,67 @@ const route = {
     {
       name: 'backToTop',
       path: '/components/back_to_up',
-      component: _import('components/BackToUp'),
+      component: _import('web-views/components/BackToUp'),
       meta: { title: '回到顶部', roles: ['admin'] }
     },
     {
       name: 'catalog',
       path: '/components/catalog',
-      component: _import('components/catalog/index'),
+      component: _import('web-views/components/catalog/index'),
       meta: { title: '嵌套导航目录', roles: ['admin'] }
     },
     {
       name: 'scrollBar',
       path: '/components/scroll_bar',
-      component: _import('components/ScrollBar'),
+      component: _import('web-views/components/ScrollBar'),
       meta: { title: '自定义滚动条', roles: ['admin'] }
     },
     {
       name: 'list',
       path: '/components/list',
-      component: _import('components/list/List'),
+      component: _import('web-views/components/list/List'),
       meta: { title: '列表', roles: ['admin'] }
     },
     {
       name: 'test-menu',
       path: '/components/test_menu',
-      component: _import('components/TestMenu'),
+      component: _import('web-views/components/TestMenu'),
       meta: { title: 'test-menu' }
     },
     {
       name: 'expand_tree',
       path: '/components/expand_tee',
-      component: _import('components/ExpandTree'), meta: { title: '扩展树组件' }
+      component: _import('web-views/components/ExpandTree'), meta: { title: '扩展树组件' }
     },
     {
       name: 'cascader',
       path: '/components/cascader',
-      component: _import('components/Cascader'),
+      component: _import('web-views/components/Cascader'),
       meta: { title: 'cascader' }
     },
     {
       name: 'vue',
       path: '/vue',
-      component: _import('components/vue/index'),
+      component: _import('web-views/components/vue/index'),
       meta: { title: 'vue' }
     },
     {
       name: 'flower',
       path: '/flower',
-      component: _import('components/flower/main'),
+      component: _import('web-views/components/flower/main'),
       meta: { title: 'flower' }
     },
     {
       name: 'rxjsPlayground',
       path: '/rxjs',
-      component: _import('rxjs/index'),
+      component: _import('web-views/rxjs/index'),
       redirect: '/rxjs/side',
       meta: { title: 'rxjsPlayground' },
       children: [
         {
           name: 'rxjsSlide',
           path: '/rxjs/side',
-          component: _import('rxjs/Slide'),
+          component: _import('web-views/rxjs/Slide'),
           meta: {
             title: 'slide'
           }
@@ -81,7 +81,7 @@ const route = {
         {
           name: 'rxjsCount',
           path: '/rxjs/count',
-          component: _import('rxjs/Count'),
+          component: _import('web-views/rxjs/Count'),
           meta: {
             title: 'count'
           }
@@ -89,7 +89,7 @@ const route = {
         {
           name: 'rxjsImage',
           path: '/rxjs/image',
-          component: _import('rxjs/Image'),
+          component: _import('web-views/rxjs/Image'),
           meta: {
             title: 'image'
           }
@@ -97,7 +97,7 @@ const route = {
         {
           name: 'rxjsSigned',
           path: '/rxjs/Signed',
-          component: _import('rxjs/Signed'),
+          component: _import('web-views/rxjs/Signed'),
           meta: {
             title: 'Signed'
           }
@@ -105,7 +105,7 @@ const route = {
         {
           name: 'rxjsForm',
           path: '/rxjs/form',
-          component: _import('rxjs/Form'),
+          component: _import('web-views/rxjs/Form'),
           meta: {
             title: 'Form'
           }
@@ -113,7 +113,7 @@ const route = {
         {
           name: 'rxjsOpreator_1',
           path: '/rxjs/opreator_1',
-          component: _import('rxjs/operators/Operators1'),
+          component: _import('web-views/rxjs/operators/Operators1'),
           meta: {
             title: 'opreator_1'
           }
@@ -121,7 +121,7 @@ const route = {
         {
           name: 'rxjsOpreator_3',
           path: '/rxjs/opreator_3',
-          component: _import('rxjs/operators/Operators3'),
+          component: _import('web-views/rxjs/operators/Operators3'),
           meta: {
             title: 'opreator_3'
           }
@@ -129,7 +129,7 @@ const route = {
         {
           name: 'operator_4',
           path: '/rxjs/operator_4',
-          component: _import('rxjs/operators/Operators4'),
+          component: _import('web-views/rxjs/operators/Operators4'),
           meta: {
             title: 'operator_4'
           }
@@ -137,7 +137,7 @@ const route = {
         {
           name: 'operator_5',
           path: '/rxjs/operator_5',
-          component: _import('rxjs/operators/Operators5'),
+          component: _import('web-views/rxjs/operators/Operators5'),
           meta: {
             title: 'operator_5'
           }
@@ -145,7 +145,7 @@ const route = {
         {
           name: 'operator_6',
           path: '/rxjs/operator_6',
-          component: _import('rxjs/operators/Operators6'),
+          component: _import('web-views/rxjs/operators/Operators6'),
           meta: {
             title: 'operator_6'
           }
@@ -153,7 +153,7 @@ const route = {
         {
           name: 'operator_7',
           path: '/rxjs/operator_7',
-          component: _import('rxjs/operators/Operators7'),
+          component: _import('web-views/rxjs/operators/Operators7'),
           meta: {
             title: 'operator_7'
           }
@@ -161,7 +161,7 @@ const route = {
         {
           name: 'rxjsDrag',
           path: '/rxjs/drag',
-          component: _import('rxjs/demos/SimpleDrag'),
+          component: _import('web-views/rxjs/demos/SimpleDrag'),
           meta: {
             title: 'simpleDrag'
           }
@@ -169,7 +169,7 @@ const route = {
         {
           name: 'rxjsPullToRefresh',
           path: '/rxjs/pull_to_refresh',
-          component: _import('rxjs/demos/PullToRefresh'),
+          component: _import('web-views/rxjs/demos/PullToRefresh'),
           meta: {
             title: 'pullToRefresh'
           }
@@ -177,7 +177,7 @@ const route = {
         {
           name: 'car',
           path: '/rxjs/car',
-          component: _import('rxjs/demos/shoppingCar/ShoppingCar'),
+          component: _import('web-views/rxjs/demos/shoppingCar/ShoppingCar'),
           meta: {
             title: 'shoppingCar'
           }
@@ -185,7 +185,7 @@ const route = {
         {
           name: 'breakout',
           path: '/rxjs/breakout',
-          component: _import('rxjs/demos/breakout/main'),
+          component: _import('web-views/rxjs/demos/breakout/main'),
           meta: {
             title: 'breakout'
           }
@@ -195,26 +195,26 @@ const route = {
     {
       name: 'charts',
       path: '/charts',
-      component: _import('charts/main'),
+      component: _import('web-views/charts/main'),
       meta: { title: 'charts' },
       redirect: '/charts/bar_chart',
       children: [
         {
           name: 'bar_chart',
           path: '/charts/bar_chart',
-          component: _import('charts/barChart/main'),
+          component: _import('web-views/charts/barChart/main'),
           meta: { title: 'barChart' }
         },
         {
           name: 'map_chart',
           path: '/charts/map_chart',
-          component: _import('charts/map/main'),
+          component: _import('web-views/charts/map/main'),
           meta: { title: 'mapChart' }
         },
         {
           name: 'population_map',
           path: '/charts/population_map',
-          component: _import('charts/populationMap/main'),
+          component: _import('web-views/charts/populationMap/main'),
           meta: { title: 'populationMap' }
         }
       ]
@@ -222,19 +222,19 @@ const route = {
     {
       name: 'lazyImagePlayground',
       path: '/lazy_image',
-      component: _import('components/LazyImage'),
+      component: _import('web-views/components/LazyImage'),
       meta: { title: 'lazyImagePlayground' }
     },
     {
       name: 'canvas',
       path: '/my_canvas',
-      component: _import('components/Canvas'),
+      component: _import('web-views/components/Canvas'),
       meta: { title: 'myCanvas' }
     },
     {
       name: 'time',
       path: '/time',
-      component: _import('components/Time'),
+      component: _import('web-views/components/Time'),
       meta: { title: 'time' }
     }
   ]

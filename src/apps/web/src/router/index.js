@@ -1,6 +1,6 @@
-import { _import } from './_importModule'
-import dashboard from 'views/dashboard/route.js'
-import components from 'views/components/route.js'
+import { _import } from 'routeImport'
+import dashboard from 'web-views/dashboard/route.js'
+import components from 'web-views/components/route.js'
 
 // Layout 规划了整个应用的布局
 const Layout = _import('layout/Layout')

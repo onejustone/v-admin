@@ -33,29 +33,30 @@ module.exports = merge(baseWebpackConfig, {
       allChunks: true, // extract-text-webpack-plugin 默认不会提取异步模块中的 CSS，需要加上配置
       filename: 'css/style.css?[contenthash:8]'
     }),
-    new HtmlWebpackPlugin({
-      title: 'vue-demo',
-      // filename 是相对于 webpack 配置项 output.path（打包资源存储路径）
-      filename: './index.html',
-      // template 的路径是相对于webpack编译时的上下文目录，就是项目根目录
-      template: './index.html',
-      path: config.prod.path,
-      // favicon: resolveApp('favicon.ico'),
-      inject: true,
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true,
-        removeRedundantAttributes: true,
-        useShortDoctype: true,
-        removeEmptyAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        keepClosingSlash: true,
-        minifyJS: true,
-        minifyCSS: true,
-        minifyURLs: true
-      },
-      // necessary to consistently work with multiple chunks via CommonsChunkPlugin
-      // chunksSortMode: 'dependency'
-    })
-  ]
+    /* 多入口配置，以下注释代码不需要 */
+    // new HtmlWebpackPlugin({
+    //   title: 'vue-demo',
+    //   // filename 是相对于 webpack 配置项 output.path（打包资源存储路径）
+    //   filename: './index.html',
+    //   // template 的路径是相对于webpack编译时的上下文目录，就是项目根目录
+    //   template: './index.html',
+    //   path: config.prod.path,
+    //   // favicon: resolveApp('favicon.ico'),
+    //   inject: true,
+    //   minify: {
+    //     removeComments: true,
+    //     collapseWhitespace: true,
+    //     removeRedundantAttributes: true,
+    //     useShortDoctype: true,
+    //     removeEmptyAttributes: true,
+    //     removeStyleLinkTypeAttributes: true,
+    //     keepClosingSlash: true,
+    //     minifyJS: true,
+    //     minifyCSS: true,
+    //     minifyURLs: true
+    //   },
+    //   // necessary to consistently work with multiple chunks via CommonsChunkPlugin
+    //   // chunksSortMode: 'dependency'
+    // })
+  ].concat(utils.htmlPlugin()) // 多入口配置
 })

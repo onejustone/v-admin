@@ -6,7 +6,7 @@
 */
 
 // base.config.js不配置css的loader的原因和vue-loader一样
-// 同样考虑到各种环境的差异E性以及个性配置，在各自的环境中配置 path和publicPath更合适
+// 同样考虑到各种环境的差异性以及个性配置，在各自的环境中配置path和publicPath更合适
 
 const webpack = require('webpack')
 const path = require('path')
@@ -17,12 +17,12 @@ function resolve(relPath) {
 }
 
 module.exports = {
-  entry: {
-    // screen: resolve('../src/screen.js'),
-    main: resolve('../src/main.js'),
-    // 第三方代码，将第三方代码和业务代码分别打包构建，然后通过 CommonsChunkPlugin 打包到 vendor.js
-    vendor: ['rxjs', 'element-ui', 'vue-rx', 'vue-i18n', 'buefy', 'vuex', 'vue', 'vue-router']
-  },
+  entry: utils.entries(),
+  // entry: {
+  //   main: resolve('../src/main.js'),
+  //   // 提取第三方代码，将第三方代码和业务代码分别打包构建，然后通过 CommonsChunkPlugin 打包到 vendor.js
+  //   vendor: ['rxjs', 'element-ui', 'vue-rx', 'vue-i18n', 'buefy', 'vuex', 'vue', 'vue-router']
+  // },
   output: {
     filename: 'js/[name].js'
   },
@@ -33,10 +33,11 @@ module.exports = {
             'vue$': 'vue/dist/vue.esm.js',
             // 用于 stylus 导入 .stylus 文件
             '@': resolve('../src'),
-            'router': path.resolve(__dirname, '../src/router'),
+            'routeImport': path.resolve(__dirname, '../src/routeImport'),
             'plugins': path.resolve(__dirname, '../src/plugins'),
-            'store': path.resolve(__dirname, '../src/store'),
-            'views': path.resolve(__dirname, '../src/views'),
+            'web-views': path.resolve(__dirname, '../src/apps/web/src/views'),
+            'mobile-views': path.resolve(__dirname, '../src/apps/mobile/src/views'),
+            'screen-views': path.resolve(__dirname, '../src/apps/screen/src/views'),
             'static': path.resolve(__dirname, '../static'),
             'util': path.resolve(__dirname, '../src/util'),
             'api': path.resolve(__dirname, '../src/api'),
@@ -76,7 +77,8 @@ module.exports = {
             loader: "url-loader",
             options: {
               limit: 10000,
-              name: 'images/[name].[hash:7].[ext]' // 将图片都放入images文件夹下，[hash:7]防缓存
+              // 将图片都放入images文件夹下，[hash:7]防缓存
+              name: 'images/[name].[hash:7].[ext]'
             }
           }
         ]
@@ -88,7 +90,8 @@ module.exports = {
             loader: "url-loader",
             options: {
               limit: 10000,
-              name: 'fonts/[name].[hash:7].[ext]' // 将字体放入fonts文件夹下
+              // 将字体放入fonts文件夹下
+              name: 'fonts/[name].[hash:7].[ext]'
             }
           }
         ]
@@ -105,30 +108,5 @@ module.exports = {
       jQuery: 'jquery'
     }),
     new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' })
-    // new webpack.optimize.CommonsChunkPlugin({
-    //   name: 'main-vendor',
-    //   chunks: ['main'],
-    //   minChunks: function (module) {
-    //     return module.context && module.context.indexOf("node_modules") !== -1;
-    //   }
-    // }),
-
-    // new webpack.optimize.CommonsChunkPlugin({
-    //   name: 'screen-vendor',
-    //   chunks: ['screen'],
-    //   minChunks: function (module) {
-    //     return module.context && module.context.indexOf("node_modules") !== -1;
-    //   }
-    // }),
-
-    // new webpack.optimize.CommonsChunkPlugin({
-    //   name: 'vendor',
-    //   chunks: ['admin-vendor', 'web-vendor']
-    // }),
-
-    // new webpack.optimize.CommonsChunkPlugin({
-    //   name: 'manifest',
-    //   chunks: ['vendor']
-    // })
   ]
 }

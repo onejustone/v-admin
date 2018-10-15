@@ -8,14 +8,6 @@ const baseWebpackConfig = require('./webpack.base.config')
 const utils = require('./utils')
 const config = require('./config')
 
-// 多入口热更新
-// Object.keys(baseWebpackConfig.entry).forEach((name) => {
-//     baseWebpackConfig.entry[name] = [
-//       `webpack-dev-server/client?http://localhost:${config.dev.port}/`,
-//       'webpack/hot/dev-server'
-//     ].concat(baseWebpackConfig.entry[name])
-// })
-
 module.exports = merge(baseWebpackConfig, {
     devServer: {
         // 热更新配置
@@ -41,14 +33,15 @@ module.exports = merge(baseWebpackConfig, {
             'development': true,
         }),
         new webpack.HotModuleReplacementPlugin(),
-        // HtmlWebpackPlugin 会自动将生成的js代码插入到 index.html
-        new HtmlWebpackPlugin({
-            title: 'liangxiang',
-            // filename 是相对于 webpack 配置项 output.path（打包资源存储路径）
-            filename: './index.html',
-            // template 的路径是相对于webpack编译时的上下文目录，就是项目根目录
-            template: './index.html',
-            inject: true
-        })
-    ]
+        /* 多入口配置，以下注释代码不需要 */
+        // // HtmlWebpackPlugin 会自动将生成的js代码插入到 index.html
+        // new HtmlWebpackPlugin({
+        //     title: 'vue-demo',
+        //     // filename 是相对于 webpack 配置项 output.path（打包资源存储路径）
+        //     filename: './index.html',
+        //     // template 的路径是相对于webpack编译时的上下文目录，就是项目根目录
+        //     template: './index.html',
+        //     inject: true
+        // })
+    ].concat(utils.htmlPlugin()) // 多入口配置
 })
