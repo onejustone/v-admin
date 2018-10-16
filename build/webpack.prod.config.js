@@ -5,7 +5,7 @@ const merge = require('webpack-merge')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const baseWebpackConfig = require('./webpack.base.config')
-const uitls = require('./utils')
+const utils = require('./utils')
 const config = require('./config')
 
 module.exports = merge(baseWebpackConfig, {
@@ -14,7 +14,7 @@ module.exports = merge(baseWebpackConfig, {
     publicPath: config.prod.publicPath
   },
   module: {
-    rules: uitls.styleLoaders()
+    rules: utils.styleLoaders()
   },
   plugins: [
     new webpack.DefinePlugin({

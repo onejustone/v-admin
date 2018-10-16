@@ -8,6 +8,7 @@ const notLoginWhiteList = ['/404', '/login']
 const loginButNoRuleWhiteList = ['/test']
 
 router.beforeEach(async (to, from, next) => {
+  console.log('fuck', to, from)
   // 用户是否登录的凭证
   const isLogin = store.getters['permission/auth/isLogin']
 

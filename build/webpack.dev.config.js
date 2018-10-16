@@ -9,7 +9,15 @@ const utils = require('./utils')
 const config = require('./config')
 
 module.exports = merge(baseWebpackConfig, {
+    module: {
+      rules: utils.styleLoaders()
+    },
     devServer: {
+        historyApiFallback: {
+          rewrites: [
+            { from: /.*/, to: path.posix.join(config.dev.assetsPublicPath, 'index.html') }
+          ]
+        },
         // 热更新配置
         hot: true,
         quiet: true, // 保证 friendly-errors-webpack-plugin 生效
@@ -19,20 +27,17 @@ module.exports = merge(baseWebpackConfig, {
         noInfo: true,
         publicPath: config.dev.publicPath
     },
-    output: {
-        path: config.dev.path,
-        publicPath: config.dev.publicPath
-    },
-    module: {
-        rules: utils.styleLoaders()
-    },
+    // output: {
+    //     path: config.dev.path,
+    //     publicPath: config.dev.publicPath
+    // },
     plugins: [
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': '"development"',
             '__ENV__': true,
             'development': true,
         }),
-        new webpack.HotModuleReplacementPlugin(),
+        new webpack.HotModuleReplacementPlugin()
         /* 多入口配置，以下注释代码不需要 */
         // // HtmlWebpackPlugin 会自动将生成的js代码插入到 index.html
         // new HtmlWebpackPlugin({

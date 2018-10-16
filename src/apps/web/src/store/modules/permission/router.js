@@ -1,7 +1,7 @@
 import localUtil from './util'
 import * as mType from '../../mutationTypes/permission'
 
-import { constRoutes, asyncRoutes } from '../../../router/index.js'
+import { constRoutes, asyncRoutes } from '../../../router/config.js'
 
 const state = {
   routes: constRoutes,

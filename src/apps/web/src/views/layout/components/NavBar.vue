@@ -5,13 +5,13 @@
 </template>
 
 <script>
-  import LxBreadcrumb from '../../../components/breadcrumb'
+  // import LxBreadcrumb from '../../../components/breadcrumb'
 
   export default {
     name: 'NavBar',
 
     components: {
-      LxBreadcrumb
+      // LxBreadcrumb
     }
   }
 </script>

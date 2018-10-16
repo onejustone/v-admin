@@ -17,27 +17,33 @@ function resolve(relPath) {
 }
 
 module.exports = {
+  context: path.resolve(__dirname, '../'),
   entry: utils.entries(),
+  // entry: Object.assign(
+  //   {},
+  //   utils.entries(),
+  //   { vendor: ['rxjs', 'element-ui', 'vue-rx', 'vue-i18n', 'buefy', 'vuex', 'vue', 'vue-router'] }
+  // ),
+    // 提取第三方代码，将第三方代码和业务代码分别打包构建，然后通过 CommonsChunkPlugin 打包到 vendor.js
   // entry: {
   //   main: resolve('../src/main.js'),
   //   // 提取第三方代码，将第三方代码和业务代码分别打包构建，然后通过 CommonsChunkPlugin 打包到 vendor.js
   //   vendor: ['rxjs', 'element-ui', 'vue-rx', 'vue-i18n', 'buefy', 'vuex', 'vue', 'vue-router']
   // },
   output: {
-    filename: 'js/[name].js'
+    filename: '[name].js'
   },
   resolve: {
         extensions: ['.js', '.vue', '.styl', '.stylus', 'pug'],
         modules: [path.resolve(__dirname, '../node_modules')],
         alias: {
             'vue$': 'vue/dist/vue.esm.js',
-            // 用于 stylus 导入 .stylus 文件
             '@': resolve('../src'),
             'routeImport': path.resolve(__dirname, '../src/routeImport'),
             'plugins': path.resolve(__dirname, '../src/plugins'),
-            'web-views': path.resolve(__dirname, '../src/apps/web/src/views'),
-            'mobile-views': path.resolve(__dirname, '../src/apps/mobile/src/views'),
-            'screen-views': path.resolve(__dirname, '../src/apps/screen/src/views'),
+            'webviews': path.resolve(__dirname, '../src/apps/web/src/views'),
+            'mobileviews': path.resolve(__dirname, '../src/apps/mobile/src/views'),
+            'screenviews': path.resolve(__dirname, '../src/apps/screen/src/views'),
             'static': path.resolve(__dirname, '../static'),
             'util': path.resolve(__dirname, '../src/util'),
             'api': path.resolve(__dirname, '../src/api'),
@@ -46,7 +52,8 @@ module.exports = {
             'rhttp': path.resolve(__dirname, '../src/rapi/http'),
             'packages': path.resolve(__dirname, '../packages'),
             'components': path.resolve(__dirname, '../src/components'),
-            'theme': path.resolve(__dirname, '../src/theme')
+            'theme': path.resolve(__dirname, '../src/theme'),
+            'style': path.resolve(__dirname, '../src/style')
         }
     },
   module: {
@@ -106,7 +113,7 @@ module.exports = {
       jquery: 'jquery',
       'window.jQuery': 'jquery',
       jQuery: 'jquery'
-    }),
-    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' })
+    })
+    // new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' })
   ]
 }

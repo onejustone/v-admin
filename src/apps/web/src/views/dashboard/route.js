@@ -1,5 +1,5 @@
 // import { _import } from 'routeImport'
-import dashboard from './index.vue'
+// import dashboard from './index.vue'
 
 const route = {
   path: '/dashboard', redirect: '/dashboard/index',
@@ -7,7 +7,7 @@ const route = {
     {
       name: 'home',
       path: '/dashboard/index',
-      component: dashboard,
+      component: () => import('./index.vue'),
       // component: _import(`apps/web/src/views/dashboard/index.vue'),
       meta: { title: '首页' }
     }

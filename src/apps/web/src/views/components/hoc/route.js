@@ -1,5 +1,7 @@
-import { _import } from 'routeImport'
+// import { _import } from 'routeImport'
 import Hoc from './index.vue'
+
+// const BASICPATH = 'webviews'
 
 const route = {
   path: '/components/hoc',
@@ -10,19 +12,19 @@ const route = {
     {
       name: 'anchoredHeadingWithJsx',
       path: '/components/hoc/AnchoredHeadingWithJsx',
-      component: _import('components/hoc/AnchoredHeadingWithJSX/Example'),
+      component: import('webviews/components/hoc/AnchoredHeadingWithJSX/Example.vue'),
       meta: { title: 'headingJSX' }
     },
     {
       name: 'smartList',
       path: '/components/hoc/smartList',
-      component: _import('components/hoc/VueFuncSmartList/Example'),
+      component: import('webviews/components/hoc/VueFuncSmartList/Example.vue'),
       meta: { title: 'smartList' }
     },
     {
       name: 'vue_mixins_vs_hoc',
       path: '/components/hoc/vue_hoc',
-      component: _import('components/hoc/vueMixinsVsHoc/index'),
+      component: import('webviews/components/hoc/vueMixinsVsHoc/index.vue'),
       meta: { title: 'vueMixinsVsHoc' }
     }
   ]

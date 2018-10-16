@@ -4,17 +4,13 @@
 </template>
 
 <script>
-import LxCurrency from 'lx-currency'
+// import LxCurrency from 'lx-currency'
 
 export default {
-  name: 'app',
-  components: {
-    LxCurrency
-  }
+  name: 'App',
+
+  // components: {
+  //   LxCurrency
+  // }
 }
 </script>
-
-<style lang="stylus">
- @import "style/global.styl"
-</style>
-

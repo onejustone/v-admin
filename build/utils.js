@@ -113,7 +113,7 @@ exports.entries = function () {
 // 多页面输出配置
 // 与上面的多页面入口配置相同，读取../src/apps文件夹下的对应的html后缀文件，然后放入数组中
 exports.htmlPlugin = function () {
-  const entryHtml = glob.sync(PAGE_PATH + '/*/*.html')
+  const entryHtml = glob.sync(PAGE_PATH + '/*/index.html')
   const arr = []
   entryHtml.forEach((filePath) => {
     const filename = filePath.substring(filePath.lastIndexOf('\/') + 1, filePath.lastIndexOf('.'))
