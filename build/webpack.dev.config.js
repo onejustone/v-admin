@@ -13,11 +13,11 @@ module.exports = merge(baseWebpackConfig, {
       rules: utils.styleLoaders()
     },
     devServer: {
-        historyApiFallback: {
-          rewrites: [
-            { from: /.*/, to: path.posix.join(config.dev.assetsPublicPath, 'index.html') }
-          ]
-        },
+        // historyApiFallback: {
+        //   rewrites: [
+        //     { from: /.*/, to: path.posix.join(config.dev.assetsPublicPath, 'index.html') }
+        //   ]
+        // },
         // 热更新配置
         hot: true,
         quiet: true, // 保证 friendly-errors-webpack-plugin 生效
