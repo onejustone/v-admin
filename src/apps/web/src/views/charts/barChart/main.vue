@@ -20,7 +20,6 @@ import ChengduMap from 'static/map/chengdu.json';
 
 export default {
   name: 'charts',
-
   componentName: 'charts',
 
   data() {

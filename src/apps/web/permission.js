@@ -1,4 +1,4 @@
-import router from './src/router'
+import router from './src/router/index.js'
 import store from './src/store'
 
 // 未登录时的白名单

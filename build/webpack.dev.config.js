@@ -27,10 +27,10 @@ module.exports = merge(baseWebpackConfig, {
         noInfo: true,
         publicPath: config.dev.publicPath
     },
-    // output: {
-    //     path: config.dev.path,
-    //     publicPath: config.dev.publicPath
-    // },
+    output: {
+        path: config.dev.path,
+        publicPath: config.dev.publicPath
+    },
     plugins: [
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': '"development"',

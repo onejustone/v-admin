@@ -1,5 +1,6 @@
 <template lang="pug">
 section.dashboard
+  div dashboard
   div.box
     img(src="static/demo.jpg")
 </template>

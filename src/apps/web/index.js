@@ -1,8 +1,9 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-import Vue from 'vue/dist/vue.js'
+import Vue from 'vue'
 import store from './src/store'
 import router from './src/router'
+
 import App from './App'
 
 // import 'normalize.css'
@@ -18,7 +19,7 @@ Vue.use(Buefy)
 import Rx from 'rxjs/Rx'
 import VueRx from 'vue-rx'
 
-import './permission'
+// import './permission'
 import Plugins from 'plugins/install.js'
 import Util from 'util/install.js'
 
@@ -38,10 +39,6 @@ new Vue({
   el: '#app',
   router,
   store,
-  render: (h) => h(App)
-  // render (h) {
-  //   return h(App)
-  // }
-  // template: '<App/>',
-  // components: { App }
+  template: '<App/>',
+  components: { App }
 })

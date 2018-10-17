@@ -1,4 +1,4 @@
-import vue from 'vue/dist/vue.js'
+import vue from 'vue'
 import vuex from 'vuex'
 
 import actions from './actions.js'
