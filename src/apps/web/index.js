@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import store from './src/store'
 import router from './src/router'
+import './src/router/permission'
 
 import App from './App'
 
@@ -19,7 +20,6 @@ Vue.use(Buefy)
 import Rx from 'rxjs/Rx'
 import VueRx from 'vue-rx'
 
-import './permission'
 import Plugins from 'plugins/install.js'
 import Util from 'util/install.js'
 
