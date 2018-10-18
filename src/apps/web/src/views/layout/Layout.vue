@@ -7,6 +7,7 @@
         nav-bar
         tags-view
         keep-alive
+          //- router-view
           app-main
 </template>
 

@@ -37,7 +37,9 @@ module.exports = merge(baseWebpackConfig, {
             '__ENV__': true,
             'development': true,
         }),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
+        new webpack.NoEmitOnErrorsPlugin(),
         /* 多入口配置，以下注释代码不需要 */
         // // HtmlWebpackPlugin 会自动将生成的js代码插入到 index.html
         // new HtmlWebpackPlugin({

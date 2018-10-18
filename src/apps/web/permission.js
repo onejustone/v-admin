@@ -1,4 +1,4 @@
-import router from './src/router/index.js'
+import router from './src/router'
 import store from './src/store'
 
 // 未登录时的白名单
@@ -8,7 +8,6 @@ const notLoginWhiteList = ['/404', '/login']
 const loginButNoRuleWhiteList = ['/test']
 
 router.beforeEach(async (to, from, next) => {
-  console.log('fuck', to, from)
   // 用户是否登录的凭证
   const isLogin = store.getters['permission/auth/isLogin']
 
@@ -50,7 +49,9 @@ router.beforeEach(async (to, from, next) => {
       router.addRoutes(store.state.permission.router.routes)
 
       next({ ...to, replace: true })
+      return
     } catch (error) {
+      console.error('动态挂载路由时报错了', error)
       store.dispatch('permission/auth/logOut', null, { root: true }).then(_ => {
         console.error('验证失败，请重新登录')
         next({ path: '/login' })

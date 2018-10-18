@@ -2,14 +2,11 @@
 import dashboard from 'webviews/dashboard/route.js'
 import components from 'webviews/components/route.js'
 
-// Layout 规划了整个应用的布局
-const Layout = import('webviews/layout/Layout')
-
 // 固定路由
 const constRoutes = [
-  { name: '404', path: '/404', component: import('webviews/error/Error404'), meta: { title: '404' }, hidden: true },
-  { name: 'screen', path: '/screen', component: import('webviews/screen/main'), meta: { title: 'screen' }, hidden: true },
-  { name: 'logOut', path: '/logOut', component: import('webviews/error/Error404'), meta: { title: '404' }, hidden: true },
+  // { name: '404', path: '/404', component: import('webviews/error/Error404'), meta: { title: '404' }, hidden: true },
+  // { name: 'screen', path: '/screen', component: import('webviews/screen/main'), meta: { title: 'screen' }, hidden: true },
+  // { name: 'logOut', path: '/logOut', component: import('webviews/error/Error404'), meta: { title: '404' }, hidden: true },
   { path: '', redirect: '/dashboard' }
 ]
 
@@ -25,7 +22,8 @@ const asyncRoutes = []
 for (const item of asyncRoutesList) {
   asyncRoutes.push({
     ...item,
-    'component': Layout
+    // Layout 规划了整个应用的布局
+    'component': () => import('webviews/layout/Layout')
   })
 }
 

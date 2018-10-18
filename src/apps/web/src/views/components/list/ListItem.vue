@@ -1,11 +1,10 @@
 <template lang="pug">
   span.list-item
     span listSubItemTotal {{ listSubItemTotal }}
-    //- span.text.blod.red {{ content }}
     div.list-sub-item-content
       ListSubItem(
-        v-for="item in listSubItemTotal"
-        :key="index"
+        v-for="(item, subIndex) in listSubItemTotal"
+        :key="index+subIndex"
         :content="content"
       )
 </template>

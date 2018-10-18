@@ -1,7 +1,5 @@
 <template lang="pug">
-  div.fuck-div
-    div chenrong
-    LxCurrency(:value="1000" suffix="$")
+  div#web-site
     router-view
 </template>
 
