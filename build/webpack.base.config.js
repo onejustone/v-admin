@@ -19,11 +19,11 @@ function resolve(relPath) {
 module.exports = {
   context: path.resolve(__dirname, '../'),
   cache: true,
-  // entry: utils.entries(),
-  entry: Object.assign(
-    utils.entries(),
-    { vendor: ['rxjs', 'lodash', 'element-ui', 'vue-rx', 'vue-i18n', 'buefy', 'vuex', 'vue', 'vue-router'] }
-  ),
+  entry: utils.entries(),
+  // entry: Object.assign(
+  //   utils.entries(),
+  //   { vendor: ['rxjs', 'lodash', 'element-ui', 'vue-rx', 'vue-i18n', 'buefy', 'vuex', 'vue', 'vue-router'] }
+  // ),
     // 提取第三方代码，将第三方代码和业务代码分别打包构建，然后通过 CommonsChunkPlugin 打包到 vendor.js
   // entry: {
   //   main: resolve('../src/main.js'),
@@ -114,6 +114,10 @@ module.exports = {
       jquery: 'jquery',
       'window.jQuery': 'jquery',
       jQuery: 'jquery'
+    }),
+    new webpack.DllReferencePlugin({
+      context: __dirname,
+      manifest: require('../static/js/vendor-mainfest.json') // 指向 DllReferencePlugin json
     }),
     // new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' })
   ]
