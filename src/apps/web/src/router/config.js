@@ -1,11 +1,10 @@
-// import { _import } from 'routeImport'
 import dashboard from 'webviews/dashboard/route.js'
 import components from 'webviews/components/route.js'
 
 // 固定路由
 const constRoutes = [
   // { name: '404', path: '/404', component: import('webviews/error/Error404'), meta: { title: '404' }, hidden: true },
-  // { name: 'screen', path: '/screen', component: import('webviews/screen/main'), meta: { title: 'screen' }, hidden: true },
+  { name: 'screen', path: '/web/screen', component: () => import('webviews/screen/main'), meta: { title: 'screen' }, hidden: true },
   // { name: 'logOut', path: '/logOut', component: import('webviews/error/Error404'), meta: { title: '404' }, hidden: true },
   { path: '', redirect: '/web/dashboard' }
 ]

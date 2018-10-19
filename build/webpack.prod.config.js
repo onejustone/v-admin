@@ -5,6 +5,8 @@ const merge = require('webpack-merge')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const baseWebpackConfig = require('./webpack.base.config')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const path = require('path')
 const utils = require('./utils')
 const config = require('./config')
 
@@ -33,6 +35,32 @@ module.exports = merge(baseWebpackConfig, {
       allChunks: true, // extract-text-webpack-plugin 默认不会提取异步模块中的 CSS，需要加上配置
       filename: 'css/style.css?[contenthash:8]'
     }),
+    // split vendor js into its own file
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      minChunks: function (module, count) {
+        // any required modules inside node_modules are extracted to vendor
+        return (
+          module.resource &&
+          /\.js$/.test(module.resource) &&
+          module.resource.indexOf(
+            path.join(__dirname, '../node_modules')
+          ) === 0
+        )
+      }
+    }),
+    // extract webpack runtime and module manifest to its own file in order to
+    // prevent vendor hash from being updated whenever app bundle is updated
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'manifest',
+      chunks: ['vendor']
+    }),
+    // copy custom static assets
+    // new CopyWebpackPlugin([{
+    //   from: path.resolve(__dirname, '../static'),
+    //   to: config.build.assetsSubDirectory,
+    //   ignore: ['.*']
+    // }])
     /* 多入口配置，以下注释代码不需要 */
     // new HtmlWebpackPlugin({
     //   title: 'vue-demo',

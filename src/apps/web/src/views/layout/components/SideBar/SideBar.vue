@@ -12,6 +12,8 @@
       text-color="white"
       active-text-color="#409EFF"
     )
+      a(href="screen.html")
+        el-menu-item(index="screen") 屏保应用
       side-bar-item(:routes="routes")
 </template>
 

@@ -18,12 +18,12 @@ function resolve(relPath) {
 
 module.exports = {
   context: path.resolve(__dirname, '../'),
-  entry: utils.entries(),
-  // entry: Object.assign(
-  //   {},
-  //   utils.entries(),
-  //   { vendor: ['rxjs', 'element-ui', 'vue-rx', 'vue-i18n', 'buefy', 'vuex', 'vue', 'vue-router'] }
-  // ),
+  cache: true,
+  // entry: utils.entries(),
+  entry: Object.assign(
+    utils.entries(),
+    { vendor: ['rxjs', 'lodash', 'element-ui', 'vue-rx', 'vue-i18n', 'buefy', 'vuex', 'vue', 'vue-router'] }
+  ),
     // 提取第三方代码，将第三方代码和业务代码分别打包构建，然后通过 CommonsChunkPlugin 打包到 vendor.js
   // entry: {
   //   main: resolve('../src/main.js'),
@@ -67,8 +67,9 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        use: "babel-loader",
-        include: [resolve('../src')]
+        use: "babel-loader?cacheDirectory=true'",
+        include: [resolve('../src')], // src是项目开发的目录
+        exclude: [path.resolve(__dirname, '../node_modules')] // 不需要编译node_modules下的js
       },
       {
         test: /\.vue$/,
@@ -113,7 +114,7 @@ module.exports = {
       jquery: 'jquery',
       'window.jQuery': 'jquery',
       jQuery: 'jquery'
-    })
+    }),
     // new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' })
   ]
 }

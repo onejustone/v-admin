@@ -1,4 +1,3 @@
-// import { _import } from 'routeImport'
 // import dashboard from './index.vue'
 
 const route = {

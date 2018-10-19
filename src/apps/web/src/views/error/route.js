@@ -1,5 +1,3 @@
-// import { _import } from 'routeImport'
-
 const route = {
   name: '404',
   path: '/error_404',

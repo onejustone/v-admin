@@ -1,4 +1,3 @@
-// import { _import } from 'routeImport'
 import Hoc from './index.vue'
 
 // const BASICPATH = 'webviews'
