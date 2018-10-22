@@ -116,8 +116,8 @@ module.exports = {
       jQuery: 'jquery'
     }),
     new webpack.DllReferencePlugin({
-      context: __dirname,
-      manifest: require('../static/js/vendor-mainfest.json') // 指向 DllReferencePlugin json
+      // context: __dirname,
+      manifest: path.resolve(__dirname, '../static/js/vendor-mainfest.json') // 指向 DllReferencePlugin json
     }),
     // new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' })
   ]

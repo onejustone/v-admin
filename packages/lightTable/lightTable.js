@@ -1,5 +1,5 @@
 // import globalUitls from 'utils'
-import Sortable from 'sortablejs'
+// import Sortable from 'sortablejs'
 import VueDraggable from 'vuedraggable'
 // import { cloneDeep } from 'lodash'
 

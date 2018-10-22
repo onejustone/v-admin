@@ -3,6 +3,11 @@
     router-view
 </template>
 
+<style lang="stylus" scoped>
+#web-site
+  height 100vh
+</style>
+
 <script>
 import LxCurrency from 'lx-currency'
 
