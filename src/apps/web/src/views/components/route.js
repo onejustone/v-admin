@@ -17,6 +17,12 @@ const route = {
       meta: { title: '回到顶部', roles: ['admin'] }
     },
     {
+      name: 'jsxTest',
+      path: '/web/components/jsx',
+      component: () => import('webviews/components/jsx/Test'),
+      meta: { title: 'testJsx', roles: ['admin'] }
+    },
+    {
       name: 'catalog',
       path: '/web/components/catalog',
       component: () => import('webviews/components/catalog/index'),

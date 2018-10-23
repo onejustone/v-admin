@@ -40,6 +40,7 @@ module.exports = {
             'vue$': 'vue/dist/vue.esm.js',
             '@': resolve('../src'),
             'routeImport': path.resolve(__dirname, '../src/routeImport'),
+            'library': path.resolve(__dirname, '../library'),
             'plugins': path.resolve(__dirname, '../src/plugins'),
             'webviews': path.resolve(__dirname, '../src/apps/web/src/views'),
             'mobileviews': path.resolve(__dirname, '../src/apps/mobile/src/views'),

@@ -1,13 +1,20 @@
 <template lang="pug">
 section.dashboard
   div dashboard
+  input(v-focus:text.foo.bar="text")
   div.box
-    img(src="static/demo.jpg")
+    //- img(src="static/demo.jpg")
 </template>
 
 <script>
 export default {
-  name: 'Dashboard'
+  name: 'Dashboard',
+
+  data () {
+    return {
+      text: 'i am jack'
+    }
+  }
 }
 </script>
 

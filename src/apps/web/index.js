@@ -4,6 +4,7 @@ import Vue from 'vue'
 import store from './src/store'
 import router from './src/router'
 import './src/router/permission'
+import Directives from '../../directives'
 
 import App from './App'
 
@@ -18,7 +19,7 @@ import Buefy from 'buefy'
 Vue.use(Buefy)
 
 import Rx from 'rxjs/Rx'
-import VueRx from 'vue-rx'
+import VueRx from 'library/vue-rx'
 
 import Plugins from 'plugins/install.js'
 import Util from 'util/install.js'
@@ -28,6 +29,7 @@ import VueI18n from 'vue-i18n'
 Vue.config.productionTip = false
 
 // Vue.component('LxDialog', LxDialog)
+Vue.use(Directives)
 Vue.use(ElementUI)
 Vue.use(VueRx, Rx)
 Vue.use(VueI18n)
