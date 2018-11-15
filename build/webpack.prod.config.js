@@ -59,11 +59,11 @@ module.exports = merge(baseWebpackConfig, {
       chunks: ['vendor']
     }),
     // copy custom static assets
-    // new CopyWebpackPlugin([{
-    //   from: path.resolve(__dirname, '../static'),
-    //   to: config.build.assetsSubDirectory,
-    //   ignore: ['.*']
-    // }])
+    new CopyWebpackPlugin([{
+      from: path.resolve(__dirname, '../static'),
+      to: config.prod.assetsSubDirectory,
+      ignore: ['.*']
+    }])
     /* 多入口配置，以下注释代码不需要 */
     // new HtmlWebpackPlugin({
     //   title: 'vue-demo',

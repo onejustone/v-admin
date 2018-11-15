@@ -68,7 +68,7 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        use: "babel-loader?cacheDirectory=true'",
+        use: "babel-loader?cacheDirectory=true",
         include: [resolve('../src')], // src是项目开发的目录
         exclude: [path.resolve(__dirname, '../node_modules')] // 不需要编译node_modules下的js
       },
@@ -87,7 +87,7 @@ module.exports = {
             options: {
               limit: 10000,
               // 将图片都放入images文件夹下，[hash:7]防缓存
-              name: 'images/[name].[hash:7].[ext]'
+              name: 'static/images/[name].[hash:7].[ext]'
             }
           }
         ]
@@ -100,10 +100,18 @@ module.exports = {
             options: {
               limit: 10000,
               // 将字体放入fonts文件夹下
-              name: 'fonts/[name].[hash:7].[ext]'
+              name: 'static/fonts/[name].[hash:7].[ext]'
             }
           }
         ]
+      },
+      {
+        test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          name: 'static/media/[name].[hash:7].[ext]'
+        }
       }
     ]
   },

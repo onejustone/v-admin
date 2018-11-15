@@ -17,6 +17,7 @@ module.exports = {
   },
   prod: {
     path: path.resolve(__dirname, '../dist'),
-    publicPath: '/'
+    publicPath: './',
+    assetsSubDirectory: 'static'
   }
 }

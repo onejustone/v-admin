@@ -1,5 +1,6 @@
 import dashboard from 'webviews/dashboard/route.js'
 import components from 'webviews/components/route.js'
+import tools from 'webviews/tools/route.js'
 
 // 固定路由
 const constRoutes = [
@@ -13,7 +14,8 @@ const constRoutes = [
 // 甚至可以支持服务器端配置
 const asyncRoutesList = [
   dashboard,
-  components
+  components,
+  tools
 ]
 
 const asyncRoutes = []

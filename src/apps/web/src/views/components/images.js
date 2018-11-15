@@ -10,7 +10,7 @@ const images = [
     "comment": "",
     "created_at": "2018-04-04 19:13:07",
     "allow_delete": false,
-    "view_link": "/static/demo.jpg",
+    "view_link": "/static/images/demo.jpg",
     "download_link": "",
     "preview_link": "",
     "source": null
@@ -24,7 +24,7 @@ const images = [
     "comment": "",
     "created_at": "2018-04-04 19:13:07",
     "allow_delete": false,
-    "view_link": "/static/demo1.jpg",
+    "view_link": "/static/images/demo1.jpg",
     "download_link": "",
     "preview_link": "",
     "source": null
@@ -38,7 +38,7 @@ const images = [
     "comment": "",
     "created_at": "2018-04-04 19:13:07",
     "allow_delete": false,
-    "view_link": "/static/demo2.jpg",
+    "view_link": "/static/images/demo2.jpg",
     "download_link": "",
     "preview_link": "",
     "source": null
@@ -52,7 +52,7 @@ const images = [
     "comment": "",
     "created_at": "2018-04-04 19:13:07",
     "allow_delete": false,
-    "view_link": "/static/demo3.jpg",
+    "view_link": "/static/images/demo3.jpg",
     "download_link": "",
     "preview_link": "",
     "source": null

@@ -1,5 +1,7 @@
 import { get$ } from 'rhttp'
 import { Observable } from 'rxjs'
+import Rythm from 'rythm.js'
+
 // import { concatMap } from 'rxjs/operators'
 
 // hitokoto 官网 api：https://hitokoto.cn/api
@@ -34,24 +36,29 @@ export default {
 
   methods: {
     handleClick () {
-      console.log('handleClick')
+      this.$router.push('/web/dashboard')
+    },
+    initRythm () {
+      const rythm = new Rythm()
+      rythm.setMusic('static/media/guoke.mp3')
+      rythm.start()
     }
   },
 
-  render (h) {
-    const vStreamClickDirs = [
-      { name: 'stream', arg: 'click', expression: this.pageClick$ }
-    ]
+  mounted () {
+  },
 
-    // const domDir = `v-stream={{ arg: 'click', value: this.pageClick, expression: this.pageClick, modifiers: { native: true }}}`
+  render (h) {
     return (
-      <section class='hitokoto__full-page' {...{ vStreamClickDirs }} >
-        <section class='hitokoto__wrap' {...{ vStreamClickDirs }}>
-          <div class='hitokoto__content' {...{ vStreamClickDirs }}>
-            <div calss='break_left'></div>
-            <div class='word'>{this.hitokoto$ && this.hitokoto$.hitokoto}</div>
-            <div calss='break_right'></div>
-            <div class='author'>{this.hitokoto$ && this.hitokoto$.from}</div>
+      <section class='hitokoto__full-page' onClick={this.handleClick}>
+        <section class='hitokoto__wrap'>
+          <div class='hitokoto__content'>
+            <div class='word rythm-bass'>
+              <span class='break_left'>「</span>
+              {this.hitokoto$ && this.hitokoto$.hitokoto}
+              <span class='break_right'>」</span>
+            </div>
+            <div class='author'>「{this.hitokoto$ && this.hitokoto$.from}」</div>
           </div>
         </section>
       </section>

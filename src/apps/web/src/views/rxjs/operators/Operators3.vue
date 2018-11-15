@@ -52,10 +52,10 @@ div
     computed: {
       images () {
         return [
-          '/static/demo.jpg',
-          '/static/demo1.jpg',
-          '/static/demo2.jpg',
-          '/static/demo3.jpg',
+          '/static/images/demo.jpg',
+          '/static/images/demo1.jpg',
+          '/static/images/demo2.jpg',
+          '/static/images/demo3.jpg',
         ]
       },
 
