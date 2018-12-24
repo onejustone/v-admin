@@ -5,10 +5,35 @@
   <title></title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+  <script>
+    function adaptHTMLRootSizeToRem (designWidth, rem2px) {
+      var d = window.document.createElement('div');
+      d.style.width = '1rem';
+      d.style.display = 'none';
+      var head = window.document.getElementsByTagName('head')[0];
+      head.appendChild(d);
+      var defaultFontSize = parseFloat(window.getComputedStyle(d, null).getPropertyValue('width'));
+      var portraitHtmlFontSize = (window.innerWidth / (designWidth / rem2px) / defaultFontSize) * 100;
+      var landscapeHtmlFontSize = (window.innerHeight / (designWidth / rem2px) / defaultFontSize) * 100;
+      var portrait = "@media screen and (min-width: "+window.innerWidth+"px) {html{font-size:"+ portraitHtmlFontSize + "%;}}";
+      var landscape = "@media screen and (min-width: "+window.innerHeight+"px) {html{font-size:"+ landscapeHtmlFontSize + "%;}}"
+      var st = document.createElement('style');
+      st.innerHTML = portrait + landscape;
+      d.remove();
+      head.appendChild(st);
+      return defaultFontSize;
+    }
+
+    adaptHTMLRootSizeToRem(750, 100);
+  </script>
   <style type="text/css">
     html,
     body {
       height: 100%;
+    }
+
+    body {
+      font-size: 0.01rem;
     }
 
     #app {
@@ -19,6 +44,7 @@
 </head>
 
 <body>
+  <div id="root">root</div>
   <div id="app"></div>
   <!-- built files will be auto injected -->
 </body>

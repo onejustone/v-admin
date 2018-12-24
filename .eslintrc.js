@@ -32,6 +32,8 @@ module.exports = {
     // don't require .vue extension when importing
     // allow optionalDependencies
     // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
+    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
+    'semi': ['warn', 'always'],
+    'one-var': 'off', // ['error', 'never']
   }
 }

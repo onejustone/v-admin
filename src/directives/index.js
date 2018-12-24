@@ -6,9 +6,7 @@ const directives = [
 ]
 
 export default function Register (Vue) {
-  console.log(Vue)
   directives.map(directive => {
-    console.log(directive)
     Vue.directive(directive.name, directive.command)
   })
 }

@@ -46,22 +46,27 @@ export default {
   },
 
   mounted () {
+    const layoutViewport = document.documentElement.clientWidth
+    const visualViewport = window.innerWidth
+
+    const message = `layoutViewport is: ${layoutViewport}, visualViewport is ${visualViewport}`
+    this.$message({ message, duration: 10000 })
   },
 
   render (h) {
-    return (
-      <section class='hitokoto__full-page' onClick={this.handleClick}>
-        <section class='hitokoto__wrap'>
-          <div class='hitokoto__content'>
-            <div class='word rythm-bass'>
-              <span class='break_left'>「</span>
-              {this.hitokoto$ && this.hitokoto$.hitokoto}
-              <span class='break_right'>」</span>
-            </div>
-            <div class='author'>「{this.hitokoto$ && this.hitokoto$.from}」</div>
-          </div>
-        </section>
-      </section>
-    )
+    // return (
+    //   <section class='hitokoto__full-page' onClick={this.handleClick}>
+    //     <section class='hitokoto__wrap'>
+    //       <div class='hitokoto__content'>
+    //         <div class='word rythm-bass'>
+    //           <span class='break_left'>「</span>
+    //           {this.hitokoto$ && this.hitokoto$.hitokoto}
+    //           <span class='break_right'>」</span>
+    //         </div>
+    //         <div class='author'>「{this.hitokoto$ && this.hitokoto$.from}」</div>
+    //       </div>
+    //     </section>
+    //   </section>
+    // )
   }
 }

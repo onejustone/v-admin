@@ -11,8 +11,6 @@ export default {
 
   methods: {
     handleClick () {
-      console.log('this.test')
-      console.log(this.test)
     }
   },
 
