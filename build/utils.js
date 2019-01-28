@@ -1,5 +1,8 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+// const nib = require('nib')
+const styleVariables = require('../src/style/variables')
+
 const isProd = process.env.NODE_ENV === 'production'
 const path = require('path')
 
@@ -10,19 +13,45 @@ const cssLang = [
     loader: 'css-loader'
   },
   {
-    name: 'stylus',
-    reg: /\.stylus$/,
-    loader: 'stylus-loader'
-  },
-  {
     name: 'less',
     reg: /\.less$/,
-    loader: 'less-loader'
+    // loader: 'less-loader',
+    loader: {
+      loader: 'less-loader',
+      options: {
+        data: Object.keys(styleVariables)
+          .map(key => `\$${key}: ${styleVariables[key]};`)
+          .join('\n'),
+          sourceMap: true,
+          sourceMapContents: true
+      }
+    }
   },
   {
     name: 'stylus',
-    reg: /\.styl$/,
-    loader: 'stylus-loader'
+    reg: /\.styl$|\.stylus$/,
+    loader: {
+      loader: 'stylus-loader',
+      // // options: {
+      // //   use: [require('nib')()],
+      // //   import: ['~nib/lib/nib/index.styl']
+      // //   // import: ['/src/style/variables.styl']
+      // }
+    }
+  },
+  {
+    name: 'sass',
+    reg: /\.scss$|\.sass$/,
+    loader: {
+      loader: 'sass-loader',
+      options: {
+        data: Object.keys(styleVariables)
+          .map(key => `\$${key}: ${styleVariables[key]};`)
+          .join('\n'),
+          sourceMap: true,
+          sourceMapContents: true
+      }
+    }
   }
 ]
 

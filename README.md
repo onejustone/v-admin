@@ -80,3 +80,53 @@ src
 └── util // 全局工具函数
 staic // 静态资源存放目录
 ```
+
+## JS 和 Sass/Less/Stylus 变量共享
+
+```js
+//src/styles/variables.js
+module.exports = {
+  // 主颜色
+  'primary-color': '#0C4CFF',
+  // 出错颜色
+  'error-color': '#F15533',
+  // 成功颜色
+  'success-color': '#35B34A',
+};
+```
+
+```js
+// webpack.config.js
+const styleVariables = require('src/styles/variables');
+// ...
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          'css-loader?sourceMap&minimize',
+          {
+            loader: 'sass-loader',
+            options: {
+              data: Object.keys(styleVariables)
+                .map(key => `\$${key}: ${styleVariables[key]};`)
+                .join('\n'),
+              sourceMap: true,
+              sourceMapContents: true
+            }
+          }
+        ]
+      }
+//...
+```
+
+在 scss 文件中，可以直接引用变量:
+
+```scss
+// page.scss
+.button {
+  background: $primary-color;
+}
+```
+
+[给2019前端的5个建议](https://mp.weixin.qq.com/s/RE0gVIuRKosH_HhEVS62GQ)
+[vue-style-variables-loader](https://github.com/lavas-project/vue-style-variables-loader)

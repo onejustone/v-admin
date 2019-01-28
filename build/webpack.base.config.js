@@ -47,7 +47,7 @@ module.exports = {
             'screenviews': path.resolve(__dirname, '../src/apps/screen/src/views'),
             'static': path.resolve(__dirname, '../static'),
             'util': path.resolve(__dirname, '../src/util'),
-            'api': path.resolve(__dirname, '../src/api'),
+            'api': path.resolve(__dirname, '../src/api/http'),
             'http': path.resolve(__dirname, '../src/api/http'),
             'rapi': path.resolve(__dirname, '../src/rapi'),
             'rhttp': path.resolve(__dirname, '../src/rapi/http'),
