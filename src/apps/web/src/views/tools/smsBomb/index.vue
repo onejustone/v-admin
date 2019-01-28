@@ -19,8 +19,8 @@
 import { Observable } from 'rxjs'
 import { get$ } from 'rhttp'
 
-// const BOMBURL = `https://boom.nange.cn/index.php?hm=`
-const BOMBURL = `https://www.baidu.com/s?`
+const BOMBURL = `https://boom.nange.cn/index.php?hm=`
+// const BOMBURL = `https://www.baidu.com/s?`
 
 export default {
   name: 'SmsBomb',

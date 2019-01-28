@@ -15,7 +15,7 @@ const constRoutes = [
 const asyncRoutesList = [
   dashboard,
   components,
-  tools
+  // tools
 ]
 
 const asyncRoutes = []
