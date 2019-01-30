@@ -38,23 +38,23 @@ module.exports = {
         modules: [path.resolve(__dirname, '../node_modules')],
         alias: {
             'vue$': 'vue/dist/vue.esm.js',
-            '@': resolve('../src'),
-            'routeImport': path.resolve(__dirname, '../src/routeImport'),
-            'library': path.resolve(__dirname, '../library'),
-            'plugins': path.resolve(__dirname, '../src/plugins'),
-            'webviews': path.resolve(__dirname, '../src/apps/web/src/views'),
-            'mobileviews': path.resolve(__dirname, '../src/apps/mobile/src/views'),
-            'screenviews': path.resolve(__dirname, '../src/apps/screen/src/views'),
+            '@': path.resolve(__dirname, '../asserts'),
             'static': path.resolve(__dirname, '../static'),
-            'util': path.resolve(__dirname, '../src/util'),
-            'api': path.resolve(__dirname, '../src/api/http'),
-            'http': path.resolve(__dirname, '../src/api/http'),
-            'rapi': path.resolve(__dirname, '../src/rapi'),
-            'rhttp': path.resolve(__dirname, '../src/rapi/http'),
+            'library': path.resolve(__dirname, '../library'),
             'packages': path.resolve(__dirname, '../packages'),
-            'components': path.resolve(__dirname, '../src/components'),
-            'theme': path.resolve(__dirname, '../src/theme'),
-            'style': path.resolve(__dirname, '../src/style')
+            'routeImport': path.resolve(__dirname, '../asserts/routeImport'),
+            'plugins': path.resolve(__dirname, '../asserts/plugins'),
+            'webviews': path.resolve(__dirname, '../asserts/apps/web/src/views'),
+            'mobileviews': path.resolve(__dirname, '../asserts/apps/mobile/src/views'),
+            'screenviews': path.resolve(__dirname, '../asserts/apps/screen/src/views'),
+            'util': path.resolve(__dirname, '../asserts/util'),
+            'api': path.resolve(__dirname, '../asserts/api/http'),
+            'http': path.resolve(__dirname, '../asserts/api/http'),
+            'rapi': path.resolve(__dirname, '../asserts/rapi'),
+            'rhttp': path.resolve(__dirname, '../asserts/rapi/http'),
+            'components': path.resolve(__dirname, '../asserts/components'),
+            'theme': path.resolve(__dirname, '../asserts/theme'),
+            'style': path.resolve(__dirname, '../asserts/style')
         }
     },
   module: {
@@ -69,7 +69,7 @@ module.exports = {
       {
         test: /\.js$/,
         use: "babel-loader?cacheDirectory=true",
-        include: [resolve('../src')], // src是项目开发的目录
+        include: [resolve('../asserts')], // asserts是项目开发的目录
         exclude: [path.resolve(__dirname, '../node_modules')] // 不需要编译node_modules下的js
       },
       {

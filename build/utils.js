@@ -1,7 +1,7 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 // const nib = require('nib')
-const styleVariables = require('../src/style/variables')
+const styleVariables = require('../asserts/style/variables')
 
 const isProd = process.env.NODE_ENV === 'production'
 const path = require('path')
@@ -121,13 +121,13 @@ const glob = require('glob')
 
 // 页面模板
 // 取得相应的页面路径，因为之前的配置，所以是src文件夹下的pages文件夹
-const PAGE_PATH = path.resolve(__dirname, '../src/apps')
+const PAGE_PATH = path.resolve(__dirname, '../asserts/apps')
 
 // 用于做相应的merge处理
 const merge = require('webpack-merge')
 
 // 多入口配置
-// 通过glob模块读取../src/apps文件夹下的所有对应文件夹下的aap.js文件，如果该文件存在
+// 通过glob模块读取../asserts/apps文件夹下的所有对应文件夹下的aap.js文件，如果该文件存在
 // 那么就作为入口处理
 exports.entries = function () {
   const entryFiles = glob.sync(PAGE_PATH + '/*/*.js')
@@ -140,7 +140,7 @@ exports.entries = function () {
 }
 
 // 多页面输出配置
-// 与上面的多页面入口配置相同，读取../src/apps文件夹下的对应的html后缀文件，然后放入数组中
+// 与上面的多页面入口配置相同，读取../asserts/apps文件夹下的对应的html后缀文件，然后放入数组中
 exports.htmlPlugin = function () {
   const entryHtml = glob.sync(PAGE_PATH + '/*/*.html')
   const arr = []
