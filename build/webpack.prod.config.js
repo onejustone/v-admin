@@ -99,7 +99,7 @@ module.exports = merge(baseWebpackConfig, {
     // https://docs.sentry.io/cli/installation/#installation-via-npm
     //
     new SentryPlugin({
-      release: '1.0.0',
+      release: '1.0.1',
       include: path.resolve(__dirname, '../dist'),
       ignore: ['vendor.dll.js', 'static/', 'node_modules'],
     })
