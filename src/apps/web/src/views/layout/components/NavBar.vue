@@ -1,7 +1,7 @@
 <template lang="pug">
   section(class="nav-bar")
     div.toggle-menu
-    //- lx-breadcrumb
+    div {{ levelList }}
 </template>
 
 <script>
@@ -12,6 +12,34 @@
 
     components: {
       // LxBreadcrumb
+    },
+
+    data () {
+      return {
+        levelList: []
+      }
+    },
+
+    created () {
+      this.getBreadcrumb()
+    },
+
+    watch: {
+      $router: 'getBreadcrumb'
+    },
+
+    methods: {
+      getBreadcrumb () {
+        const currentRoute = this.$router.currentRoute
+        console.log(currentRoute, 'currentRoute')
+        const currentRouteInfo = currentRoute.matched.find(item => item.name === currentRoute.name)
+
+        if (!currentRouteInfo) {
+          this.levelList = []
+        }
+
+        console.log(currentRouteInfo);
+      }
     }
   }
 </script>

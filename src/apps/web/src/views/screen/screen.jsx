@@ -16,8 +16,6 @@ export default {
   subscriptions () {
     const catType = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
 
-    const pageClick = this.pageClick$.map(value => console.log(value))
-
     const hitokoto$ = Observable.merge(Observable.of(0), Observable.interval(60 * 1000))
       .concatMap(seq => get$(`https://sslapi.hitokoto.cn?c=${catType[CURRENTINDEX]}`))
       .do(_ => {
@@ -26,10 +24,8 @@ export default {
       })
       .map(result => result)
 
-    this.pageClick$.map(vlaue => console.log('this.pageClick$'))
-
     return {
-      pageClick,
+      pageClick$: this.pageClick$,
       hitokoto$
     }
   },
