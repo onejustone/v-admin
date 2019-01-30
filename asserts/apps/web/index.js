@@ -22,7 +22,7 @@ import Buefy from 'buefy';
 Vue.use(Buefy);
 
 import Rx from 'rxjs/Rx';
-import VueRx from 'library/vue-rx';
+import VueRx from 'vue-rx';
 
 import Plugins from 'plugins/install.js';
 import Util from 'util/install.js';
