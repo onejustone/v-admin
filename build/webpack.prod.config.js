@@ -6,6 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const baseWebpackConfig = require('./webpack.base.config')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const SentryPlugin = require('@sentry/webpack-plugin')
 const path = require('path')
 const utils = require('./utils')
 const config = require('./config')
@@ -15,8 +16,11 @@ module.exports = merge(baseWebpackConfig, {
     path: config.prod.path,
     publicPath: config.prod.publicPath,
     filename: '[name].[chunkhash].js',
-    chunkFilename: '[id].[chunkhash].js'
+    chunkFilename: '[id].[chunkhash].js',
+    sourceMapFilename: '[name].[chunkhash].js.map'
   },
+  // 为了开启 sentry 线上代码调试
+  devtool: '#source-map',
   module: {
     rules: utils.styleLoaders()
   },
@@ -28,10 +32,11 @@ module.exports = merge(baseWebpackConfig, {
     new webpack.optimize.UglifyJsPlugin({
       // UglifyJsPlugin 它既可以压缩js代码也可以压缩css代码。
       // 开启代码压缩
-      // compress: {
+      compress: {
         // 去除代码注释
-        // warnings: false
-      // }
+        warnings: false
+      },
+      sourceMap: true
     }),
     new ExtractTextPlugin({
       allChunks: true, // extract-text-webpack-plugin 默认不会提取异步模块中的 CSS，需要加上配置
@@ -63,7 +68,7 @@ module.exports = merge(baseWebpackConfig, {
       from: path.resolve(__dirname, '../static'),
       to: config.prod.assetsSubDirectory,
       ignore: ['.*']
-    }])
+    }]),
     /* 多入口配置，以下注释代码不需要 */
     // new HtmlWebpackPlugin({
     //   title: 'vue-demo',
@@ -89,5 +94,14 @@ module.exports = merge(baseWebpackConfig, {
     //   // necessary to consistently work with multiple chunks via CommonsChunkPlugin
     //   // chunksSortMode: 'dependency'
     // })
+    // 上传 SourceMaps 到 Sentry 对错误进行定位:
+    // https://docs.sentry.io/clients/javascript/sourcemaps/
+    // https://docs.sentry.io/cli/installation/#installation-via-npm
+    //
+    new SentryPlugin({
+      release: '1.0.0',
+      include: path.resolve(__dirname, '../dist'),
+      ignore: ['vendor.dll.js', 'static/', 'node_modules'],
+    })
   ].concat(utils.htmlPlugin()) // 多入口配置
 })

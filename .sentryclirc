@@ -1,0 +1,6 @@
+[defaults]
+org = ojo
+project = vue-demo
+
+[auth]
+token = 3a9367e049a24ab2b7d902eba51118e63725c3a4578442b48308fe5f1b4fa507
