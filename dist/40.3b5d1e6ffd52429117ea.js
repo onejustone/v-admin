@@ -1,0 +1,2 @@
+webpackJsonp([40],{1149:function(e,t,n){"use strict";t.a={name:"Test",props:[],data:function(){return{test:"i am jack"}},methods:{handleClick:function(){}},render:function(e){return e("input",{directives:[{name:"focus",arg:"text",value:this.test,expression:this.handleClick}]},[" "])}}},904:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var u=n(1149),s=n(22),i=s(u.a,null,!1,null,null,null);t.default=i.exports}});
+//# sourceMappingURL=40.3b5d1e6ffd52429117ea.js.map

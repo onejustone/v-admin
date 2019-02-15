@@ -7,16 +7,22 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const baseWebpackConfig = require('./webpack.base.config')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const SentryPlugin = require('@sentry/webpack-plugin')
+const moment = require('moment');
 const path = require('path')
 const utils = require('./utils')
 const config = require('./config')
+
+function releaseVerison () {
+  const releseTimeStamp = moment().format('YYYY-MM-DD HH:mm:ss')
+  return releseTimeStamp
+}
 
 module.exports = merge(baseWebpackConfig, {
   output: {
     path: config.prod.path,
     publicPath: config.prod.publicPath,
     filename: '[name].[chunkhash].js',
-    chunkFilename: '[id].[chunkhash].js',
+    chunkFilename: '[name].[chunkhash].js',
     sourceMapFilename: '[name].[chunkhash].js.map'
   },
   // 为了开启 sentry 线上代码调试
@@ -61,6 +67,7 @@ module.exports = merge(baseWebpackConfig, {
     // prevent vendor hash from being updated whenever app bundle is updated
     new webpack.optimize.CommonsChunkPlugin({
       name: 'manifest',
+      filename: '[name].[chunkhash]',
       chunks: ['vendor']
     }),
     // copy custom static assets
@@ -98,10 +105,10 @@ module.exports = merge(baseWebpackConfig, {
     // https://docs.sentry.io/clients/javascript/sourcemaps/
     // https://docs.sentry.io/cli/installation/#installation-via-npm
     //
-    new SentryPlugin({
-      release: '1.0.1',
-      include: path.resolve(__dirname, '../dist'),
-      ignore: ['vendor.dll.js', 'static/', 'node_modules'],
-    })
+    // new SentryPlugin({
+    //   release: releaseVerison(),
+    //   include: path.resolve(__dirname, '../dist'),
+    //   ignore: ['vendor.dll.js', 'static/', 'node_modules'],
+    // })
   ].concat(utils.htmlPlugin()) // 多入口配置
 })
