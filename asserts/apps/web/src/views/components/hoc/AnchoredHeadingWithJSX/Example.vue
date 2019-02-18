@@ -7,7 +7,7 @@ section.section.anchored-heading-with-jsx
 </template>
 
 <script>
-import AnchoredHeadingWithJsx from './AnchoredHeadingWithJSX.vue'
+import AnchoredHeadingWithJsx from './AnchoredHeadingWithJSX.vue';
 
 export default {
   name: 'Example',

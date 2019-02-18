@@ -39,7 +39,6 @@
     },
 
     mounted () {
-      console.log(this.routes);
     },
 
     methods: {

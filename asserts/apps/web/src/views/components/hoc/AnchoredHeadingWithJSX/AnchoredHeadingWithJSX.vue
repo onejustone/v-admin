@@ -1,2 +1,2 @@
-<script src='./AnchoredHeadingWithJSX.jsx'> </script>
+<script src='./AnchoredHeadingWithJSX.jsx'></script>
 

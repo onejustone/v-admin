@@ -1,5 +1,6 @@
 <template lang="pug">
   div.app-main
+    div {{ appMain }}
     transition(:name="transitionName")
       router-view
 </template>
@@ -10,7 +11,8 @@
 
     data () {
       return {
-        transitionName: 'el-zoom-in-top'
+        transitionName: 'el-zoom-in-top',
+        appMain: 'appMain'
       }
     },
 

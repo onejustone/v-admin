@@ -31,7 +31,7 @@ module.exports = {
   //   vendor: ['rxjs', 'element-ui', 'vue-rx', 'vue-i18n', 'buefy', 'vuex', 'vue', 'vue-router']
   // },
   output: {
-    filename: '[name].[chunckhash].js'
+    filename: '[name].js'
   },
   resolve: {
         extensions: ['.js', '.vue', '.styl', '.stylus', 'pug'],

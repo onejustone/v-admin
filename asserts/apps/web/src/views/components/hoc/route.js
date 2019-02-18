@@ -3,6 +3,7 @@ import Hoc from './index.vue'
 // const BASICPATH = 'webviews'
 
 const route = {
+  name: 'hoc',
   path: '/web/components/hoc',
   redirect: '/web/components/hoc/anchoredHeadingWithJsx',
   meta: { title: 'hoc' },

@@ -15,12 +15,6 @@ export default {
     return {
       text: 'i am jack'
     }
-  },
-
-  mounted () {
-    window.onload = function () {
-     console.log(window['aaa'].aaa); // 此处window['aaa']为undifine，所以这里一定会报错
-    };
   }
 }
 </script>

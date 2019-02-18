@@ -29,6 +29,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         noInfo: true,
         publicPath: config.dev.publicPath
     },
+    devtool: '#source-map',
     output: {
         path: config.dev.path,
         publicPath: config.dev.publicPath

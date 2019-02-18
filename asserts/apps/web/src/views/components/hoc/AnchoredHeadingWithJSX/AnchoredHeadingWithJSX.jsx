@@ -1,8 +1,8 @@
 const getChildrenTextContent = function (children) {
   return children.map(node => {
-    return node.children ? getChildrenTextContent(node.children) : node.text
-  }).join('').replace(/\s+/gi, '')
-}
+    return node.children ? getChildrenTextContent(node.children) : node.text;
+  }).join('').replace(/\s+/gi, '');
+};
 
 export default {
   name: 'AnchoredHeading',
@@ -13,10 +13,10 @@ export default {
     const headId = getChildrenTextContent(context.children)
       .toLowerCase()
       .replace(/W+/g, '-')
-      .replace(/(^\-|\-$)/g, '')
+      .replace(/(^\-|\-$)/g, '');
 
-    const HType = `h${context.props.level}`
+    const HType = `h${context.props.level}`;
 
-    return (<HType id={headId}>{context.children}</HType>)
+    return (<HType id={headId}>{context.children}</HType>);
   }
 }
