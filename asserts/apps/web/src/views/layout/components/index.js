@@ -1,9 +1,7 @@
-import SideBar from './SideBar/SideBar.vue'
+import SideBar from './SideBar/SideBar.vue';
 
-import NavBar from './NavBar.vue'
+import NavBar from './NavBar';
 
-import AppMain from './AppMain.vue'
+import AppMain from './AppMain.vue';
 
-import TagsView from './TagsView'
-
-export { SideBar, NavBar, AppMain, TagsView }
+export { SideBar, NavBar, AppMain };

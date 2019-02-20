@@ -15,6 +15,14 @@ const constRoutes = [
     component: () => import('webviews/screen/main'),
     meta: { title: 'screen' }
   }
+  // {
+  //   name: 'home',
+  //   meta: {
+  //     title: '首页'
+  //   },
+  //   path: '/web/dashboard',
+  //   component: () => import('webviews/dashboard/index.vue')
+  // }
 ]
 
 // 需要异步加载的路由列表，在系统初始时会通过 permisson 对该列表中的路由进行权限过滤
@@ -36,6 +44,8 @@ for (const item of asyncRoutesList) {
     'component': () => import('webviews/layout/Layout.vue')
   })
 }
+
+console.log(asyncRoutes, 'asyncRoutes');
 
 export {
   constRoutes,
