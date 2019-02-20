@@ -27,6 +27,6 @@
 
 <style lang="scss" scoped>
 .app-content {
-  padding-left: 0.5rem;
+  padding-left: 0.05rem;
 }
 </style>
