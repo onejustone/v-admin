@@ -13,6 +13,7 @@
 <style lang="stylus" scoped>
 .map-chart
   background pink
+  overflow hidden
 </style>
 
 <script>

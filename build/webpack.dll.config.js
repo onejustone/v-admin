@@ -7,7 +7,7 @@ module.exports = {
     vendor: [
       'vue',
       'rxjs', 'lodash', 'element-ui',
-      'vue-rx', 'vue-i18n', 'buefy',
+      'vue-rx', 'vue-i18n',
       'vuex', 'vue-router'
     ] // 需要打包起来的依赖
   },
@@ -18,7 +18,7 @@ module.exports = {
   },
   resolve: {
     modules: [path.resolve(__dirname, '../node_modules')],
-    extensions: ['.js', '.vue', '.css', '.scss', '.styl', '.style', '.json'],
+    // extensions: ['.js', '.vue', '.css', '.scss', '.styl', '.style', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
     }
@@ -32,10 +32,10 @@ module.exports = {
     // 这个是用来稳定hash值，防止出现webpack的hash出现莫名的变化
     new webpack.HashedModuleIdsPlugin(),
     new webpack.NamedChunksPlugin(),
-    new webpack.optimize.UglifyJsPlugin({ // uglifjs压缩
-      compress: {
-        warnings: false
-      }
-    })
+    // new webpack.optimize.UglifyJsPlugin({ // uglifjs压缩
+      // compress: {
+      //   warnings: false
+      // }
+    // })
   ]
 }

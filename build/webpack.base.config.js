@@ -34,7 +34,9 @@ module.exports = {
     filename: '[name].js'
   },
   resolve: {
-        extensions: ['.js', '.vue', '.styl', '.stylus', 'pug'],
+        // 在导入语句没带文件后缀时，用于配置在尝试过程中用到的后缀列表
+        extensions: ['.vue', '.js', 'pug', '.styl', '.stylus'],
+        // resolve.modules 用于配置 Webpack 去哪些目录下寻找第三方模块。
         modules: [path.resolve(__dirname, '../node_modules')],
         alias: {
             'vue$': 'vue/dist/vue.esm.js',
@@ -58,6 +60,8 @@ module.exports = {
         }
     },
   module: {
+    // 忽略对部分没采用模块化的文件的递归解析处理
+    // noParse: [],
     rules: [
       {
         test: require.resolve('lodash'),
@@ -69,7 +73,8 @@ module.exports = {
       {
         test: /\.js$/,
         use: "babel-loader?cacheDirectory=true",
-        include: [resolve('../asserts')], // asserts是项目开发的目录
+        // Loader 时可以通过 test 、 include 、 exclude 三个配置项来命中 Loader 要应用规则的文件
+        include: [path.resolve(__dirname, '../asserts')], // asserts是项目开发的目录
         exclude: [path.resolve(__dirname, '../node_modules')] // 不需要编译node_modules下的js
       },
       {
@@ -77,7 +82,8 @@ module.exports = {
         use: {
           loader: "vue-loader",
           options: utils.vueLoaderOptions()
-        }
+        },
+        exclude: [path.resolve(__dirname, '../node_modules')] // 不需要编译node_modules下的js
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
